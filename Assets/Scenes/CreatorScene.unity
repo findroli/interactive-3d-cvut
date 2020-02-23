@@ -228,9 +228,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testPrefab: {fileID: 1309791300091212, guid: 815176c3adeb40448ba2fc0d71d454a0, type: 3}
+  nodePrefab: {fileID: 3230278345308252274, guid: 7aa270dfeaf4f8f4c867d3ba70c18329,
+    type: 3}
   inputManager: {fileID: 2140407967}
   interactCreationBtn: {fileID: 1293633520}
   model: {fileID: 0}
+  node: {fileID: 0}
 --- !u!4 &1008346225
 Transform:
   m_ObjectHideFlags: 0
