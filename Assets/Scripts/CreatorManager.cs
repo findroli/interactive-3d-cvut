@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class CreatorManager: MonoBehaviour
 {
@@ -9,7 +6,7 @@ public class CreatorManager: MonoBehaviour
     [SerializeField] private GameObject nodePrefab;
     
     [SerializeField] private InputManager inputManager;
-    [SerializeField] private Button interactCreationBtn;
+    [SerializeField] private InteractiveButton interactCreationBtn;
     
     public GameObject model;
     public GameObject node;
@@ -17,54 +14,43 @@ public class CreatorManager: MonoBehaviour
     private bool interactCreationMode = false;
 
     void Start() {
-        model = GameObject.Instantiate(testPrefab, Vector3.zero, Quaternion.identity);
+        model = Instantiate(testPrefab, Vector3.zero, Quaternion.identity);
         interactCreationBtn.onClick.AddListener(ToggleInteractionPointCreation);
     }
 
     void Update() {
-        if (interactCreationMode)
-        {
+        if (interactCreationBtn.selected) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (!node.activeInHierarchy)
-                {
+            if (Physics.Raycast(ray, out hit)) {
+                if (!node.activeInHierarchy) {
                     node.SetActive(true);
                 }
                 node.transform.position = hit.point;
                 
             }
-            else if (node.activeInHierarchy)
-            {
+            else if (node.activeInHierarchy) {
                 node.SetActive(false);
             }
-            if (Input.GetMouseButtonDown(0))
-            {
+            if (Input.GetMouseButtonDown(0)) {
                 SetInteractionPointCreation(false);
             }
         }
     }
 
-    void ToggleInteractionPointCreation()
-    {
-        SetInteractionPointCreation(!interactCreationMode);
+    void ToggleInteractionPointCreation() {
+        SetInteractionPointCreation(!interactCreationBtn.selected);
     }
 
-    private void SetInteractionPointCreation(bool value)
-    {
-        interactCreationMode = !interactCreationMode;
-        interactCreationBtn.GetComponent<Image>().color = interactCreationMode ? Color.yellow : Color.white;
-        if (interactCreationMode)
-        {
+    private void SetInteractionPointCreation(bool value) {
+        interactCreationBtn.selected = value;
+        if (value) {
             node = Instantiate(nodePrefab);
             node.transform.SetParent(model.transform);
             node.SetActive(false);
         }
-        else
-        {
-            if (!node.activeInHierarchy)
-            {
+        else{ 
+            if (!node.activeInHierarchy) {
                 Destroy(node);
             }
             node = null;
