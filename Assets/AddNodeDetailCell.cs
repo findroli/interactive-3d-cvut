@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AddNodeDetailCell: MonoBehaviour {
+    public delegate void OnCreateClickDelegate();
+    public static OnCreateClickDelegate createClickDelegate;
+    public delegate void OnCancelClickDelegate();
+    public static OnCancelClickDelegate cancelClickDelegate;
+    
     public Button addBtn;
     public Button createBtn;
     public Button cancelBtn;
@@ -14,11 +19,22 @@ public class AddNodeDetailCell: MonoBehaviour {
         get { return _creationStarted; }
         set {
             _creationStarted = value;
-            if (_creationStarted) {
-                addBtn.gameObject.SetActive(false);
-                cancelBtn.gameObject.SetActive(true);
-                createBtn.gameObject.SetActive(true);
-            }
+            addBtn.gameObject.SetActive(!_creationStarted);
+            cancelBtn.gameObject.SetActive(_creationStarted);
+            createBtn.gameObject.SetActive(_creationStarted);
         }
+    }
+
+    private void Start() {
+        createBtn.onClick.AddListener(CreateTapped);
+        cancelBtn.onClick.AddListener(CancelTapped);
+    }
+
+    private void CreateTapped() {
+        createClickDelegate();
+    }
+
+    private void CancelTapped() {
+        cancelClickDelegate();
     }
 }

@@ -8,6 +8,10 @@ public class NodeDetailTextCell: MonoBehaviour {
     private InputField inputField;
     private RectTransform rectTransform;
     
+    public void CreatingEnded() {
+        gameObject.SetActive(false);
+    }
+    
     void Start() {
         inputField = gameObject.GetComponent<InputField>();
         inputField.onValueChanged.AddListener(OnValueChanged);
@@ -19,5 +23,4 @@ public class NodeDetailTextCell: MonoBehaviour {
         var newLineCount = inputField.text.Count(c => c == '\n');
         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, newLineCount * 16 + 30);
     }
-
 }
