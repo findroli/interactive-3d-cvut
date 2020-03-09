@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionPoint : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class InteractionPoint : MonoBehaviour {
+    public delegate void OnInteractionDelegate(InteractionPoint point);
+    public static event OnInteractionDelegate interactionDelegate;
+    
+    void Update() {
+        transform.LookAt(Camera.main.transform);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.LookAt(Camera.main.transform);
+    private void OnMouseDown() {
+        if (interactionDelegate != null) {
+            interactionDelegate(this);
+        }
     }
 }

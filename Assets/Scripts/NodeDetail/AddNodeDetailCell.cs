@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class AddNodeDetailCell: MonoBehaviour {
     public delegate void OnCreateClickDelegate();
-    public static OnCreateClickDelegate createClickDelegate;
+    public event OnCreateClickDelegate createClickDelegate;
     public delegate void OnCancelClickDelegate();
-    public static OnCancelClickDelegate cancelClickDelegate;
+    public event OnCancelClickDelegate cancelClickDelegate;
     
     public Button addBtn;
     public Button createBtn;
@@ -16,7 +16,7 @@ public class AddNodeDetailCell: MonoBehaviour {
     private bool _creationStarted = false;
 
     public bool creationStarted {
-        get { return _creationStarted; }
+        get => _creationStarted;
         set {
             _creationStarted = value;
             addBtn.gameObject.SetActive(!_creationStarted);

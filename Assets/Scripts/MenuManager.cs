@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuManager: MonoBehaviour {
-    // Start is called before the first frame update
-
     [SerializeField] private Button importBtn;
     [SerializeField] private Button startBtn;
     [SerializeField] private Text modelNameText;
@@ -14,11 +12,6 @@ public class MenuManager: MonoBehaviour {
     void Start() {
         importBtn.onClick.AddListener(ImportModel);
         startBtn.onClick.AddListener(StartCreation);
-    }
-
-    // Update is called once per frame
-    void Update() {
-        
     }
 
     private void ImportModel() {

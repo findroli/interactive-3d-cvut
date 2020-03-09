@@ -4,12 +4,12 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NodeDetailTextCell: MonoBehaviour {
-    private InputField inputField;
+public class NodeDetailTextCell: NodeDetailCell {
+    public InputField inputField;
     private RectTransform rectTransform;
     
     public void CreatingEnded() {
-        gameObject.SetActive(false);
+        inputField.enabled = false;
     }
     
     void Start() {
