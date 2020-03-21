@@ -12,7 +12,6 @@ public class NodeDetail: MonoBehaviour {
     public event OnCancel onCancel;
     
     [SerializeField] private GameObject textCellPrefab;
-    
     [SerializeField] private GameObject scrollViewContent;
     [SerializeField] private Button cancelBtn;
     [SerializeField] private Button doneBtn;
@@ -22,21 +21,20 @@ public class NodeDetail: MonoBehaviour {
     public InteractionPoint interactionPoint = null;
     private GameObject currentCreatingCell = null;
 
-    public void UpdateData(string[] texts) {
-        foreach (var text in texts) {
-            var cell = Instantiate(textCellPrefab, scrollViewContent.transform, false);
-            cell.GetComponent<NodeDetailTextCell>().inputField.text = text;
+    public void UpdateData(NodeDetailItem[] items) {
+        foreach (var item in items) {
+            var cell = item.CreateCell(scrollViewContent.transform);
             cell.transform.SetAsFirstSibling();
             cell.GetComponent<NodeDetailTextCell>().CreatingEnded();
         }
     }
 
-    public string[] GetData() {
-        var result = new List<string>();
+    public NodeDetailItem[] GetData() {
+        var result = new List<NodeDetailItem>();
         for (int i = 0; i < scrollViewContent.transform.childCount; i++) {
-            var cell = scrollViewContent.transform.GetChild(i).GetComponent<NodeDetailTextCell>();
+            var cell = scrollViewContent.transform.GetChild(i).GetComponent<NodeDetailCell>();
             if (cell != null) {
-                result.Add(cell.inputField.text);
+                result.Add(cell.GetData());
             }
         }
         return result.ToArray();
@@ -72,7 +70,12 @@ public class NodeDetail: MonoBehaviour {
         Debug.Log("Add clicked!");
         addCell.creationStarted = !addCell.creationStarted;
         currentCreatingCell = Instantiate(textCellPrefab, scrollViewContent.transform, false);
-        currentCreatingCell.transform.SetAsFirstSibling();
+        var children = scrollViewContent.transform.childCount;
+        if (children > 1) {
+            currentCreatingCell.transform.SetSiblingIndex(children - 2);
+        } else {
+            currentCreatingCell.transform.SetSiblingIndex(0);   
+        }
     }
     
 }

@@ -13,13 +13,18 @@
           <e p="InteractiveButton.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
           <e p="Model" t="Include">
-            <e p="NodeDetailModel.cs" t="Include" />
+            <e p="NodeDetailImageItem.cs" t="Include" />
+            <e p="NodeDetailItem.cs" t="Include" />
+            <e p="NodeDetailTextItem.cs" t="Include" />
           </e>
           <e p="NodeDetail" t="Include">
             <e p="AddNodeDetailCell.cs" t="Include" />
+            <e p="Cells" t="Include">
+              <e p="NodeDetailCell.cs" t="Include" />
+              <e p="NodeDetailImageCell.cs" t="Include" />
+              <e p="NodeDetailTextCell.cs" t="Include" />
+            </e>
             <e p="NodeDetail.cs" t="Include" />
-            <e p="NodeDetailCell.cs" t="Include" />
-            <e p="NodeDetailTextCell.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">
