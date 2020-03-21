@@ -81,13 +81,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailTextItem.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+            <state relative-caret-position="285">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding>
-                <marker date="1584806291090" expanded="true" signature="7:33" ph="..." />
-                <marker date="1584806291090" expanded="true" signature="98:523" ph="{...}" />
-                <marker date="1584806291090" expanded="true" signature="169:202" ph="{...}" />
-                <marker date="1584806291090" expanded="true" signature="255:520" ph="{...}" />
+                <marker date="1584806415110" expanded="true" signature="7:33" ph="..." />
+                <marker date="1584806415110" expanded="true" signature="98:457" ph="{...}" />
+                <marker date="1584806415110" expanded="true" signature="169:202" ph="{...}" />
+                <marker date="1584806415110" expanded="true" signature="255:454" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -352,12 +352,12 @@
       <workItem from="1583702469860" duration="3408000" />
       <workItem from="1583744649671" duration="14936000" />
       <workItem from="1584005224037" duration="932000" />
-      <workItem from="1584790101755" duration="4460000" />
+      <workItem from="1584790101755" duration="4712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42933000" />
+    <option name="totallyTimeSpent" value="43185000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,13 +621,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailTextItem.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        <state relative-caret-position="285">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding>
-            <marker date="1584806291090" expanded="true" signature="7:33" ph="..." />
-            <marker date="1584806291090" expanded="true" signature="98:523" ph="{...}" />
-            <marker date="1584806291090" expanded="true" signature="169:202" ph="{...}" />
-            <marker date="1584806291090" expanded="true" signature="255:520" ph="{...}" />
+            <marker date="1584806415110" expanded="true" signature="7:33" ph="..." />
+            <marker date="1584806415110" expanded="true" signature="98:457" ph="{...}" />
+            <marker date="1584806415110" expanded="true" signature="169:202" ph="{...}" />
+            <marker date="1584806415110" expanded="true" signature="255:454" ph="{...}" />
           </folding>
         </state>
       </provider>
