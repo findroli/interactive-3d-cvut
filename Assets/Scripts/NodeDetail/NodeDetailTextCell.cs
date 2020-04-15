@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,10 +9,25 @@ public class NodeDetailTextCell: NodeDetailCell {
     public InputField inputField;
     private RectTransform rectTransform;
     
-    public void CreatingEnded() {
+    public override void CreatingEnded() {
         inputField.enabled = false;
     }
-    
+
+    public override void FillWithData(NodeCellData data) {
+        var textData = data as NodeTextCellData;
+        if(textData == null) return;
+        if (textData.text != "") {
+            inputField.text = textData.text;
+        }
+        Debug.Log("Filled text cell with data: " + textData.text);
+    }
+
+    public override NodeCellData GetData() {
+        return new NodeTextCellData {
+            text = inputField.text
+        };
+    }
+
     void Start() {
         inputField = gameObject.GetComponent<InputField>();
         inputField.onValueChanged.AddListener(OnValueChanged);

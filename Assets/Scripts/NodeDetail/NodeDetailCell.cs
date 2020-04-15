@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NodeDetailCell: MonoBehaviour {
-    
-    
-    
+public abstract class NodeDetailCell: MonoBehaviour {
+    public abstract void CreatingEnded();
+    public abstract void FillWithData(NodeCellData data);
+    public abstract NodeCellData GetData();
 }

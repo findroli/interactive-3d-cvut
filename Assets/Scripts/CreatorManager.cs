@@ -17,7 +17,7 @@ public class CreatorManager: MonoBehaviour
 
     private GameObject canvas;
     private bool interactCreationMode = false;
-    private Dictionary<InteractionPoint, string[]> nodesData = new Dictionary<InteractionPoint, string[]>();
+    private Dictionary<InteractionPoint, NodeCellData[]> nodesData = new Dictionary<InteractionPoint, NodeCellData[]>();
     private NodeDetail currentDetail = null;
 
     void Start() {

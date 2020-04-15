@@ -4,19 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public struct NodeDetailModel {
-    public NodeDetailItem[] items;
-}
-
-public interface NodeDetailItem { }
-
-[Serializable]
-public struct NodeDetailText: NodeDetailItem {
-    public string text;
-}
-
-[Serializable]
-public struct NodeDetailImage: NodeDetailItem {
-    
+    public Vector3 position;
+    public string title;
+    public NodeCellData[] cells;
 }
 
 
