@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CreatorManager: MonoBehaviour
-{
+public class CreatorManager: MonoBehaviour {
     [SerializeField] private GameObject testPrefab;
     [SerializeField] private GameObject nodePrefab;
     [SerializeField] private GameObject nodeDetailPrefab;
     
     [SerializeField] private InputManager inputManager;
-    [SerializeField] private InteractiveButton interactCreationBtn;
+    [SerializeField] private NodeMenuManager nodeMenuManager;
     
     public GameObject model;
     public GameObject node;
@@ -24,7 +23,7 @@ public class CreatorManager: MonoBehaviour
         canvas = GameObject.Find("Canvas");
         model = Instantiate(testPrefab, Vector3.zero, Quaternion.identity);
         model.layer = 8;
-        interactCreationBtn.onClick.AddListener(ToggleInteractionPointCreation);
+        nodeMenuManager.OnNodePlaceTapped += ToggleInteractionPointCreation;
         InteractionPoint.interactionDelegate += point => {
             if(currentDetail != null) return;
             var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform);
@@ -61,11 +60,11 @@ public class CreatorManager: MonoBehaviour
     }
 
     void ToggleInteractionPointCreation() {
-        SetInteractionPointCreation(!interactCreationBtn.selected);
+        SetInteractionPointCreation(!interactCreationMode);
     }
 
     private void SetInteractionPointCreation(bool value) {
-        interactCreationBtn.selected = value;
+        EventManager.PlacingNodeChanged(value);
         if (value) {
             node = Instantiate(nodePrefab);
             node.transform.SetParent(model.transform);
