@@ -24,8 +24,8 @@ public class NodeDetail: MonoBehaviour {
     public InteractionPoint interactionPoint = null;
     private GameObject currentCreatingCell = null;
 
-    public void UpdateData(NodeCellData[] data) {
-        foreach (var cellData in data) {
+    public void UpdateData(NodeDetailData data) {
+        foreach (var cellData in data.cells) {
             var cell = cellData.GetCell();
             cell.transform.SetParent(scrollViewContent.transform);
             cell.GetComponent<NodeDetailCell>().CreatingEnded();
@@ -33,7 +33,7 @@ public class NodeDetail: MonoBehaviour {
         addCell.transform.SetAsLastSibling();
     }
 
-    public NodeCellData[] GetData() {
+    public NodeDetailData GetData() {
         var result = new List<NodeCellData>();
         for (int i = 0; i < scrollViewContent.transform.childCount; i++) {
             var cell = scrollViewContent.transform.GetChild(i).GetComponent<NodeDetailCell>();
@@ -41,7 +41,11 @@ public class NodeDetail: MonoBehaviour {
                 result.Add(cell.GetData());
             }
         }
-        return result.ToArray();
+        return new NodeDetailData {
+            title = "Some title",
+            position = interactionPoint.transform.localPosition,
+            cells = result.ToArray()
+        };
     }
     
     private void Start() {

@@ -21,16 +21,11 @@ public class NodeDetailImageCell: NodeDetailCell {
         tex.LoadImage(imageCellData.imageData); //..this will auto-resize the texture dimensions.
         image.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(tex.width/2f, tex.height/2f));
         image.preserveAspect = true;
-        Debug.Log("Success, I guess?!");
     }
 
     public override NodeCellData GetData() {
         return new NodeImageCellData {
             imageData = textureData
         };
-    }
-
-    void Start() {
-        
     }
 }

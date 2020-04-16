@@ -11,6 +11,7 @@
           <e p="InteractiveButton.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
           <e p="Model" t="Include">
+            <e p="CellDataJsonWrapper.cs" t="Include" />
             <e p="NodeCellData.cs" t="Include" />
             <e p="NodeDetailModel.cs" t="Include" />
           </e>

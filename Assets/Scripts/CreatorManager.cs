@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,19 +13,24 @@ public class CreatorManager: MonoBehaviour
     
     [SerializeField] private InputManager inputManager;
     [SerializeField] private InteractiveButton interactCreationBtn;
-    
+    [SerializeField] private Button saveBtn;
+    [SerializeField] private Button loadBtn;
+
     public GameObject model;
     public GameObject node;
 
     private GameObject canvas;
     private bool interactCreationMode = false;
-    private Dictionary<InteractionPoint, NodeCellData[]> nodesData = new Dictionary<InteractionPoint, NodeCellData[]>();
+    private List<InteractionPoint> interactNodes = new List<InteractionPoint>();
+    private Dictionary<InteractionPoint, NodeDetailData> nodesData = new Dictionary<InteractionPoint, NodeDetailData>();
     private NodeDetail currentDetail = null;
 
     void Start() {
         canvas = GameObject.Find("Canvas");
         model = Instantiate(testPrefab, Vector3.zero, Quaternion.identity);
         model.layer = 8;
+        saveBtn.onClick.AddListener(Save);
+        loadBtn.onClick.AddListener(Load);
         interactCreationBtn.onClick.AddListener(ToggleInteractionPointCreation);
         InteractionPoint.interactionDelegate += point => {
             if(currentDetail != null) return;
@@ -67,13 +74,55 @@ public class CreatorManager: MonoBehaviour
     private void SetInteractionPointCreation(bool value) {
         interactCreationBtn.selected = value;
         if (value) {
-            node = Instantiate(nodePrefab);
-            node.transform.SetParent(model.transform);
+            node = Instantiate(nodePrefab, model.transform, false);
             node.SetActive(false);
         }
         else { 
-            if (!node.activeInHierarchy) { Destroy(node); }
+            if (!node.activeInHierarchy) Destroy(node);
+            else {
+                var interactPoint = node.GetComponent<InteractionPoint>();
+                if(interactPoint != null) interactNodes.Add(interactPoint);
+            }
             node = null;
+        }
+    }
+    
+    private void Save() {
+        var data = new DetailsArrayJsonWrapper(nodesData.Values.ToArray());
+        var json = JsonUtility.ToJson(data, true);
+        Debug.Log("CreatorManager.Save(): Created JSON:\n" + json);
+        var path = Application.dataPath + "/data.json";
+        if (File.Exists(path)) {
+            File.Delete(path);
+            Debug.Log("CreatorManager.Save(): File already exists - was deleted!");
+        }
+        var sr = File.CreateText(path);
+        sr.Write(json);
+        sr.Close();
+        Debug.Log("CreatorManager.Save(): JSON was saved in path:\n" + path);
+    }
+
+    private void Load() {
+        var path = Application.dataPath + "/data.json";
+        if (!File.Exists(path)) {
+            Debug.Log("CreatorManager.Load(): File with JSON was not found!");
+            return;
+        }
+        var sr = new StreamReader(path);
+        var fileContent = sr.ReadToEnd();
+        sr.Close();
+        LoadFromData(JsonUtility.FromJson<DetailsArrayJsonWrapper>(fileContent).ToOriginal());
+    }
+
+    private void LoadFromData(NodeDetailData[] data) {
+        foreach (var detailData in data) {
+            node = Instantiate(nodePrefab, model.transform, false);
+            node.transform.localPosition = detailData.position;
+            var interactPoint = node.GetComponent<InteractionPoint>();
+            if (interactPoint != null) {
+                interactNodes.Add(interactPoint);
+                nodesData.Add(interactPoint, detailData);
+            }
         }
     }
     
