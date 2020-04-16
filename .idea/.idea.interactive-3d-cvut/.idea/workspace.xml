@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NodeDetail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NodeDetail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NodeDetailTextCell.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NodeDetailTextCell.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Wheel FR.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Wheel FR.controller.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +106,8 @@
       <workItem from="1582490024682" duration="2272000" />
       <workItem from="1583702469860" duration="3408000" />
       <workItem from="1583744649671" duration="14608000" />
-      <workItem from="1586951764050" duration="13493000" />
+      <workItem from="1586951764050" duration="14232000" />
+      <workItem from="1587036955763" duration="615000" />
     </task>
     <servers />
   </component>
@@ -130,7 +121,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
