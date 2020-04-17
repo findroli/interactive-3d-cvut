@@ -15,7 +15,8 @@ public class NodeDetail: MonoBehaviour {
     
     [SerializeField] private GameObject textCellPrefab;
     [SerializeField] private GameObject imageCellPrefab;
-    
+
+    [SerializeField] private InputField titleInputField;
     [SerializeField] private GameObject scrollViewContent;
     [SerializeField] private Button cancelBtn;
     [SerializeField] private Button doneBtn;
@@ -25,6 +26,7 @@ public class NodeDetail: MonoBehaviour {
     private GameObject currentCreatingCell = null;
 
     public void UpdateData(NodeDetailData data) {
+        titleInputField.text = data.title;
         foreach (var cellData in data.cells) {
             var cell = cellData.GetCell();
             cell.transform.SetParent(scrollViewContent.transform);
@@ -42,7 +44,7 @@ public class NodeDetail: MonoBehaviour {
             }
         }
         return new NodeDetailData {
-            title = "Some title",
+            title = titleInputField.text ?? "",
             position = interactionPoint.transform.localPosition,
             cells = result.ToArray()
         };

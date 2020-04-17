@@ -24,6 +24,7 @@
 
 # Idea
 .idea/
+Assets/Plugins/Editor/JetBrains*
 
 # Gradle cache directory
 .gradle/
