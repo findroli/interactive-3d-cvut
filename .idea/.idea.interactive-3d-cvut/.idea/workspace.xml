@@ -2,10 +2,132 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menu.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NodeDetail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NodeDetail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/IStandaloneFileBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/IStandaloneFileBrowser.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Linux.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Linux/x86_64.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Linux/x86_64/libStandaloneFileBrowser.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Linux/x86_64/libStandaloneFileBrowser.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/Info.plist.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/MacOS.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/MacOS/StandaloneFileBrowser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/MacOS/StandaloneFileBrowser.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.jslib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.jslib.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/BasicSample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/BasicSample.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/BasicSampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/BasicSampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileImage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileImage.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileText.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileText.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileTextMultiple.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileTextMultiple.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleSaveFileImage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleSaveFileImage.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowser.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserLinux.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserLinux.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserMac.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserMac.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Masking.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Sprite.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Sprite.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,17 +143,20 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/982F5A4B-86A9-4E77-B7C6-C7452AD8E95C/ab/3857ba94/ImageConversion.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/CellDataJsonWrapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples/ObjFromFile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Libraries/OBJImport/OBJLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InteractionPoint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/ModePicker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/LoadInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/data.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -46,7 +171,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetailTextCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AddNodeDetailCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetailCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InteractionPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeCellData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" />
@@ -56,8 +180,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/CellDataJsonWrapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" />
+        <option value="$PROJECT_DIR$/Assets/ModePicker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ModePicker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LoadInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorManager.cs" />
       </list>
     </option>
   </component>
@@ -104,7 +233,8 @@
       <workItem from="1583744649671" duration="14608000" />
       <workItem from="1586951764050" duration="14232000" />
       <workItem from="1587036955763" duration="8212000" />
-      <workItem from="1587109027432" duration="387000" />
+      <workItem from="1587109027432" duration="1256000" />
+      <workItem from="1587287181890" duration="6686000" />
     </task>
     <servers />
   </component>

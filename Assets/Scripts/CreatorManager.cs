@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Dummiesman;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CreatorManager: MonoBehaviour
 {
-    [SerializeField] private GameObject testPrefab;
     [SerializeField] private GameObject nodePrefab;
     [SerializeField] private GameObject nodeDetailPrefab;
     
@@ -15,6 +17,9 @@ public class CreatorManager: MonoBehaviour
     [SerializeField] private InteractiveButton interactCreationBtn;
     [SerializeField] private Button saveBtn;
     [SerializeField] private Button loadBtn;
+    [SerializeField] private Button exitBtn;
+    [SerializeField] private Button saveProjectBtn;
+    [SerializeField] private InputField projectName;
 
     public GameObject model;
     public GameObject node;
@@ -27,24 +32,12 @@ public class CreatorManager: MonoBehaviour
 
     void Start() {
         canvas = GameObject.Find("Canvas");
-        model = Instantiate(testPrefab, Vector3.zero, Quaternion.identity);
-        model.layer = 8;
+        LoadModel();
         saveBtn.onClick.AddListener(Save);
         loadBtn.onClick.AddListener(Load);
         interactCreationBtn.onClick.AddListener(ToggleInteractionPointCreation);
-        InteractionPoint.interactionDelegate += point => {
-            if(currentDetail != null) return;
-            var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform);
-            nodeGO.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
-            var nodeDetail = nodeGO.GetComponent<NodeDetail>();
-            nodeDetail.interactionPoint = point;
-            nodeDetail.onDone += OnDetailDone;
-            nodeDetail.onCancel += OnDetailCancel;
-            currentDetail = nodeDetail;
-            if (nodesData.ContainsKey(point)) {
-                nodeDetail.UpdateData(nodesData[point]);
-            }
-        };
+        InteractionPoint.interactionDelegate += OnInteractionPointSelect;
+        exitBtn.onClick.AddListener(() => { SceneManager.LoadScene("MainMenuScene"); });
     }
 
     void Update() {
@@ -63,6 +56,29 @@ public class CreatorManager: MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0)) {
                 SetInteractionPointCreation(false);
+            }
+        }
+    }
+
+    void LoadModel() {
+        var loadInfo = FindObjectOfType<LoadInfo>();
+        model = new OBJLoader().Load(loadInfo.ImportObjectPath);
+        model.layer = 8;
+        if(loadInfo.AppMode == AppMode.Edit) {
+            CreateMeshColliderRecursively(model.gameObject);
+        }
+    }
+
+    void CreateMeshColliderRecursively(GameObject gameObject) {
+        for (int i = 0; i < gameObject.transform.childCount; i++) {
+            var child = gameObject.transform.GetChild(i);
+            var meshFilter = child.gameObject.GetComponent<MeshFilter>();
+            if (meshFilter != null) {
+                var childCollider = child.gameObject.AddComponent<MeshCollider>();
+                childCollider.sharedMesh = meshFilter.mesh;
+            }
+            if (child.childCount > 0) {
+                CreateMeshColliderRecursively(child.gameObject);
             }
         }
     }
@@ -123,6 +139,20 @@ public class CreatorManager: MonoBehaviour
                 interactNodes.Add(interactPoint);
                 nodesData.Add(interactPoint, detailData);
             }
+        }
+    }
+
+    private void OnInteractionPointSelect(InteractionPoint point) {
+        if(currentDetail != null) return;
+        var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform);
+        nodeGO.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
+        var nodeDetail = nodeGO.GetComponent<NodeDetail>();
+        nodeDetail.interactionPoint = point;
+        nodeDetail.onDone += OnDetailDone;
+        nodeDetail.onCancel += OnDetailCancel;
+        currentDetail = nodeDetail;
+        if (nodesData.ContainsKey(point)) {
+            nodeDetail.UpdateData(nodesData[point]);
         }
     }
     
