@@ -11,12 +11,9 @@ using UnityEngine.UI;
 public class CreatorManager: MonoBehaviour
 {
     [SerializeField] private GameObject nodePrefab;
-    [SerializeField] private GameObject nodeDetailPrefab;
     
     [SerializeField] private InputManager inputManager;
     [SerializeField] private InteractiveButton interactCreationBtn;
-    [SerializeField] private Button saveBtn;
-    [SerializeField] private Button loadBtn;
     [SerializeField] private Button exitBtn;
     [SerializeField] private Button saveProjectBtn;
     [SerializeField] private InputField projectName;
@@ -24,6 +21,7 @@ public class CreatorManager: MonoBehaviour
     public GameObject model;
     public GameObject node;
 
+    private string loadedModelPath;
     private GameObject canvas;
     private bool interactCreationMode = false;
     private List<InteractionPoint> interactNodes = new List<InteractionPoint>();
@@ -33,8 +31,7 @@ public class CreatorManager: MonoBehaviour
     void Start() {
         canvas = GameObject.Find("Canvas");
         LoadModel();
-        saveBtn.onClick.AddListener(Save);
-        loadBtn.onClick.AddListener(Load);
+        saveProjectBtn.onClick.AddListener(Save);
         interactCreationBtn.onClick.AddListener(ToggleInteractionPointCreation);
         InteractionPoint.interactionDelegate += OnInteractionPointSelect;
         exitBtn.onClick.AddListener(() => { SceneManager.LoadScene("MainMenuScene"); });
@@ -61,9 +58,24 @@ public class CreatorManager: MonoBehaviour
     }
 
     void LoadModel() {
+        Debug.Log("CreatorManager.LoadModel(): started!");
         var loadInfo = FindObjectOfType<LoadInfo>();
-        model = new OBJLoader().Load(loadInfo.ImportObjectPath);
-        model.layer = 8;
+        var modelPath = loadInfo.ImportObjectPath;
+        if (loadInfo.LoadProjectName != null) {
+            var fileContent = IOManager.LoadProjectJson(loadInfo.LoadProjectName);
+            var projectData = JsonUtility.FromJson<ProjectData>(fileContent);
+            modelPath = projectData.modelPath;
+            model = new OBJLoader().Load(modelPath);
+            model.layer = 8;
+            LoadPointsFromData(projectData.ToOriginal());
+            projectName.text = projectData.name;
+            Debug.Log("CreatorManager.LoadModel(): loaded project model from path:\n" + modelPath);
+        }
+        else {
+            model = new OBJLoader().Load(modelPath);
+            model.layer = 8;
+        }
+        loadedModelPath = modelPath;
         if(loadInfo.AppMode == AppMode.Edit) {
             CreateMeshColliderRecursively(model.gameObject);
         }
@@ -104,33 +116,14 @@ public class CreatorManager: MonoBehaviour
     }
     
     private void Save() {
-        var data = new DetailsArrayJsonWrapper(nodesData.Values.ToArray());
+        var name = projectName.text ?? "Untitled";
+        var path = loadedModelPath;
+        var data = new ProjectData(name, path, nodesData.Values.ToArray());
         var json = JsonUtility.ToJson(data, true);
-        Debug.Log("CreatorManager.Save(): Created JSON:\n" + json);
-        var path = Application.dataPath + "/data.json";
-        if (File.Exists(path)) {
-            File.Delete(path);
-            Debug.Log("CreatorManager.Save(): File already exists - was deleted!");
-        }
-        var sr = File.CreateText(path);
-        sr.Write(json);
-        sr.Close();
-        Debug.Log("CreatorManager.Save(): JSON was saved in path:\n" + path);
+        IOManager.SaveCurrentProject(name, json);
     }
 
-    private void Load() {
-        var path = Application.dataPath + "/data.json";
-        if (!File.Exists(path)) {
-            Debug.Log("CreatorManager.Load(): File with JSON was not found!");
-            return;
-        }
-        var sr = new StreamReader(path);
-        var fileContent = sr.ReadToEnd();
-        sr.Close();
-        LoadFromData(JsonUtility.FromJson<DetailsArrayJsonWrapper>(fileContent).ToOriginal());
-    }
-
-    private void LoadFromData(NodeDetailData[] data) {
+    private void LoadPointsFromData(NodeDetailData[] data) {
         foreach (var detailData in data) {
             node = Instantiate(nodePrefab, model.transform, false);
             node.transform.localPosition = detailData.position;
@@ -144,6 +137,7 @@ public class CreatorManager: MonoBehaviour
 
     private void OnInteractionPointSelect(InteractionPoint point) {
         if(currentDetail != null) return;
+        var nodeDetailPrefab = Resources.Load("NodeDetail") as GameObject;
         var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform);
         nodeGO.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
         var nodeDetail = nodeGO.GetComponent<NodeDetail>();

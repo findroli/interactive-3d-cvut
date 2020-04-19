@@ -9,11 +9,19 @@ public class LoadInfo: MonoBehaviour {
     private AppMode appMode = AppMode.Edit;
     public AppMode AppMode => appMode;
 
+    private string loadProjectName = null;
+    public string LoadProjectName => loadProjectName;
+
+
     public void SetPath(string path) {
         importObjectPath = path;
     }
 
     public void SetAppMode(AppMode mode) {
         appMode = mode;
+    }
+
+    public void SetLoadProjectName(string projectName) {
+        loadProjectName = projectName;
     }
 }

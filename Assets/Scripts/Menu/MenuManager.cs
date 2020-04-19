@@ -10,10 +10,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuManager: MonoBehaviour {
+    [SerializeField] private GameObject projectCellPrefab;
+    
     [SerializeField] private Button importBtn;
     [SerializeField] private Button startBtn;
     [SerializeField] private Text modelNameText;
     [SerializeField] private ModePicker modePicker;
+    [SerializeField] private GameObject projectsScrollViewContent;
 
     private LoadInfo loadInfo;
     
@@ -25,9 +28,24 @@ public class MenuManager: MonoBehaviour {
             loadInfoGameObject.name = "LoadInfo";
             DontDestroyOnLoad(loadInfoGameObject);
         }
+        
         importBtn.onClick.AddListener(ImportModel);
         startBtn.onClick.AddListener(StartCreation);
         UpdateImportModelName();
+        
+        var projects = IOManager.LoadSavedProjecs();
+        foreach (var projectPath in projects) {
+            Debug.Log("Found project in path:\n" + projectPath);
+            var cellGameObject = Instantiate(projectCellPrefab, projectsScrollViewContent.transform);
+            var cell = cellGameObject.GetComponent<ProjectCell>();
+            var projectName = projectPath.Split('/').Last();
+            cell.Setup(projectName);
+            cell.onClick += () => {
+                loadInfo.SetAppMode(modePicker.CurrentAppMode);
+                loadInfo.SetLoadProjectName(projectName);
+                SceneManager.LoadScene("CreatorScene");
+            };
+        }
     }
 
     private void ImportModel() {

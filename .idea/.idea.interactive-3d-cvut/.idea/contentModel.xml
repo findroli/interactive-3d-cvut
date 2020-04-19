@@ -77,15 +77,18 @@
           <e p="InputManager.cs" t="Include" />
           <e p="InteractionPoint.cs" t="Include" />
           <e p="InteractiveButton.cs" t="Include" />
+          <e p="IOManager.cs" t="Include" />
           <e p="Menu" t="Include">
             <e p="LoadInfo.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
             <e p="ModePicker.cs" t="Include" />
+            <e p="ProjectCell.cs" t="Include" />
           </e>
           <e p="Model" t="Include">
             <e p="CellDataJsonWrapper.cs" t="Include" />
             <e p="NodeCellData.cs" t="Include" />
             <e p="NodeDetailModel.cs" t="Include" />
+            <e p="ProjectData.cs" t="Include" />
           </e>
           <e p="NodeDetail" t="Include">
             <e p="AddNodeDetailCell.cs" t="Include" />

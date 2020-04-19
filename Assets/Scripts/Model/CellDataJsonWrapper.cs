@@ -5,19 +5,6 @@ using System.Linq;
 using UnityEngine;
 
 [Serializable]
-public class DetailsArrayJsonWrapper {
-    public DetailDataJsonWrapper[] detailsData;
-
-    public DetailsArrayJsonWrapper(NodeDetailData[] detailsArray) {
-        detailsData = detailsArray.Select(d => new DetailDataJsonWrapper(d)).ToArray();
-    }
-
-    public NodeDetailData[] ToOriginal() {
-        return detailsData.Select(d => d.ToOriginal()).ToArray();
-    }
-}
-
-[Serializable]
 public class DetailDataJsonWrapper {
     public Vector3 position;
     public string title;

@@ -1475,49 +1475,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178248789}
   m_CullTransparentMesh: 0
---- !u!1 &1188780970
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1188780972}
-  - component: {fileID: 1188780971}
-  m_Layer: 0
-  m_Name: LoadInfo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1188780971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188780970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89fde219f6cae4880b8f7a8b64bfa851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1188780972
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188780970}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 700.3286, y: 293.36786, z: -207.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1349006938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,7 +1488,7 @@ GameObject:
   - component: {fileID: 1349006941}
   - component: {fileID: 1349006940}
   m_Layer: 5
-  m_Name: Scroll View
+  m_Name: ProjectsScrollView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1744,10 +1701,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938009017a8e22042a63177b3ae67779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectCellPrefab: {fileID: 6343944826292283221, guid: fde017f1267c64a7cab5e53e4f5c7a33,
+    type: 3}
   importBtn: {fileID: 1178248791}
   startBtn: {fileID: 738451981}
   modelNameText: {fileID: 30222575}
   modePicker: {fileID: 492921802}
+  projectsScrollViewContent: {fileID: 2090843162}
 --- !u!4 &1574940157
 Transform:
   m_ObjectHideFlags: 0
@@ -2248,11 +2208,11 @@ RectTransform:
   m_Father: {fileID: 1630561706}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 225}
-  m_Pivot: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &2090843164
 MonoBehaviour:
   m_ObjectHideFlags: 0
