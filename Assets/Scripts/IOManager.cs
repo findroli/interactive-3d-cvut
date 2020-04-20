@@ -19,6 +19,10 @@ public class IOManager {
         return true;
     }
 
+    public static string CurrentProjectImagePath(string projectName) {
+        return GetProjectFolder(projectName) + "/image.png";
+    }
+
     public static string[] LoadSavedProjecs() {
         return Directory.GetDirectories(GetAllProjectsFolder());
     }

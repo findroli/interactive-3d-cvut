@@ -97,6 +97,7 @@
             <e p="NodeDetailImageCell.cs" t="Include" />
             <e p="NodeDetailTextCell.cs" t="Include" />
           </e>
+          <e p="ViewModePicker.cs" t="Include" />
         </e>
       </e>
       <e p="interactive-3d-cvut.sln" t="IncludeFlat" />

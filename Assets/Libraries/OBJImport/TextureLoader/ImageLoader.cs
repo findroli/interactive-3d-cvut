@@ -118,6 +118,7 @@ namespace Dummiesman
                     byte crnFormatByte = crnBytes[18];
 
                     var crnTextureFormat = UnityEngine.TextureFormat.RGB24;
+#if !UNITY_IOS
                     if (crnFormatByte == 0)
                     {
                         crnTextureFormat = UnityEngine.TextureFormat.DXT1Crunched;
@@ -134,6 +135,7 @@ namespace Dummiesman
                         Debug.LogError("Could not load crunched texture " + name + " because its format is not supported (" + crnFormatByte + "): " + fn);
                         break;
                     }
+#endif
 
                     returnTex = new Texture2D(crnWidth, crnHeight, crnTextureFormat, true);
                     returnTex.LoadRawTextureData(crnBytes);

@@ -11,7 +11,8 @@ using UnityEngine.UI;
 
 public class MenuManager: MonoBehaviour {
     [SerializeField] private GameObject projectCellPrefab;
-    
+
+    [SerializeField] private Button demoBtn;
     [SerializeField] private Button importBtn;
     [SerializeField] private Button startBtn;
     [SerializeField] private Text modelNameText;
@@ -29,6 +30,7 @@ public class MenuManager: MonoBehaviour {
             DontDestroyOnLoad(loadInfoGameObject);
         }
         
+        demoBtn.onClick.AddListener(Demo);
         importBtn.onClick.AddListener(ImportModel);
         startBtn.onClick.AddListener(StartCreation);
         UpdateImportModelName();
@@ -39,7 +41,13 @@ public class MenuManager: MonoBehaviour {
             var cellGameObject = Instantiate(projectCellPrefab, projectsScrollViewContent.transform);
             var cell = cellGameObject.GetComponent<ProjectCell>();
             var projectName = projectPath.Split('/').Last();
-            cell.Setup(projectName);
+            Texture2D texture = null;
+            if (File.Exists(projectPath + "/image.png")) {
+                byte[] fileData = File.ReadAllBytes(projectPath + "/image.png");
+                texture = new Texture2D(2, 2);
+                texture.LoadImage(fileData);
+            }
+            cell.Setup(projectName, texture);
             cell.onClick += () => {
                 loadInfo.SetAppMode(modePicker.CurrentAppMode);
                 loadInfo.SetLoadProjectName(projectName);
@@ -62,6 +70,13 @@ public class MenuManager: MonoBehaviour {
 
     private void StartCreation() {
         loadInfo.SetAppMode(modePicker.CurrentAppMode);
+        SceneManager.LoadScene("CreatorScene");
+    }
+
+    private void Demo() {
+        loadInfo.SetAppMode(modePicker.CurrentAppMode);
+        loadInfo.SetPath(null);
+        loadInfo.SetLoadProjectName(null);
         SceneManager.LoadScene("CreatorScene");
     }
 

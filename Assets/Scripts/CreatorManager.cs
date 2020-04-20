@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Dummiesman;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CreatorManager: MonoBehaviour
-{
+public class CreatorManager: MonoBehaviour {
+    [SerializeField] private GameObject testCarPrefab;
     [SerializeField] private GameObject nodePrefab;
     
     [SerializeField] private InputManager inputManager;
@@ -33,7 +31,6 @@ public class CreatorManager: MonoBehaviour
         LoadModel();
         saveProjectBtn.onClick.AddListener(Save);
         interactCreationBtn.onClick.AddListener(ToggleInteractionPointCreation);
-        InteractionPoint.interactionDelegate += OnInteractionPointSelect;
         exitBtn.onClick.AddListener(() => { SceneManager.LoadScene("MainMenuScene"); });
     }
 
@@ -59,24 +56,35 @@ public class CreatorManager: MonoBehaviour
 
     void LoadModel() {
         Debug.Log("CreatorManager.LoadModel(): started!");
+        var isDemoRun = false;
         var loadInfo = FindObjectOfType<LoadInfo>();
-        var modelPath = loadInfo.ImportObjectPath;
-        if (loadInfo.LoadProjectName != null) {
+        var modelPath = loadInfo == null ? "" : loadInfo.ImportObjectPath;
+        if (loadInfo == null || loadInfo.ImportObjectPath == null && loadInfo.LoadProjectName == null) {
+            model = Instantiate(testCarPrefab);
+            modelPath = "test";
+            isDemoRun = true;
+        }
+        else if (loadInfo.LoadProjectName != null) {
             var fileContent = IOManager.LoadProjectJson(loadInfo.LoadProjectName);
             var projectData = JsonUtility.FromJson<ProjectData>(fileContent);
             modelPath = projectData.modelPath;
-            model = new OBJLoader().Load(modelPath);
-            model.layer = 8;
+            if (modelPath == "test") {
+                model = Instantiate(testCarPrefab);
+                isDemoRun = true;
+            }
+            else {
+                model = new OBJLoader().Load(modelPath);
+            }
             LoadPointsFromData(projectData.ToOriginal());
             projectName.text = projectData.name;
             Debug.Log("CreatorManager.LoadModel(): loaded project model from path:\n" + modelPath);
         }
         else {
             model = new OBJLoader().Load(modelPath);
-            model.layer = 8;
         }
+        model.layer = 8;
         loadedModelPath = modelPath;
-        if(loadInfo.AppMode == AppMode.Edit) {
+        if(loadInfo != null && loadInfo.AppMode == AppMode.Edit && !isDemoRun) {
             CreateMeshColliderRecursively(model.gameObject);
         }
     }
@@ -116,11 +124,12 @@ public class CreatorManager: MonoBehaviour
     }
     
     private void Save() {
-        var name = projectName.text ?? "Untitled";
+        var name = projectName.text ?? "untitled";
         var path = loadedModelPath;
         var data = new ProjectData(name, path, nodesData.Values.ToArray());
         var json = JsonUtility.ToJson(data, true);
         IOManager.SaveCurrentProject(name, json);
+        ScreenCapture.CaptureScreenshot(IOManager.CurrentProjectImagePath(name));
     }
 
     private void LoadPointsFromData(NodeDetailData[] data) {
@@ -152,10 +161,12 @@ public class CreatorManager: MonoBehaviour
     
     private void OnEnable() {
         InputManager.onRotateModel += RotateModel;
+        InteractionPoint.interactionDelegate += OnInteractionPointSelect;
     }
 
     private void OnDisable() {
         InputManager.onRotateModel -= RotateModel;
+        InteractionPoint.interactionDelegate -= OnInteractionPointSelect;
     }
 
     private void OnDetailDone() {
@@ -164,11 +175,15 @@ public class CreatorManager: MonoBehaviour
         } else {
             nodesData.Add(currentDetail.interactionPoint, currentDetail.GetData());
         }
+        currentDetail.onDone -= OnDetailDone;
+        currentDetail.onCancel -= OnDetailCancel;
         Destroy(currentDetail.gameObject);
         currentDetail = null;
     }
 
     private void OnDetailCancel() {
+        currentDetail.onDone -= OnDetailDone;
+        currentDetail.onCancel -= OnDetailCancel;
         Destroy(currentDetail.gameObject);
         currentDetail = null;
     }
