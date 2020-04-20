@@ -15,6 +15,10 @@ public class CreatorManager: MonoBehaviour {
     [SerializeField] private Button exitBtn;
     [SerializeField] private Button saveProjectBtn;
     [SerializeField] private InputField projectName;
+    [SerializeField] private ViewModePicker viewModePicker;
+
+    [SerializeField] private GameObject viewCamera;
+    [SerializeField] private GameObject arObject;
 
     public GameObject model;
     public GameObject node;
@@ -158,15 +162,26 @@ public class CreatorManager: MonoBehaviour {
             nodeDetail.UpdateData(nodesData[point]);
         }
     }
+
+    private void OnViewModeChanged(ViewMode viewMode) {
+        arObject.SetActive(viewMode == ViewMode.viewAR);
+        viewCamera.SetActive(viewMode == ViewMode.view3D);
+        model.SetActive(viewMode == ViewMode.view3D);
+        if (viewMode == ViewMode.viewAR) {
+            //arObject.GetComponentInChildren<PlaceObjectsOnPlane>().placedPrefab = model;
+        }
+    }
     
     private void OnEnable() {
         InputManager.onRotateModel += RotateModel;
         InteractionPoint.interactionDelegate += OnInteractionPointSelect;
+        viewModePicker.onViewModeChanged += OnViewModeChanged;
     }
 
     private void OnDisable() {
         InputManager.onRotateModel -= RotateModel;
         InteractionPoint.interactionDelegate -= OnInteractionPointSelect;
+        viewModePicker.onViewModeChanged -= OnViewModeChanged;
     }
 
     private void OnDetailDone() {

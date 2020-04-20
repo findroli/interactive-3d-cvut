@@ -14,7 +14,7 @@ public class ViewModePicker : MonoBehaviour {
     [SerializeField] private Button arBtn;
     [SerializeField] private Button normalViewBtn;
 
-    private ViewMode viewMode = ViewMode.viewAR;
+    private ViewMode viewMode = ViewMode.view3D;
     public ViewMode CurrentViewMode => viewMode;
 
     private Color tintColor;
