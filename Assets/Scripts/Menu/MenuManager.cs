@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using SFB;
 using Dummiesman;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,13 +15,14 @@ public class MenuManager: MonoBehaviour {
     [SerializeField] private GameObject versionCellPrefab;
 
     [SerializeField] private Button importBtn;
-    [SerializeField] private Button startBtn;
     [SerializeField] private Button newVersionBtn;
     [SerializeField] private ModePicker modePicker;
     [SerializeField] private GameObject projectsScrollViewContent;
     [SerializeField] private GameObject versionsScrollViewContent;
+    [SerializeField] private GameObject emptyVersionsLabel;
 
     private LoadInfo loadInfo;
+    private ProjectCell selectedCell;
     private string selectedModel;
     
     void Start() {
@@ -32,25 +34,33 @@ public class MenuManager: MonoBehaviour {
             DontDestroyOnLoad(loadInfoGameObject);
         }
         importBtn.onClick.AddListener(ImportModel);
-        startBtn.onClick.AddListener(StartCreation);
         newVersionBtn.onClick.AddListener(NewVersion);
         SetupModelCells();
     }
 
     private void SetupModelCells() {
-        var prefabNames = Resources.LoadAll("Models").Select(p => p.name);
-        foreach (var prefabName in prefabNames) {
+        var prefabs = Resources.LoadAll("Models");
+        foreach (var prefab in prefabs) {
+            var prefabName = prefab.name;
             var cellGameObject = Instantiate(projectCellPrefab, projectsScrollViewContent.transform);
             var cell = cellGameObject.GetComponent<ProjectCell>();
             Texture2D texture = null;
-            //if (File.Exists(projectPath + "/image.png")) {
-            // byte[] fileData = File.ReadAllBytes(projectPath + "/image.png");
-            // texture = new Texture2D(2, 2);
-            // texture.LoadImage(fileData);
-            //}
+            var resPath = "ModelImages/" + prefabName;
+            
+#if UNITY_EDITOR
+            texture = AssetPreview.GetAssetPreview(prefab);
+            var texturePath = Application.dataPath + "/Textures/Resources/" + resPath + ".png";
+            if(!File.Exists(texturePath)) SaveTextureAsPNG(texture, texturePath);
+#endif
+
+            texture = Resources.Load<Texture2D>(resPath);
+            if(texture == null) Debug.Log("MenuManager.SetupModelCells(): Texture " + prefabName + " was not found!");
             cell.Setup(prefabName, texture);
-            cell.onClick += () => {
+            cell.onClick += (newCell) => {
+                if(selectedCell != null) selectedCell.SetHighlight(false);
+                newCell.SetHighlight(true);
                 selectedModel = prefabName;
+                selectedCell = newCell;
                 UpdateVersions();
             };
         }
@@ -60,13 +70,13 @@ public class MenuManager: MonoBehaviour {
         for (int i = 0; i < versionsScrollViewContent.transform.childCount; i++) {
             Destroy(versionsScrollViewContent.transform.GetChild(i).gameObject);
         }
-        
         var versions = IOManager.LoadModelVersionNames(selectedModel).Select(v => v.Split('/').Last());
+        emptyVersionsLabel.SetActive(!versions.Any());
         foreach (var version in versions) {
             var cellGameObject = Instantiate(versionCellPrefab, versionsScrollViewContent.transform);
             var cell = cellGameObject.GetComponent<ProjectCell>();
             cell.Setup(version);
-            cell.onClick += () => {
+            cell.onClick += (clickedCell) => {
                 loadInfo.SetAppMode(modePicker.CurrentAppMode);
                 loadInfo.SetModelName(selectedModel);
                 loadInfo.SetVersion(version);
@@ -83,12 +93,13 @@ public class MenuManager: MonoBehaviour {
         SceneManager.LoadScene("CreatorScene");
     }
 
-    private void StartCreation() {
-        loadInfo.SetAppMode(modePicker.CurrentAppMode);
-        SceneManager.LoadScene("CreatorScene");
-    }
-
     private void ImportModel() {
-        Debug.Log("Import not supported yet!");
+        Debug.Log("MenuManager.ImportModel(): Import not supported yet!");
+    }
+    
+    private void SaveTextureAsPNG(Texture2D texture, string fullPath) {
+        var bytes = texture.EncodeToPNG();
+        File.WriteAllBytes(fullPath, bytes);
+        Debug.Log("MenuManager.SaveTextureAsPNG(): " + bytes.Length/1024  + "kb was saved at:\n" + fullPath);
     }
 }

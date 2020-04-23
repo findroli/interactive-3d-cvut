@@ -3,86 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ProjectCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ProjectCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ProjectCell.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ProjectCell.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/Models/Black Car.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/Models/Black Car.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VersionCell Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VersionCell Variant.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LoadInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LoadInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/ProjectData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/ProjectData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Car.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Car.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/CarPrefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/CarPrefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Demo.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Demo.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Floor.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Floor.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Body.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Body.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Body_2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Body_2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Bottom.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Bottom.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Brakelights.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Brakelights.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Disc.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Disc.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Grills.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Grills.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/HeadLights.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/HeadLights.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Number Plate.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Number Plate.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/ReverseLights.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/ReverseLights.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Rims.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Rims.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Tailights.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Tailights.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Tires 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Tires 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Tires 2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Tires 2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Window.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Materials/Window.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Bottom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Bottom.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Disc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Disc.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/HeadLights.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/HeadLights.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Bottom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Bottom.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Disc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Disc.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/HeadLights.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/HeadLights.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Number Plate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Number Plate.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Rims.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Rims.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Tire_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Tire_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Tire_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Normals/Tire_2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Number Plate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Number Plate.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Rims.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Rims.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Tire_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Tire_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Tire_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/Textures/Tire_2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/floor Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/floor Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/floor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestCars/floor.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/LoadInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ImageLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -153,7 +84,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ModePicker.cs" />
         <option value="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ImageLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/ViewModePicker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ViewModePicker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/ModelsInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/ModelInfo.cs" />
@@ -162,6 +92,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" />
       </list>
     </option>
   </component>
@@ -216,7 +147,7 @@
       <workItem from="1587408767631" duration="182000" />
       <workItem from="1587455195186" duration="311000" />
       <workItem from="1587542630567" duration="5071000" />
-      <workItem from="1587638559335" duration="766000" />
+      <workItem from="1587638559335" duration="5981000" />
     </task>
     <servers />
   </component>

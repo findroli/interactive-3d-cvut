@@ -6,9 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ProjectCell: MonoBehaviour {
-    public delegate void OnClick();
+    public delegate void OnClick(ProjectCell cell);
     public event OnClick onClick;
-    
+
+    [SerializeField] private Image underlineImage;
     [SerializeField] private Image image;
     [SerializeField] private Text text;
     [SerializeField] private Button button;
@@ -17,7 +18,7 @@ public class ProjectCell: MonoBehaviour {
         image.preserveAspect = true;
         button.onClick.AddListener(() => {
             Debug.Log("Project button clicked!!");
-            onClick?.Invoke();
+            onClick?.Invoke(this);
         });
     }
 
@@ -27,5 +28,12 @@ public class ProjectCell: MonoBehaviour {
             image.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), 
                     new Vector2(texture.width/2f, texture.height/2f));
         }
+        else {
+            image.SetNativeSize();
+        }
+    }
+
+    public void SetHighlight(bool value) {
+        underlineImage.gameObject.SetActive(value);
     }
 }
