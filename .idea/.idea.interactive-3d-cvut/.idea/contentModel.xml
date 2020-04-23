@@ -95,10 +95,16 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="CreatorManager.cs" t="Include" />
-          <e p="InputManager.cs" t="Include" />
-          <e p="InteractionPoint.cs" t="Include" />
-          <e p="InteractiveButton.cs" t="Include" />
+          <e p="Creator" t="Include">
+            <e p="CreatorManager.cs" t="Include" />
+            <e p="InteractionPoint.cs" t="Include" />
+            <e p="InteractiveButton.cs" t="Include" />
+            <e p="ViewModePicker.cs" t="Include" />
+          </e>
+          <e p="Input" t="Include">
+            <e p="InputManager.cs" t="Include" />
+            <e p="MobileInputManager.cs" t="Include" />
+          </e>
           <e p="IOManager.cs" t="Include" />
           <e p="Menu" t="Include">
             <e p="LoadInfo.cs" t="Include" />
@@ -119,7 +125,6 @@
             <e p="NodeDetailImageCell.cs" t="Include" />
             <e p="NodeDetailTextCell.cs" t="Include" />
           </e>
-          <e p="ViewModePicker.cs" t="Include" />
         </e>
       </e>
       <e p="interactive-3d-cvut.sln" t="IncludeFlat" />

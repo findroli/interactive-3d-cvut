@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CreatorManager: MonoBehaviour {
-    [SerializeField] private GameObject testCarPrefab;
     [SerializeField] private GameObject nodePrefab;
     
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private MobileInputManager mobileInputManager;
     [SerializeField] private InteractiveButton interactCreationBtn;
     [SerializeField] private Button exitBtn;
     [SerializeField] private Button saveProjectBtn;
@@ -31,6 +31,13 @@ public class CreatorManager: MonoBehaviour {
     private NodeDetail currentDetail = null;
 
     void Start() {
+#if UNITY_EDITOR
+        mobileInputManager.enabled = false;
+#endif
+#if !UNITY_EDITOR && UNITY_IOS
+        inputManager.enabled = false;
+#endif
+        
         canvas = GameObject.Find("Canvas");
         LoadModel();
         saveProjectBtn.onClick.AddListener(Save);
@@ -150,20 +157,27 @@ public class CreatorManager: MonoBehaviour {
     private void OnViewModeChanged(ViewMode viewMode) {
         arObject.SetActive(viewMode == ViewMode.viewAR);
         viewCamera.SetActive(viewMode == ViewMode.view3D);
-        model.SetActive(viewMode == ViewMode.view3D);
         if (viewMode == ViewMode.viewAR) {
-            //arObject.GetComponentInChildren<PlaceObjectsOnPlane>().placedPrefab = model;
+            arObject.GetComponentInChildren<PlaceObjectsOnPlane>().spawnedObject = model;
+        } else {
+            model.transform.position = Vector3.zero;
         }
     }
     
     private void OnEnable() {
-        InputManager.onRotateModel += RotateModel;
+        inputManager.onRotateModel += RotateModel;
+        inputManager.onZoomModel += ZoomModel;
+        mobileInputManager.onRotateModel += RotateModel;
+        mobileInputManager.onZoomModel += ZoomModel;
         InteractionPoint.interactionDelegate += OnInteractionPointSelect;
         viewModePicker.onViewModeChanged += OnViewModeChanged;
     }
 
     private void OnDisable() {
-        InputManager.onRotateModel -= RotateModel;
+        inputManager.onRotateModel -= RotateModel;
+        inputManager.onZoomModel -= ZoomModel;
+        mobileInputManager.onRotateModel -= RotateModel;
+        mobileInputManager.onZoomModel -= ZoomModel;
         InteractionPoint.interactionDelegate -= OnInteractionPointSelect;
         viewModePicker.onViewModeChanged -= OnViewModeChanged;
     }
@@ -188,6 +202,16 @@ public class CreatorManager: MonoBehaviour {
     }
 
     private void RotateModel(Vector3 rotation) {
-        model.transform.Rotate(rotation, 1f);
+        model.transform.Rotate(rotation/10f, Space.World);
+    }
+
+    private void ZoomModel(float value) {
+        var scale = model.transform.localScale;
+        if (scale.x + value / 100f <= 0f) {
+            model.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+            return;
+        }
+        model.transform.localScale = new Vector3(scale.x + value / 100f, scale.y + value / 100f, scale.z + value / 100f);
+        Debug.Log("Scale: " + model.transform.localScale);
     }
 }
