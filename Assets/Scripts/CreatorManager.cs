@@ -23,7 +23,7 @@ public class CreatorManager: MonoBehaviour {
     public GameObject model;
     public GameObject node;
 
-    private string loadedModelPath;
+    private string modelName;
     private GameObject canvas;
     private bool interactCreationMode = false;
     private List<InteractionPoint> interactNodes = new List<InteractionPoint>();
@@ -60,35 +60,19 @@ public class CreatorManager: MonoBehaviour {
 
     void LoadModel() {
         Debug.Log("CreatorManager.LoadModel(): started!");
-        var isDemoRun = false;
         var loadInfo = FindObjectOfType<LoadInfo>();
-        var modelPath = loadInfo == null ? "" : loadInfo.ImportObjectPath;
-        if (loadInfo == null || loadInfo.ImportObjectPath == null && loadInfo.LoadProjectName == null) {
-            model = Instantiate(testCarPrefab);
-            modelPath = "test";
-            isDemoRun = true;
-        }
-        else if (loadInfo.LoadProjectName != null) {
-            var fileContent = IOManager.LoadProjectJson(loadInfo.LoadProjectName);
-            var projectData = JsonUtility.FromJson<ProjectData>(fileContent);
-            modelPath = projectData.modelPath;
-            if (modelPath == "test") {
-                model = Instantiate(testCarPrefab);
-                isDemoRun = true;
-            }
-            else {
-                model = new OBJLoader().Load(modelPath);
-            }
-            LoadPointsFromData(projectData.ToOriginal());
-            projectName.text = projectData.name;
-            Debug.Log("CreatorManager.LoadModel(): loaded project model from path:\n" + modelPath);
-        }
-        else {
-            model = new OBJLoader().Load(modelPath);
-        }
+        var prefab = Resources.Load("Models/" + loadInfo.ModelName);
+        modelName = loadInfo.ModelName;
+        model = Instantiate(prefab) as GameObject;
         model.layer = 8;
-        loadedModelPath = modelPath;
-        if(loadInfo != null && loadInfo.AppMode == AppMode.Edit && !isDemoRun) {
+        if (loadInfo.VersionName != null) {
+            var fileContent = IOManager.LoadProjectJson(loadInfo.ModelName, loadInfo.VersionName);
+            var projectData = JsonUtility.FromJson<ProjectData>(fileContent);
+            LoadPointsFromData(projectData.ToOriginal());
+            projectName.text = loadInfo.VersionName;
+            Debug.Log("CreatorManager.LoadModel(): loaded project model:\n" + modelName);
+        }
+        if(loadInfo.AppMode == AppMode.Edit) {
             CreateMeshColliderRecursively(model.gameObject);
         }
     }
@@ -128,12 +112,12 @@ public class CreatorManager: MonoBehaviour {
     }
     
     private void Save() {
-        var name = projectName.text ?? "untitled";
-        var path = loadedModelPath;
-        var data = new ProjectData(name, path, nodesData.Values.ToArray());
+        var versionName = projectName.text ?? "untitled";
+        var data = new ProjectData(nodesData.Values.ToArray());
         var json = JsonUtility.ToJson(data, true);
-        IOManager.SaveCurrentProject(name, json);
-        ScreenCapture.CaptureScreenshot(IOManager.CurrentProjectImagePath(name));
+        IOManager.SaveCurrentProject(modelName, versionName, json);
+        var imagePath = IOManager.CurrentProjectVersionImagePath(modelName, versionName);
+        if(imagePath != null) ScreenCapture.CaptureScreenshot(imagePath);
     }
 
     private void LoadPointsFromData(NodeDetailData[] data) {

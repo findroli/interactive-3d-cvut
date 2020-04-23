@@ -4,9 +4,9 @@ using System.IO;
 using UnityEngine;
 
 public class IOManager {
-    public static bool SaveCurrentProject(string projectName, string json, bool overwrite = true) {
-        var projectFolder = GetProjectFolder(projectName, true);
-        var jsonPath = projectFolder + "/interactionPoints.json";
+    public static bool SaveCurrentProject(string modelName, string versionName, string json, bool overwrite = true) {
+        var versionFolder = GetVersionFolder(modelName, versionName, true);
+        var jsonPath = versionFolder + "/interactionPoints.json";
         if (File.Exists(jsonPath)) {
             if (!overwrite) return false; 
             File.Delete(jsonPath);
@@ -19,23 +19,31 @@ public class IOManager {
         return true;
     }
 
-    public static string CurrentProjectImagePath(string projectName) {
-        return GetProjectFolder(projectName) + "/image.png";
+    public static string CurrentProjectVersionImagePath(string modelName, string versionName) {
+        var path = GetVersionFolder(modelName, versionName);
+        return path == null ? null : path + "/image.png";
     }
 
-    public static string[] LoadSavedProjecs() {
-        return Directory.GetDirectories(GetAllProjectsFolder());
+    public static string[] LoadSavedProjects() {
+        return Directory.GetDirectories(GetAllModelsFolder());
     }
 
-    public static string LoadProjectJson(string projectName) {
-        var folder = GetProjectFolder(projectName);
+    public static string[] LoadModelVersionNames(string modelName) {
+        var folder = GetModelFolder(modelName);
+        if (folder == null) return new string[] {};
+        return Directory.GetDirectories(folder);
+    }
+
+    public static string LoadProjectJson(string modelName, string versionName) {
+        var folder = GetVersionFolder(modelName, versionName);
         if (folder == null) {
-            Debug.Log("IOManager.LoadProject(): Project directory was not found!");
+            Debug.Log("IOManager.LoadProjectJson(): Model version directory was not found!\n" + 
+                      "Model: " + modelName + " Version: " + versionName);
             return null;
         }
         var jsonPath = folder + "/interactionPoints.json";
         if (!File.Exists(jsonPath)) {
-            Debug.Log("IOManager.LoadProject(): File with JSON was not found!");
+            Debug.Log("IOManager.LoadProjectJson(): File with JSON was not found!");
             return null;
         }
         var sr = new StreamReader(jsonPath);
@@ -44,23 +52,30 @@ public class IOManager {
         return fileContent;
     }
 
-    private static string GetAllProjectsFolder() {
-        var folderPath = Application.persistentDataPath + "/Projects";
+    private static string GetAllModelsFolder() {
+        var folderPath = Application.persistentDataPath + "/Models";
         if (!Directory.Exists(folderPath)) {
             Directory.CreateDirectory(folderPath);
         }
         return folderPath;
     }
 
-    private static string GetProjectFolder(string name, bool createIfNonExisting = false) {
-        var folderPath = GetAllProjectsFolder() + "/" + name;
+    private static string GetModelFolder(string name, bool createIfNonExisting = false) {
+        var folderPath = GetAllModelsFolder() + "/" + name;
         if (!Directory.Exists(folderPath)) {
-            if (createIfNonExisting) {
-                Directory.CreateDirectory(folderPath);
-            }
-            else {
-                return null;
-            }
+            if (createIfNonExisting) Directory.CreateDirectory(folderPath);
+            else return null;
+        }
+        return folderPath;
+    }
+
+    private static string GetVersionFolder(string modelName, string versionName, bool createIfNonExisting = false) {
+        var modelFolderPath = GetModelFolder(modelName, createIfNonExisting);
+        if (!Directory.Exists(modelFolderPath)) return null;
+        var folderPath = modelFolderPath + "/" + versionName;
+        if (!Directory.Exists(folderPath)) {
+            if (createIfNonExisting) Directory.CreateDirectory(folderPath);
+            else return null;
         }
         return folderPath;
     }

@@ -11,15 +11,17 @@ using UnityEngine.UI;
 
 public class MenuManager: MonoBehaviour {
     [SerializeField] private GameObject projectCellPrefab;
+    [SerializeField] private GameObject versionCellPrefab;
 
-    [SerializeField] private Button demoBtn;
     [SerializeField] private Button importBtn;
     [SerializeField] private Button startBtn;
-    [SerializeField] private Text modelNameText;
+    [SerializeField] private Button newVersionBtn;
     [SerializeField] private ModePicker modePicker;
     [SerializeField] private GameObject projectsScrollViewContent;
+    [SerializeField] private GameObject versionsScrollViewContent;
 
     private LoadInfo loadInfo;
+    private string selectedModel;
     
     void Start() {
         loadInfo = FindObjectOfType<LoadInfo>();
@@ -29,43 +31,56 @@ public class MenuManager: MonoBehaviour {
             loadInfoGameObject.name = "LoadInfo";
             DontDestroyOnLoad(loadInfoGameObject);
         }
-        
-        demoBtn.onClick.AddListener(Demo);
         importBtn.onClick.AddListener(ImportModel);
         startBtn.onClick.AddListener(StartCreation);
-        UpdateImportModelName();
-        
-        var projects = IOManager.LoadSavedProjecs();
-        foreach (var projectPath in projects) {
-            Debug.Log("Found project in path:\n" + projectPath);
+        newVersionBtn.onClick.AddListener(NewVersion);
+        SetupModelCells();
+    }
+
+    private void SetupModelCells() {
+        var prefabNames = Resources.LoadAll("Models").Select(p => p.name);
+        foreach (var prefabName in prefabNames) {
             var cellGameObject = Instantiate(projectCellPrefab, projectsScrollViewContent.transform);
             var cell = cellGameObject.GetComponent<ProjectCell>();
-            var projectName = projectPath.Split('/').Last();
             Texture2D texture = null;
-            if (File.Exists(projectPath + "/image.png")) {
-                byte[] fileData = File.ReadAllBytes(projectPath + "/image.png");
-                texture = new Texture2D(2, 2);
-                texture.LoadImage(fileData);
-            }
-            cell.Setup(projectName, texture);
+            //if (File.Exists(projectPath + "/image.png")) {
+            // byte[] fileData = File.ReadAllBytes(projectPath + "/image.png");
+            // texture = new Texture2D(2, 2);
+            // texture.LoadImage(fileData);
+            //}
+            cell.Setup(prefabName, texture);
+            cell.onClick += () => {
+                selectedModel = prefabName;
+                UpdateVersions();
+            };
+        }
+    }
+
+    private void UpdateVersions() {
+        for (int i = 0; i < versionsScrollViewContent.transform.childCount; i++) {
+            Destroy(versionsScrollViewContent.transform.GetChild(i).gameObject);
+        }
+        
+        var versions = IOManager.LoadModelVersionNames(selectedModel).Select(v => v.Split('/').Last());
+        foreach (var version in versions) {
+            var cellGameObject = Instantiate(versionCellPrefab, versionsScrollViewContent.transform);
+            var cell = cellGameObject.GetComponent<ProjectCell>();
+            cell.Setup(version);
             cell.onClick += () => {
                 loadInfo.SetAppMode(modePicker.CurrentAppMode);
-                loadInfo.SetLoadProjectName(projectName);
+                loadInfo.SetModelName(selectedModel);
+                loadInfo.SetVersion(version);
                 SceneManager.LoadScene("CreatorScene");
             };
         }
     }
 
-    private void ImportModel() {
-        var extensions = new [] {
-            new ExtensionFilter("3D model files", "obj", "mtl")
-        };
-        var paths = StandaloneFileBrowser.OpenFilePanel("Open File", "", extensions, false);
-        if(paths.Length == 0) return;
-        if (File.Exists(paths[0])) {
-            loadInfo.SetPath(paths[0]);
-            UpdateImportModelName();
-        }
+    private void NewVersion() {
+        if (selectedModel == null) return;
+        loadInfo.SetAppMode(modePicker.CurrentAppMode);
+        loadInfo.SetModelName(selectedModel);
+        loadInfo.SetVersion(null);
+        SceneManager.LoadScene("CreatorScene");
     }
 
     private void StartCreation() {
@@ -73,18 +88,7 @@ public class MenuManager: MonoBehaviour {
         SceneManager.LoadScene("CreatorScene");
     }
 
-    private void Demo() {
-        loadInfo.SetAppMode(modePicker.CurrentAppMode);
-        loadInfo.SetPath(null);
-        loadInfo.SetLoadProjectName(null);
-        SceneManager.LoadScene("CreatorScene");
-    }
-
-    private void UpdateImportModelName() {
-        if (loadInfo.ImportObjectPath == null) {
-            modelNameText.text = "";
-            return;
-        }
-        modelNameText.text = loadInfo.ImportObjectPath.Split('/').Last();
+    private void ImportModel() {
+        Debug.Log("Import not supported yet!");
     }
 }
