@@ -1668,7 +1668,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: No versions are created for this model, yet.
+  m_Text: No versions found for selected model.
 --- !u!222 &1370511264
 CanvasRenderer:
   m_ObjectHideFlags: 0
