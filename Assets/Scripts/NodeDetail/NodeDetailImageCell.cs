@@ -6,10 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class NodeDetailImageCell: NodeDetailCell {
-    [SerializeField]
-    private Image image;
+    [SerializeField] private Image image;
+    [SerializeField] private Button deleteButton;
 
     private byte[] textureData;
+
+    private void Start() {
+        deleteButton.onClick.AddListener(() => { RaiseOnDelete(this); });
+    }
 
     public override void CreatingEnded() { }
 

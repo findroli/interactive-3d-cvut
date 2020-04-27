@@ -94,6 +94,7 @@
             </e>
           </e>
         </e>
+        <e p="NodeDetailVideoCell.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Creator" t="Include">
             <e p="CreatorManager.cs" t="Include" />

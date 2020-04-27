@@ -5,65 +5,92 @@ using UnityEngine.UI;
 
 public class AddNodeDetailCell: MonoBehaviour {
     public delegate void OnTextCreateDelegate();
-    public event OnTextCreateDelegate textCreateDelegate;
+    public event OnTextCreateDelegate TextCreateDelegate;
     public delegate void OnImageCreateDelegate();
-    public event OnImageCreateDelegate imageCreateDelegate;
+    public event OnImageCreateDelegate ImageCreateDelegate;
     public delegate void OnVideoCreateDelegate();
-    public event OnVideoCreateDelegate videoCreateDelegate;
-    public delegate void OnConfirmCreateDelegate();
-    public event OnConfirmCreateDelegate confirmCreateDelegate;
-    public delegate void OnCancelCreateDelegate();
-    public event OnCancelCreateDelegate cancelCreateDelegate;
+    public event OnVideoCreateDelegate VideoCreateDelegate;
+    public delegate void OnAnimationCreate();
+    public event OnAnimationCreate AnimationCreateDelegate;
     
     public Button addBtn;
     public Button textBtn;
     public Button imageBtn;
     public Button videoBtn;
-    public Button confirmBtn;
+    public Button animBtn;
     public Button cancelBtn;
 
-    private CreationState _creationState = CreationState.add;
+    private float buttonSpacing = 40f;
+    private float animationSpeed = 10f;
     
+    private CreationState _creationState = CreationState.add;
     public CreationState CreationState {
         get => _creationState;
         set {
             _creationState = value;
             addBtn.gameObject.SetActive(_creationState == CreationState.add);
+            cancelBtn.gameObject.SetActive(_creationState == CreationState.chooseType);
             textBtn.gameObject.SetActive(_creationState == CreationState.chooseType);
             imageBtn.gameObject.SetActive(_creationState == CreationState.chooseType);
             videoBtn.gameObject.SetActive(_creationState == CreationState.chooseType);
-            confirmBtn.gameObject.SetActive(_creationState == CreationState.confirm);
-            cancelBtn.gameObject.SetActive(_creationState == CreationState.confirm);
+            animBtn.gameObject.SetActive(_creationState == CreationState.chooseType);
+            if(value == CreationState.add) TransitionCollapse();
+            else if(value == CreationState.chooseType) TransitionExpand();
         }
     }
 
     private void Start() {
         addBtn.onClick.AddListener(() => { CreationState = CreationState.chooseType; });
+        cancelBtn.onClick.AddListener(() => { CreationState = CreationState.add; });
         textBtn.onClick.AddListener(() => {
-            CreationState = CreationState.confirm;
-            textCreateDelegate?.Invoke();
+            CreationState = CreationState.add;
+            TextCreateDelegate?.Invoke();
         });
         imageBtn.onClick.AddListener(() => {
-            CreationState = CreationState.confirm;
-            imageCreateDelegate?.Invoke();
+            CreationState = CreationState.add;
+            ImageCreateDelegate?.Invoke();
         });
         videoBtn.onClick.AddListener(() => {
-            CreationState = CreationState.confirm;
-            videoCreateDelegate?.Invoke();
-        });
-        confirmBtn.onClick.AddListener(() => {
             CreationState = CreationState.add;
-            confirmCreateDelegate?.Invoke();
+            VideoCreateDelegate?.Invoke();
         });
-        cancelBtn.onClick.AddListener(() => {
+        animBtn.onClick.AddListener(() => {
             CreationState = CreationState.add;
-            cancelCreateDelegate?.Invoke();
+            AnimationCreateDelegate?.Invoke();
         });
+    }
+
+    private void TransitionCollapse() {
+        var targetPosition = addBtn.transform.position;
+        StartCoroutine(AnimateMovement(textBtn.gameObject, animationSpeed, targetPosition));
+        StartCoroutine(AnimateMovement(animBtn.gameObject, animationSpeed, targetPosition));
+        StartCoroutine(AnimateMovement(imageBtn.gameObject, animationSpeed, targetPosition));
+        StartCoroutine(AnimateMovement(videoBtn.gameObject, animationSpeed, targetPosition));
+    }
+
+    private void TransitionExpand() {
+        var pos = addBtn.transform.position;
+        var textPos = new Vector3(pos.x - buttonSpacing * 2, pos.y, pos.z);
+        var animPos = new Vector3(pos.x - buttonSpacing, pos.y, pos.z);
+        var imagePos = new Vector3(pos.x + buttonSpacing, pos.y, pos.z);
+        var videoPos = new Vector3(pos.x + buttonSpacing * 2, pos.y, pos.z);
+        StartCoroutine(AnimateMovement(textBtn.gameObject, animationSpeed, textPos));
+        StartCoroutine(AnimateMovement(animBtn.gameObject, animationSpeed, animPos));
+        StartCoroutine(AnimateMovement(imageBtn.gameObject, animationSpeed, imagePos));
+        StartCoroutine(AnimateMovement(videoBtn.gameObject, animationSpeed, videoPos));
+    }
+
+    private IEnumerator AnimateMovement(GameObject obj, float speed, Vector3 toPos) {
+        while ((toPos - obj.transform.position).magnitude > speed) {
+            var direction = (toPos - obj.transform.position).normalized;
+            obj.transform.position += direction * speed;
+            yield return null;
+        }
+        obj.transform.position = toPos;
     }
 }
 
  public enum CreationState {
      add,
-     chooseType,
-     confirm
+     chooseType
  }

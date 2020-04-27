@@ -37,4 +37,6 @@ public class NodeVideoCellData: NodeCellData {
     protected override string getCellPrefabFileName() {
         return "NodeDetailVideoCell";
     }
+
+    public string videoFile;
 }

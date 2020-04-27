@@ -15,6 +15,7 @@ public class NodeDetail: MonoBehaviour {
     
     [SerializeField] private GameObject textCellPrefab;
     [SerializeField] private GameObject imageCellPrefab;
+    [SerializeField] private GameObject videoCellPrefab;
 
     [SerializeField] private InputField titleInputField;
     [SerializeField] private GameObject scrollViewContent;
@@ -28,9 +29,11 @@ public class NodeDetail: MonoBehaviour {
     public void UpdateData(NodeDetailData data) {
         titleInputField.text = data.title;
         foreach (var cellData in data.cells) {
-            var cell = cellData.GetCell();
-            cell.transform.SetParent(scrollViewContent.transform);
-            cell.GetComponent<NodeDetailCell>().CreatingEnded();
+            var cellObj = cellData.GetCell();
+            cellObj.transform.SetParent(scrollViewContent.transform);
+            var cell = cellObj.GetComponent<NodeDetailCell>();
+            cell.onDelete += OnDeleteCell;
+            cell.CreatingEnded();
         }
         addCell.transform.SetAsLastSibling();
     }
@@ -53,19 +56,35 @@ public class NodeDetail: MonoBehaviour {
     private void Start() {
         cancelBtn.onClick.AddListener(() => { onCancel?.Invoke(); });
         doneBtn.onClick.AddListener(() => { onDone?.Invoke(); });
-        addCell.textCreateDelegate += () => {
-            CreateNewCell(textCellPrefab);
-        };
-        addCell.imageCreateDelegate += CreateImage;
-        addCell.confirmCreateDelegate += () => {
-            if(currentCreatingCell == null) return;
-            currentCreatingCell.GetComponentInChildren<NodeDetailCell>().CreatingEnded();
+        addCell.TextCreateDelegate += () => { CreateNewCell(textCellPrefab); };
+        addCell.ImageCreateDelegate += CreateImage;
+        addCell.VideoCreateDelegate += CreateVideo;
+        addCell.AnimationCreateDelegate += () => { Debug.Log("Animation not implemented yet!"); };
+    }
+
+    private void OnDeleteCell(NodeDetailCell cell) {
+        if (cell.gameObject == currentCreatingCell) {
             currentCreatingCell = null;
+        }
+        Destroy(cell.gameObject);
+    }
+
+    private void CreateVideo() {
+        var extensions = new [] {
+            new ExtensionFilter("Video Files", "mp4")
         };
-        addCell.cancelCreateDelegate += () => {
-            Destroy(currentCreatingCell);
-            currentCreatingCell = null;
-        };
+        var paths = StandaloneFileBrowser.OpenFilePanel("Open File", "", extensions, false);
+        if(paths.Length == 0) return;
+        if (File.Exists(paths[0])) {
+            CreateNewCell(videoCellPrefab);
+            currentCreatingCell.GetComponent<NodeDetailVideoCell>().FillWithData(new NodeVideoCellData {
+                videoFile = paths[0]
+            });
+        }
+        else {
+            Debug.Log("NodeDetail.CreateVideo(): Couldn't load the video!");
+            addCell.CreationState = CreationState.add;
+        }
     }
 
     private void CreateImage() {
@@ -82,7 +101,7 @@ public class NodeDetail: MonoBehaviour {
             });
         }
         else {
-            Debug.Log("NodeDetail: Couldn't load the image!");
+            Debug.Log("NodeDetail.CreateImage(): Couldn't load the image!");
             addCell.CreationState = CreationState.add;
         }
     }
@@ -91,6 +110,7 @@ public class NodeDetail: MonoBehaviour {
         var index = scrollViewContent.transform.childCount - 1;
         currentCreatingCell = Instantiate(prefab, scrollViewContent.transform, false);
         currentCreatingCell.transform.SetSiblingIndex(index);
+        currentCreatingCell.GetComponent<NodeDetailCell>().onDelete += OnDeleteCell;
     }
     
 }

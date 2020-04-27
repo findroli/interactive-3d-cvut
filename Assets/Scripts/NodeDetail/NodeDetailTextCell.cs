@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class NodeDetailTextCell: NodeDetailCell {
+    [SerializeField] private Button deleteBtn;
     public InputField inputField;
     private RectTransform rectTransform;
     
@@ -32,6 +33,7 @@ public class NodeDetailTextCell: NodeDetailCell {
         inputField = gameObject.GetComponent<InputField>();
         inputField.onValueChanged.AddListener(OnValueChanged);
         rectTransform = gameObject.GetComponent<RectTransform>();
+        deleteBtn.onClick.AddListener(() => { RaiseOnDelete(this); });
     }
 
     void OnValueChanged(string newText) {
