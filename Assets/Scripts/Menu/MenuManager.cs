@@ -17,6 +17,7 @@ public class MenuManager: MonoBehaviour {
     [SerializeField] private Button importBtn;
     [SerializeField] private Button newVersionBtn;
     [SerializeField] private ModePicker modePicker;
+    [SerializeField] private GameObject scrollView;
     [SerializeField] private GameObject projectsScrollViewContent;
     [SerializeField] private GameObject versionsScrollViewContent;
     [SerializeField] private GameObject emptyVersionsLabel;
@@ -24,6 +25,7 @@ public class MenuManager: MonoBehaviour {
     private LoadInfo loadInfo;
     private ProjectCell selectedCell;
     private string selectedModel;
+    private float scrollViewWidth;
     
     void Start() {
         loadInfo = FindObjectOfType<LoadInfo>();
@@ -36,6 +38,20 @@ public class MenuManager: MonoBehaviour {
         importBtn.onClick.AddListener(ImportModel);
         newVersionBtn.onClick.AddListener(NewVersion);
         SetupModelCells();
+        
+        scrollViewWidth = Screen.width + scrollView.GetComponent<RectTransform>().sizeDelta.x;
+    }
+
+    //TODO: not used - smaller cells when further from the center
+    private void UpdateCellSizes() {
+        for(int i = 0; i < projectsScrollViewContent.transform.childCount; i++) {
+            var cell = projectsScrollViewContent.transform.GetChild(i).GetComponent<RectTransform>();
+            var dist = (scrollView.transform.position - cell.position).magnitude;
+            var scale = 1 - dist / (scrollViewWidth / 2);
+            Debug.Log("Dist: " + dist + ", Width: " + scrollViewWidth + ", Scale: " + scale);
+            if (scale < 0) scale = 0;
+            cell.sizeDelta = new Vector2(200 * scale, cell.sizeDelta.y);
+        }
     }
 
     private void SetupModelCells() {

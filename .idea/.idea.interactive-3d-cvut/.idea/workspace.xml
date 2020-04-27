@@ -4,20 +4,14 @@
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AddBtn.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AddBtn.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeDetailVideoCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailVideoCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeDetailVideoCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailVideoCell.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailImageCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailImageCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/anim-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/anim-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/anim-icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/anim-icon.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +51,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/LoadInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ImageLoader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/NodeDetailVideoCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailVideoCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -91,7 +85,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/LoadInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/ProjectData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/PCInputManager.cs" />
@@ -106,6 +99,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" />
         <option value="$PROJECT_DIR$/Assets/NodeDetailVideoCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" />
       </list>
     </option>
@@ -162,7 +156,7 @@
       <workItem from="1587455195186" duration="311000" />
       <workItem from="1587542630567" duration="5071000" />
       <workItem from="1587638559335" duration="19133000" />
-      <workItem from="1587982502253" duration="7651000" />
+      <workItem from="1587982502253" duration="11065000" />
     </task>
     <servers />
   </component>

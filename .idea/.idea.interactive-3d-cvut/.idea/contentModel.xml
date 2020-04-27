@@ -94,7 +94,6 @@
             </e>
           </e>
         </e>
-        <e p="NodeDetailVideoCell.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Creator" t="Include">
             <e p="CreatorManager.cs" t="Include" />
@@ -125,6 +124,7 @@
             <e p="NodeDetailCell.cs" t="Include" />
             <e p="NodeDetailImageCell.cs" t="Include" />
             <e p="NodeDetailTextCell.cs" t="Include" />
+            <e p="NodeDetailVideoCell.cs" t="Include" />
           </e>
         </e>
       </e>

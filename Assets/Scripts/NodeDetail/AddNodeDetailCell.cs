@@ -70,6 +70,10 @@ public class AddNodeDetailCell: MonoBehaviour {
 
     private void TransitionExpand() {
         var pos = addBtn.transform.position;
+        textBtn.transform.position = pos;
+        animBtn.transform.position = pos;
+        imageBtn.transform.position = pos;
+        videoBtn.transform.position = pos;
         var textPos = new Vector3(pos.x - buttonSpacing * 2, pos.y, pos.z);
         var animPos = new Vector3(pos.x - buttonSpacing, pos.y, pos.z);
         var imagePos = new Vector3(pos.x + buttonSpacing, pos.y, pos.z);
