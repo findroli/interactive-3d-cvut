@@ -146,6 +146,7 @@ public class CreatorManager: MonoBehaviour {
         nodeGO.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
         var nodeDetail = nodeGO.GetComponent<NodeDetail>();
         nodeDetail.interactionPoint = point;
+        nodeDetail.modelAnimator = model.GetComponent<Animator>();
         nodeDetail.onDone += OnDetailDone;
         nodeDetail.onCancel += OnDetailCancel;
         currentDetail = nodeDetail;

@@ -120,7 +120,9 @@
           </e>
           <e p="NodeDetail" t="Include">
             <e p="AddNodeDetailCell.cs" t="Include" />
+            <e p="ListViewController.cs" t="Include" />
             <e p="NodeDetail.cs" t="Include" />
+            <e p="NodeDetailAnimationCell.cs" t="Include" />
             <e p="NodeDetailCell.cs" t="Include" />
             <e p="NodeDetailImageCell.cs" t="Include" />
             <e p="NodeDetailTextCell.cs" t="Include" />

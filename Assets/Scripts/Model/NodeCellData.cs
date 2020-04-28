@@ -40,3 +40,12 @@ public class NodeVideoCellData: NodeCellData {
 
     public string videoFile;
 }
+
+[Serializable]
+public class NodeAnimationCellData : NodeCellData {
+    protected override string getCellPrefabFileName() {
+        return "NodeDetailAnimationCell";
+    }
+
+    public string animName;
+}

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [Serializable]
 public class DetailDataJsonWrapper {
@@ -29,14 +30,14 @@ public class DetailDataJsonWrapper {
 [Serializable]
 public class CellDataJsonWrapper {
     public string type;
-    public string text;
+    public string textData;
     public byte[] imageData;
 
     public CellDataJsonWrapper(NodeCellData cellData) {
         var cellType = cellData.GetType();
         if (cellType == typeof(NodeTextCellData)) {
             type = "NodeTextCellData";
-            text = (cellData as NodeTextCellData).text;
+            textData = (cellData as NodeTextCellData).text;
         } 
         else if (cellType == typeof(NodeImageCellData)) {
             type = "NodeImageCellData";
@@ -44,17 +45,24 @@ public class CellDataJsonWrapper {
         }
         else if (cellType == typeof(NodeVideoCellData)) {
             type = "NodeVideoCellData";
+            textData = (cellData as NodeVideoCellData).videoFile;
+        }
+        else if (cellType == typeof(NodeAnimationCellData)) {
+            type = "NodeAnimationCellData";
+            textData = (cellData as NodeAnimationCellData).animName;
         }
     }
 
     public NodeCellData ToOriginal() {
         switch (type) {
             case "NodeTextCellData":
-                return new NodeTextCellData { text = this.text };
+                return new NodeTextCellData { text = textData };
             case "NodeImageCellData":
-                return new NodeImageCellData { imageData = this.imageData };
+                return new NodeImageCellData { imageData = imageData };
             case "NodeVideoCellData":
-                return new NodeVideoCellData();
+                return new NodeVideoCellData() { videoFile = textData };
+            case "NodeAnimationCellData":
+                return new NodeAnimationCellData() { animName = textData };
         }
         return new NodeTextCellData { text = "" };
     }

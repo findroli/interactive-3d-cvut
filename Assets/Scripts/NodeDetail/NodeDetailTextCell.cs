@@ -20,7 +20,6 @@ public class NodeDetailTextCell: NodeDetailCell {
         if (textData.text != "") {
             inputField.text = textData.text;
         }
-        Debug.Log("Filled text cell with data: " + textData.text);
     }
 
     public override NodeCellData GetData() {

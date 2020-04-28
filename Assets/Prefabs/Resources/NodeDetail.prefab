@@ -665,12 +665,17 @@ MonoBehaviour:
     type: 3}
   videoCellPrefab: {fileID: 2125894489871421618, guid: 5ac2d676a7ed4452ebf20c82239fcd89,
     type: 3}
+  animationCellPrefab: {fileID: 1280069963983733930, guid: aa2e74140dde14d7ca3b27e426551e54,
+    type: 3}
+  listViewPrefab: {fileID: 2884605355882925648, guid: fcc34254c629146b5ad214712a2b74e1,
+    type: 3}
   titleInputField: {fileID: 3228672952091405808}
   scrollViewContent: {fileID: 2122570292131253670}
   cancelBtn: {fileID: 2122570291304853382}
   doneBtn: {fileID: 2122570292016965642}
   addCell: {fileID: 2122570292326726940}
   interactionPoint: {fileID: 0}
+  modelAnimator: {fileID: 0}
 --- !u!222 &8627152895198867415
 CanvasRenderer:
   m_ObjectHideFlags: 0

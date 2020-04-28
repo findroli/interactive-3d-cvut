@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using SFB;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,8 @@ public class NodeDetail: MonoBehaviour {
     [SerializeField] private GameObject textCellPrefab;
     [SerializeField] private GameObject imageCellPrefab;
     [SerializeField] private GameObject videoCellPrefab;
+    [SerializeField] private GameObject animationCellPrefab;
+    [SerializeField] private GameObject listViewPrefab;
 
     [SerializeField] private InputField titleInputField;
     [SerializeField] private GameObject scrollViewContent;
@@ -24,6 +27,7 @@ public class NodeDetail: MonoBehaviour {
     [SerializeField] private AddNodeDetailCell addCell;
 
     public InteractionPoint interactionPoint = null;
+    public Animator modelAnimator;
     private GameObject currentCreatingCell = null;
 
     public void UpdateData(NodeDetailData data) {
@@ -34,6 +38,8 @@ public class NodeDetail: MonoBehaviour {
             var cell = cellObj.GetComponent<NodeDetailCell>();
             cell.onDelete += OnDeleteCell;
             cell.CreatingEnded();
+            var animCell = cell.GetComponent<NodeDetailAnimationCell>();
+            if (animCell != null) animCell.onTriggerAnimation += OnAnimatorTrigger;
         }
         addCell.transform.SetAsLastSibling();
     }
@@ -59,7 +65,7 @@ public class NodeDetail: MonoBehaviour {
         addCell.TextCreateDelegate += () => { CreateNewCell(textCellPrefab); };
         addCell.ImageCreateDelegate += CreateImage;
         addCell.VideoCreateDelegate += CreateVideo;
-        addCell.AnimationCreateDelegate += () => { Debug.Log("Animation not implemented yet!"); };
+        addCell.AnimationCreateDelegate += SelectAnimation;
     }
 
     private void OnDeleteCell(NodeDetailCell cell) {
@@ -67,6 +73,33 @@ public class NodeDetail: MonoBehaviour {
             currentCreatingCell = null;
         }
         Destroy(cell.gameObject);
+    }
+
+    private void SelectAnimation() {
+        if (modelAnimator == null) {
+            Debug.Log("Model has no animator!");
+            return;
+        }
+        var listView = Instantiate(listViewPrefab, addCell.transform.position, Quaternion.identity, transform);
+        var listViewController = listView.GetComponent<ListViewController>();
+        var animNames = modelAnimator.runtimeAnimatorController.animationClips.Select(a => a.name).ToArray();
+        listViewController.FillWithData(animNames);
+        listViewController.onFinish += CreateAnimationCell;
+    }
+
+    private void CreateAnimationCell(string animationName) {
+        if (animationName == null) return;
+        CreateNewCell(animationCellPrefab);
+        var cell = currentCreatingCell.GetComponent<NodeDetailAnimationCell>();
+        cell.FillWithData(new NodeAnimationCellData {
+            animName = animationName
+        });
+        cell.onTriggerAnimation += OnAnimatorTrigger;
+    }
+
+    private void OnAnimatorTrigger(string triggerName) {
+        Debug.Log("Playing animation: " + triggerName);
+        modelAnimator.SetTrigger(triggerName);
     }
 
     private void CreateVideo() {
