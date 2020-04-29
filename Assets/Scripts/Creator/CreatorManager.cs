@@ -17,6 +17,7 @@ public class CreatorManager: MonoBehaviour {
     [SerializeField] private Button saveProjectBtn;
     [SerializeField] private InputField projectName;
     [SerializeField] private ViewModePicker viewModePicker;
+    [SerializeField] private FullScreenViewer fullScreenViewer;
 
     [SerializeField] private GameObject viewCamera;
     [SerializeField] private GameObject arObject;
@@ -30,6 +31,11 @@ public class CreatorManager: MonoBehaviour {
     private List<InteractionPoint> interactNodes = new List<InteractionPoint>();
     private Dictionary<InteractionPoint, NodeDetailData> nodesData = new Dictionary<InteractionPoint, NodeDetailData>();
     private NodeDetail currentDetail = null;
+
+    public void ViewFullScreenImage(Sprite sprite) {
+        fullScreenViewer.gameObject.SetActive(true);
+        fullScreenViewer.ViewImage(sprite);
+    }
 
     void Start() {
         canvas = GameObject.Find("Canvas");

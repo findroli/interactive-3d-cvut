@@ -25,7 +25,7 @@ public class PCInputManager: MonoBehaviour, IAnyInputManager {
         if (swiping) {
             var diff = Input.mousePosition - touchPos;
             if (diff.magnitude > 0.2) {
-                var directions = new Vector3(diff.y, -diff.x, diff.z);
+                var directions = new Vector3(-diff.y, -diff.x, diff.z);
                 onSwipe?.Invoke(directions);
                 Debug.Log("Rotation value: " + diff);
                 touchPos = Input.mousePosition;

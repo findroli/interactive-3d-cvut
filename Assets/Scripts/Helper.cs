@@ -10,4 +10,9 @@ public class Helper {
         }
         obj.transform.position = toPos;
     }
+
+    public static void FullScreenViewer(Sprite sprite) {
+        var creatorManager = GameObject.FindObjectOfType<CreatorManager>();
+        creatorManager.ViewFullScreenImage(sprite);
+    }
 }
