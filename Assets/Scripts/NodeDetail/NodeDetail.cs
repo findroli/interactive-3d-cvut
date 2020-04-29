@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ public class NodeDetail: MonoBehaviour {
     [SerializeField] private Button cancelBtn;
     [SerializeField] private Button doneBtn;
     [SerializeField] private AddNodeDetailCell addCell;
+    [SerializeField] private LongPressEventTrigger grabBtn;
 
     public InteractionPoint interactionPoint = null;
     public Animator modelAnimator;

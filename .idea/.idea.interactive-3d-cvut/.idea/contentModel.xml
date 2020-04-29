@@ -96,14 +96,19 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Creator" t="Include">
+            <e p="CameraViewChange.cs" t="Include" />
             <e p="CreatorManager.cs" t="Include" />
             <e p="InteractionPoint.cs" t="Include" />
             <e p="InteractiveButton.cs" t="Include" />
             <e p="ViewModePicker.cs" t="Include" />
           </e>
+          <e p="Helper.cs" t="Include" />
           <e p="Input" t="Include">
-            <e p="InputManager.cs" t="Include" />
+            <e p="IAnyInputManager.cs" t="Include" />
+            <e p="InputHandler.cs" t="Include" />
+            <e p="LongPressEventTrigger.cs" t="Include" />
             <e p="MobileInputManager.cs" t="Include" />
+            <e p="PCInputManager.cs" t="Include" />
           </e>
           <e p="IOManager.cs" t="Include" />
           <e p="Menu" t="Include">
@@ -118,6 +123,7 @@
             <e p="NodeDetailModel.cs" t="Include" />
             <e p="ProjectData.cs" t="Include" />
           </e>
+          <e p="MovingWindow.cs" t="Include" />
           <e p="NodeDetail" t="Include">
             <e p="AddNodeDetailCell.cs" t="Include" />
             <e p="ListViewController.cs" t="Include" />

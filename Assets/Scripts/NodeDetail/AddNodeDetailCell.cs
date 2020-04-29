@@ -62,10 +62,10 @@ public class AddNodeDetailCell: MonoBehaviour {
 
     private void TransitionCollapse() {
         var targetPosition = addBtn.transform.position;
-        StartCoroutine(AnimateMovement(textBtn.gameObject, animationSpeed, targetPosition));
-        StartCoroutine(AnimateMovement(animBtn.gameObject, animationSpeed, targetPosition));
-        StartCoroutine(AnimateMovement(imageBtn.gameObject, animationSpeed, targetPosition));
-        StartCoroutine(AnimateMovement(videoBtn.gameObject, animationSpeed, targetPosition));
+        StartCoroutine(Helper.AnimateMovement(textBtn.transform, animationSpeed, targetPosition));
+        StartCoroutine(Helper.AnimateMovement(animBtn.transform, animationSpeed, targetPosition));
+        StartCoroutine(Helper.AnimateMovement(imageBtn.transform, animationSpeed, targetPosition));
+        StartCoroutine(Helper.AnimateMovement(videoBtn.transform, animationSpeed, targetPosition));
     }
 
     private void TransitionExpand() {
@@ -78,23 +78,13 @@ public class AddNodeDetailCell: MonoBehaviour {
         var animPos = new Vector3(pos.x - buttonSpacing, pos.y, pos.z);
         var imagePos = new Vector3(pos.x + buttonSpacing, pos.y, pos.z);
         var videoPos = new Vector3(pos.x + buttonSpacing * 2, pos.y, pos.z);
-        StartCoroutine(AnimateMovement(textBtn.gameObject, animationSpeed, textPos));
-        StartCoroutine(AnimateMovement(animBtn.gameObject, animationSpeed, animPos));
-        StartCoroutine(AnimateMovement(imageBtn.gameObject, animationSpeed, imagePos));
-        StartCoroutine(AnimateMovement(videoBtn.gameObject, animationSpeed, videoPos));
-    }
-
-    private IEnumerator AnimateMovement(GameObject obj, float speed, Vector3 toPos) {
-        while ((toPos - obj.transform.position).magnitude > speed) {
-            var direction = (toPos - obj.transform.position).normalized;
-            obj.transform.position += direction * speed;
-            yield return null;
-        }
-        obj.transform.position = toPos;
+        StartCoroutine(Helper.AnimateMovement(textBtn.transform, animationSpeed, textPos));
+        StartCoroutine(Helper.AnimateMovement(animBtn.transform, animationSpeed, animPos));
+        StartCoroutine(Helper.AnimateMovement(imageBtn.transform, animationSpeed, imagePos));
+        StartCoroutine(Helper.AnimateMovement(videoBtn.transform, animationSpeed, videoPos));
     }
 }
 
- public enum CreationState {
-     add,
-     chooseType
- }
+public enum CreationState {
+    add, chooseType
+}

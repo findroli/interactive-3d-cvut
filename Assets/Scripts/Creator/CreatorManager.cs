@@ -4,13 +4,14 @@ using System.Linq;
 using Dummiesman;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class CreatorManager: MonoBehaviour {
     [SerializeField] private GameObject nodePrefab;
     
-    [SerializeField] private InputManager inputManager;
-    [SerializeField] private MobileInputManager mobileInputManager;
+    [SerializeField] private InputHandler inputHandler;
+    [SerializeField] private CameraViewChange viewChange;
     [SerializeField] private InteractiveButton interactCreationBtn;
     [SerializeField] private Button exitBtn;
     [SerializeField] private Button saveProjectBtn;
@@ -31,13 +32,6 @@ public class CreatorManager: MonoBehaviour {
     private NodeDetail currentDetail = null;
 
     void Start() {
-#if UNITY_EDITOR
-        mobileInputManager.enabled = false;
-#endif
-#if !UNITY_EDITOR && UNITY_IOS
-        inputManager.enabled = false;
-#endif
-        
         canvas = GameObject.Find("Canvas");
         LoadModel();
         saveProjectBtn.onClick.AddListener(Save);
@@ -166,19 +160,17 @@ public class CreatorManager: MonoBehaviour {
     }
     
     private void OnEnable() {
-        inputManager.onRotateModel += RotateModel;
-        inputManager.onZoomModel += ZoomModel;
-        mobileInputManager.onRotateModel += RotateModel;
-        mobileInputManager.onZoomModel += ZoomModel;
+        inputHandler.onRotateModel += RotateModel;
+        inputHandler.onZoomModel += ZoomModel;
+        viewChange.onViewChange += ChangeView;
         InteractionPoint.interactionDelegate += OnInteractionPointSelect;
         viewModePicker.onViewModeChanged += OnViewModeChanged;
     }
 
     private void OnDisable() {
-        inputManager.onRotateModel -= RotateModel;
-        inputManager.onZoomModel -= ZoomModel;
-        mobileInputManager.onRotateModel -= RotateModel;
-        mobileInputManager.onZoomModel -= ZoomModel;
+        inputHandler.onRotateModel -= RotateModel;
+        inputHandler.onZoomModel -= ZoomModel;
+        viewChange.onViewChange -= ChangeView;
         InteractionPoint.interactionDelegate -= OnInteractionPointSelect;
         viewModePicker.onViewModeChanged -= OnViewModeChanged;
     }
@@ -214,5 +206,20 @@ public class CreatorManager: MonoBehaviour {
         }
         model.transform.localScale = new Vector3(scale.x + value / 100f, scale.y + value / 100f, scale.z + value / 100f);
         Debug.Log("Scale: " + model.transform.localScale);
+    }
+
+    private void ChangeView(CameraViewChange.CameraDefaultView view) {
+        viewChange.SetButtonsHidden(true);
+        switch (view) {
+            case CameraViewChange.CameraDefaultView.front:
+                model.transform.rotation = Quaternion.identity;
+                break;
+            case CameraViewChange.CameraDefaultView.side:
+                model.transform.rotation = Quaternion.LookRotation(Vector3.left);
+                break;
+            case CameraViewChange.CameraDefaultView.top:
+                model.transform.rotation = Quaternion.LookRotation(Vector3.down);
+                break;
+        }
     }
 }

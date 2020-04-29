@@ -1,17 +1,21 @@
-﻿using UnityEngine;
+using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class InputManager: MonoBehaviour {
-    public delegate void OnRotateModel(Vector3 directions);
-    public event OnRotateModel onRotateModel;
+public class PCInputManager: MonoBehaviour, IAnyInputManager {
+    public event OnSwipe onSwipe;
+    public event OnPinch onPinch;
 
-    public delegate void OnZoomModel(float value);
-    public event OnZoomModel onZoomModel;
+    public Vector2 inputPosition => Input.mousePosition;
 
     private bool swiping = false;
     private bool pinching = false;
     private Vector3 touchPos;
     private Vector3 screenCenter;
+    
+    public Vector3 GetInputPosition() {
+        return Input.mousePosition;
+    }
     
     void Start() {
         screenCenter = new Vector3(Screen.width/2f, Screen.height/2f, 0); 
@@ -22,7 +26,7 @@ public class InputManager: MonoBehaviour {
             var diff = Input.mousePosition - touchPos;
             if (diff.magnitude > 0.2) {
                 var directions = new Vector3(diff.y, -diff.x, diff.z);
-                onRotateModel?.Invoke(directions);
+                onSwipe?.Invoke(directions);
                 Debug.Log("Rotation value: " + diff);
                 touchPos = Input.mousePosition;
             }
@@ -30,9 +34,9 @@ public class InputManager: MonoBehaviour {
             var diff = Input.mousePosition - touchPos;
             if (diff.magnitude > 0.2) {
                 if ((touchPos - screenCenter).magnitude > (Input.mousePosition - screenCenter).magnitude) {
-                    onZoomModel?.Invoke(diff.magnitude);
+                    onPinch?.Invoke(diff.magnitude);
                 } else {
-                    onZoomModel?.Invoke(-diff.magnitude);
+                    onPinch?.Invoke(-diff.magnitude);
                 }
                 Debug.Log("Zoom value: " + diff.magnitude);
                 touchPos = Input.mousePosition;
