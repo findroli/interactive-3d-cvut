@@ -14,11 +14,12 @@ public class InputHandler: MonoBehaviour {
     private IAnyInputManager inputManager;
     
     private void Start() {
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
         inputManager = gameObject.AddComponent<PCInputManager>();
-#endif
-#if !UNITY_EDITOR && UNITY_IOS
+#elif UNITY_IOS || UNITY_ANDROID
         inputManager = gameObject.AddComponent<MobileInputManager>();
+#else
+        Debug.Log("InputHandler.Start(): ERROR - Device is not supported!");
 #endif
         if (inputManager != null) {
             inputManager.onPinch += HandlePinchGesture;
