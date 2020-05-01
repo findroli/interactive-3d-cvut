@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="FullScreenViewer.cs" t="Include" />
-        <e p="Libraries" t="Include">
+        <e p="Plugins" t="Include">
           <e p="ARFoundationDemos" t="Include">
             <e p="Common" t="Include">
               <e p="Scripts" t="Include">
@@ -27,6 +29,22 @@
                 <e p="UIManager.cs" t="Include" />
               </e>
             </e>
+          </e>
+          <e p="NativeGallery" t="Include">
+            <e p="Android" t="Include">
+              <e p="NGCallbackHelper.cs" t="Include" />
+              <e p="NGMediaReceiveCallbackAndroid.cs" t="Include" />
+              <e p="NGPermissionCallbackAndroid.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="NGPostProcessBuild.cs" t="Include" />
+            </e>
+            <e p="iOS" t="Include">
+              <e p="NGMediaReceiveCallbackiOS.cs" t="Include" />
+              <e p="NGMediaSaveCallbackiOS.cs" t="Include" />
+            </e>
+            <e p="NativeGallery.cs" t="Include" />
+            <e p="README.txt" t="Include" />
           </e>
           <e p="OBJImport" t="Include">
             <e p="CharWordReader.cs" t="Include" />
@@ -103,6 +121,7 @@
             <e p="InteractiveButton.cs" t="Include" />
             <e p="ViewModePicker.cs" t="Include" />
           </e>
+          <e p="FileBrowseHandler.cs" t="Include" />
           <e p="Helper.cs" t="Include" />
           <e p="Input" t="Include">
             <e p="IAnyInputManager.cs" t="Include" />

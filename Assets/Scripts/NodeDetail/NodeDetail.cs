@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using SFB;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
 public class NodeDetail: MonoBehaviour {
@@ -105,40 +101,38 @@ public class NodeDetail: MonoBehaviour {
     }
 
     private void CreateVideo() {
-        var extensions = new [] {
-            new ExtensionFilter("Video Files", "mp4")
-        };
-        var paths = StandaloneFileBrowser.OpenFilePanel("Open File", "", extensions, false);
-        if(paths.Length == 0) return;
-        if (File.Exists(paths[0])) {
-            CreateNewCell(videoCellPrefab);
-            currentCreatingCell.GetComponent<NodeDetailVideoCell>().FillWithData(new NodeVideoCellData {
-                videoFile = paths[0]
-            });
-        }
-        else {
-            Debug.Log("NodeDetail.CreateVideo(): Couldn't load the video!");
-            addCell.CreationState = CreationState.add;
-        }
+        FileBrowseHandler.OpenFileBrowser(FileBrowseHandler.MediaType.video, path => {
+            if(path == null) return;
+            if (File.Exists(path)) {
+                CreateNewCell(videoCellPrefab);
+                currentCreatingCell.GetComponent<NodeDetailVideoCell>().FillWithData(new NodeVideoCellData {
+                    videoFile = path
+                });
+            }
+            else {
+                Debug.Log("NodeDetail.CreateVideo(): Couldn't load the video!");
+                addCell.CreationState = CreationState.add;
+            }
+        });
+        
     }
 
     private void CreateImage() {
-        var extensions = new [] {
-            new ExtensionFilter("Image Files", "png", "jpg", "jpeg" )
-        };
-        var paths = StandaloneFileBrowser.OpenFilePanel("Open File", "", extensions, false);
-        if(paths.Length == 0) return;
-        if (File.Exists(paths[0])) {
-            byte[] fileData = File.ReadAllBytes(paths[0]);
-            CreateNewCell(imageCellPrefab);
-            currentCreatingCell.GetComponent<NodeDetailImageCell>().FillWithData(new NodeImageCellData {
-                imageData = fileData
-            });
-        }
-        else {
-            Debug.Log("NodeDetail.CreateImage(): Couldn't load the image!");
-            addCell.CreationState = CreationState.add;
-        }
+        FileBrowseHandler.OpenFileBrowser(FileBrowseHandler.MediaType.image, path => {
+            if(path == null) return;
+            if (File.Exists(path)) {
+                byte[] fileData = File.ReadAllBytes(path);
+                CreateNewCell(imageCellPrefab);
+                currentCreatingCell.GetComponent<NodeDetailImageCell>().FillWithData(new NodeImageCellData {
+                    imageData = fileData
+                });
+            }
+            else {
+                Debug.Log("NodeDetail.CreateImage(): Couldn't load the image!");
+                addCell.CreationState = CreationState.add;
+            }
+        });
+        
     }
 
     private void CreateNewCell(GameObject prefab) {

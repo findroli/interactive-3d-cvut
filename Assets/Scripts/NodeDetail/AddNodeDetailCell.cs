@@ -40,6 +40,8 @@ public class AddNodeDetailCell: MonoBehaviour {
     }
 
     private void Start() {
+        var rectTransform = GetComponent<RectTransform>();
+        buttonSpacing = (rectTransform.sizeDelta.x / 5) * transform.localScale.x;
         addBtn.onClick.AddListener(() => { CreationState = CreationState.chooseType; });
         cancelBtn.onClick.AddListener(() => { CreationState = CreationState.add; });
         textBtn.onClick.AddListener(() => {

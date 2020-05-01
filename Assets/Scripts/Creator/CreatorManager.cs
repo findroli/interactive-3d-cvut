@@ -142,7 +142,7 @@ public class CreatorManager: MonoBehaviour {
     private void OnInteractionPointSelect(InteractionPoint point) {
         if(currentDetail != null) return;
         var nodeDetailPrefab = Resources.Load("NodeDetail") as GameObject;
-        var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform);
+        var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform, true);
         nodeGO.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
         var nodeDetail = nodeGO.GetComponent<NodeDetail>();
         nodeDetail.interactionPoint = point;
