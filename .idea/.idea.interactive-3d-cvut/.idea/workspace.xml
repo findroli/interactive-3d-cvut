@@ -2,258 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FileBrowseHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FileBrowseHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DBManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DBManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/User.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Animation/AR Feathered Plane Fade.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Animation/AR Feathered Plane Fade.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Animation/PlaneFadeOff.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Animation/PlaneFadeOff.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Animation/PlaneFadeOn.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Animation/PlaneFadeOn.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Fonts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Fonts/Roboto-Medium SDF.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Fonts/Roboto-Medium SDF.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Fonts/Roboto-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Fonts/Roboto-Medium.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Materials/FeaturePointMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Materials/FeaturePointMat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Materials/PlacedSphereMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Materials/PlacedSphereMat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Materials/PlaneMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Materials/PlaneMat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Materials/ShadowMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Materials/ShadowMat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Prefabs/ARPlane.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Prefabs/ARPlane.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Prefabs/ARPointCloud.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Prefabs/ARPointCloud.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Prefabs/SphereObject.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Prefabs/SphereObject.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Scripts/ARFeatheredPlaneMeshVisualizer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Scripts/ARFeatheredPlaneMeshVisualizer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Scripts/FadePlaneOnBoundaryChange.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Scripts/FadePlaneOnBoundaryChange.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Scripts/LightEstimation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Scripts/LightEstimation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Shaders/FeatheredPlaneShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Shaders/FeatheredPlaneShader.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Shaders/MobileARShadow.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Shaders/MobileARShadow.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Textures/FeaturePoint.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Textures/FeaturePoint.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Textures/PlanePatternDot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/Common/Textures/PlanePatternDot.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Prefabs/ScreenspaceUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Prefabs/ScreenspaceUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scenes/UXManagerScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scenes/UXManagerScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/ARKitCoachingOverlay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/ARKitCoachingOverlay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/ARUXAnimationManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/ARUXAnimationManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/DisableTrackedVisuals.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/DisableTrackedVisuals.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/UIManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/UIManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Textures/TransparentTexture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Textures/TransparentTexture.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/UXRenderTexture.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/UXRenderTexture.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findabody.webm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findabody.webm.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findaface.webm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findaface.webm.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findanimage.webm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findanimage.webm.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findanobject.webm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findanobject.webm.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findaplane.webm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/findaplane.webm.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/taptoplace.webm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Videos/taptoplace.webm.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/CharWordReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/CharWordReader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/MTLLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/MTLLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/OBJLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/OBJLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/OBJLoaderHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/OBJLoaderHelper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/OBJObjectBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/OBJObjectBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/README.HTML" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/README.HTML.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples/ObjFromFile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples/ObjFromFile.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples/ObjFromFile.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples/ObjFromFile.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples/ObjFromStream.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples/ObjFromStream.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples/ObjFromStream.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/Samples/ObjFromStream.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/StringExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/StringExtensions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/BMPLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/BMPLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/BinaryExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/BinaryExtensions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ColorExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ColorExtensions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/DDSLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/DDSLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ImageLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ImageLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ImageLoaderHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ImageLoaderHelper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ImageUtils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/ImageUtils.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/TGALoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/OBJImport/TextureLoader/TGALoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/IStandaloneFileBrowser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/IStandaloneFileBrowser.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/Linux.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/Linux/x86_64.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/Linux/x86_64/libStandaloneFileBrowser.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/Linux/x86_64/libStandaloneFileBrowser.so.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/Info.plist.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/MacOS.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/MacOS/StandaloneFileBrowser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/MacOS/StandaloneFileBrowser.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.jslib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.jslib.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/BasicSample.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/BasicSample.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/BasicSampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/BasicSampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleOpenFileImage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleOpenFileImage.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleOpenFileText.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleOpenFileText.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleOpenFileTextMultiple.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleOpenFileTextMultiple.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleSaveFileImage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleSaveFileImage.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/Sample/CanvasSampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowser.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowserEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowserEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowserLinux.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowserLinux.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowserMac.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowserMac.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Documentation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Fonts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Fonts/LiberationSans - OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Fonts/LiberationSans.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Fonts/LiberationSans.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Fonts &amp; Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/LineBreaking Following Characters.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Mobile.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_Bitmap.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_Bitmap.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF Overlay.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF Overlay.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Masking.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Overlay.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface-Mobile.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_SDF.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_Sprite.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMP_Sprite.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMPro.cginc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMPro.cginc.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Sprite Assets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Style Sheets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Resources/TMP Settings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Sprites/EmojiOne Attribution.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Sprites/EmojiOne.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Sprites/EmojiOne.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Sprites/EmojiOne.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creator/CameraViewChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creator/CameraViewChange.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FullScreenViewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FullScreenViewer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FullScreenViewer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FullScreenViewer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,53 +22,53 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/PCInputManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/InteractionPoint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/ModePicker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/InteractiveButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file:///Applications/Unity/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F961FE2-8A7A-4258-AA27-4703AA7B6BA0/08/8d246241/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FileBrowseHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/IAnyInputManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/LoadInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/982F5A4B-86A9-4E77-B7C6-C7452AD8E95C/ab/3857ba94/ImageConversion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/CellDataJsonWrapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FullScreenViewer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FullScreenViewer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/MobileInputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IOManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/CameraViewChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Resources/Models/Chevrolet Camaro 1960.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/InteractionPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/ModePicker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/LongPressEventTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/NativeGallery/NativeGallery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ProjectData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/InteractiveButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/ViewModePicker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file:///Applications/Unity/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F961FE2-8A7A-4258-AA27-4703AA7B6BA0/08/8d246241/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/ListViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FileBrowseHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMPro.cginc" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/IAnyInputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DBManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailAnimationCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/LoadInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailVideoCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/ModePicker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ModePicker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LoadInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ProjectCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ModePicker.cs" />
@@ -359,6 +116,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/User.cs" />
+        <option value="$PROJECT_DIR$/Assets/LoginManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DBManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" />
       </list>
     </option>
   </component>
@@ -419,7 +180,8 @@
       <workItem from="1588069120115" duration="7044000" />
       <workItem from="1588146303552" duration="11961000" />
       <workItem from="1588232685889" duration="1604000" />
-      <workItem from="1588333964000" duration="3394000" />
+      <workItem from="1588333964000" duration="3732000" />
+      <workItem from="1588603993372" duration="2463000" />
     </task>
     <servers />
   </component>

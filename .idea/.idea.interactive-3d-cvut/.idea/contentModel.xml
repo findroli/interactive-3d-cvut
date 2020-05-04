@@ -6,7 +6,6 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="FullScreenViewer.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="ARFoundationDemos" t="Include">
             <e p="Common" t="Include">
@@ -121,7 +120,9 @@
             <e p="InteractiveButton.cs" t="Include" />
             <e p="ViewModePicker.cs" t="Include" />
           </e>
+          <e p="DBManager.cs" t="Include" />
           <e p="FileBrowseHandler.cs" t="Include" />
+          <e p="FullScreenViewer.cs" t="Include" />
           <e p="Helper.cs" t="Include" />
           <e p="Input" t="Include">
             <e p="IAnyInputManager.cs" t="Include" />
@@ -131,6 +132,7 @@
             <e p="PCInputManager.cs" t="Include" />
           </e>
           <e p="IOManager.cs" t="Include" />
+          <e p="LoginManager.cs" t="Include" />
           <e p="Menu" t="Include">
             <e p="LoadInfo.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
@@ -142,6 +144,7 @@
             <e p="NodeCellData.cs" t="Include" />
             <e p="NodeDetailModel.cs" t="Include" />
             <e p="ProjectData.cs" t="Include" />
+            <e p="User.cs" t="Include" />
           </e>
           <e p="MovingWindow.cs" t="Include" />
           <e p="NodeDetail" t="Include">
