@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "791558071547",
+    "firebase_url": "https://interactive3d-25d90.firebaseio.com",
+    "project_id": "interactive3d-25d90",
+    "storage_bucket": "interactive3d-25d90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791558071547:android:a0fadde53498145a7b7c5e",
+        "android_client_info": {
+          "package_name": "com.oliver.interactive3d"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791558071547-fpfk6lgoi73rlup88n2iu9tehgm5uf5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbZ8oofRhYRsNQhJTfq0I1lWwCIsUqJ-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791558071547-fpfk6lgoi73rlup88n2iu9tehgm5uf5t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "791558071547-0luou1lh2is686saq00jp6a83i0ntvu0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.oliver.interactive3d"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
