@@ -120,7 +120,6 @@
             <e p="InteractiveButton.cs" t="Include" />
             <e p="ViewModePicker.cs" t="Include" />
           </e>
-          <e p="DBManager.cs" t="Include" />
           <e p="FileBrowseHandler.cs" t="Include" />
           <e p="FullScreenViewer.cs" t="Include" />
           <e p="Helper.cs" t="Include" />
@@ -134,10 +133,10 @@
           <e p="IOManager.cs" t="Include" />
           <e p="LoginManager.cs" t="Include" />
           <e p="Menu" t="Include">
-            <e p="LoadInfo.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
             <e p="ModePicker.cs" t="Include" />
             <e p="ProjectCell.cs" t="Include" />
+            <e p="TopMenuPanel.cs" t="Include" />
           </e>
           <e p="Model" t="Include">
             <e p="CellDataJsonWrapper.cs" t="Include" />
@@ -156,6 +155,11 @@
             <e p="NodeDetailImageCell.cs" t="Include" />
             <e p="NodeDetailTextCell.cs" t="Include" />
             <e p="NodeDetailVideoCell.cs" t="Include" />
+          </e>
+          <e p="ObjectShaker.cs" t="Include" />
+          <e p="Singleton" t="Include">
+            <e p="AppState.cs" t="Include" />
+            <e p="DBManager.cs" t="Include" />
           </e>
         </e>
       </e>

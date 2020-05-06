@@ -11,8 +11,8 @@ public class DBManager {
 
     private User[] users;
 
-    public bool Login(string username, string password) {
-        return users.Any(c => c.username == username && c.password == password);
+    public User? Login(string username, string password) {
+        return users.FirstOrDefault(c => c.username == username && c.password == password);
     } 
         
     private DBManager() {

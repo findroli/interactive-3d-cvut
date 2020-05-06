@@ -38,6 +38,7 @@ public class CreatorManager: MonoBehaviour {
     }
 
     void Start() {
+        SetupUI();
         canvas = GameObject.Find("Canvas");
         LoadModel();
         saveProjectBtn.onClick.AddListener(Save);
@@ -67,19 +68,19 @@ public class CreatorManager: MonoBehaviour {
 
     void LoadModel() {
         Debug.Log("CreatorManager.LoadModel(): started!");
-        var loadInfo = FindObjectOfType<LoadInfo>();
-        var prefab = Resources.Load("Models/" + loadInfo.ModelName);
-        modelName = loadInfo.ModelName;
+        modelName = AppState.shared().modelName;
+        var prefab = Resources.Load("Models/" + modelName);
         model = Instantiate(prefab) as GameObject;
         model.layer = 8;
-        if (loadInfo.VersionName != null) {
-            var fileContent = IOManager.LoadProjectJson(loadInfo.ModelName, loadInfo.VersionName);
+        var versionName = AppState.shared().modelVersionName;
+        if (versionName != null) {
+            var fileContent = IOManager.LoadProjectJson(modelName, versionName);
             var projectData = JsonUtility.FromJson<ProjectData>(fileContent);
             LoadPointsFromData(projectData.ToOriginal());
-            projectName.text = loadInfo.VersionName;
+            projectName.text = versionName;
             Debug.Log("CreatorManager.LoadModel(): loaded project model:\n" + modelName);
         }
-        if(loadInfo.AppMode == AppMode.Edit) {
+        if(AppState.shared().mode == AppMode.Edit) {
             CreateMeshColliderRecursively(model.gameObject);
         }
     }
@@ -100,6 +101,13 @@ public class CreatorManager: MonoBehaviour {
 
     void ToggleInteractionPointCreation() {
         SetInteractionPointCreation(!interactCreationBtn.selected);
+    }
+
+    private void SetupUI() {
+        var mode = AppState.shared().mode;
+        interactCreationBtn.gameObject.SetActive(mode == AppMode.Edit);
+        saveProjectBtn.gameObject.SetActive(mode == AppMode.Edit);
+        projectName.gameObject.SetActive(mode == AppMode.Edit);
     }
 
     private void SetInteractionPointCreation(bool value) {

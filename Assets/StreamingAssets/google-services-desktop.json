@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "services": {
+        "appinvite_service": {
+          "status": 1
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "791558071547-0luou1lh2is686saq00jp6a83i0ntvu0.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5GN9GAWVdg-u0MWYLdE5Kb2azSQnIGbc"
+        }
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:791558071547:ios:25d4ec3bd5ce54717b7c5e", 
+        "android_client_info": {
+          "package_name": "com.oliver.interactive3d"
+        }
+      }
+    }
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "interactive3d-25d90.appspot.com", 
+    "project_id": "interactive3d-25d90", 
+    "firebase_url": "https://interactive3d-25d90.firebaseio.com", 
+    "project_number": "791558071547"
+  }
+}

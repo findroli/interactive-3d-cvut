@@ -16,25 +16,16 @@ public class MenuManager: MonoBehaviour {
 
     [SerializeField] private Button importBtn;
     [SerializeField] private Button newVersionBtn;
-    [SerializeField] private ModePicker modePicker;
     [SerializeField] private GameObject scrollView;
     [SerializeField] private GameObject projectsScrollViewContent;
     [SerializeField] private GameObject versionsScrollViewContent;
     [SerializeField] private GameObject emptyVersionsLabel;
 
-    private LoadInfo loadInfo;
     private ProjectCell selectedCell;
     private string selectedModel;
     private float scrollViewWidth;
     
     void Start() {
-        loadInfo = FindObjectOfType<LoadInfo>();
-        if (loadInfo == null) {
-            var loadInfoGameObject = new GameObject();
-            loadInfo = loadInfoGameObject.AddComponent<LoadInfo>();
-            loadInfoGameObject.name = "LoadInfo";
-            DontDestroyOnLoad(loadInfoGameObject);
-        }
         importBtn.onClick.AddListener(ImportModel);
         newVersionBtn.onClick.AddListener(NewVersion);
         SetupModelCells();
@@ -93,9 +84,8 @@ public class MenuManager: MonoBehaviour {
             var cell = cellGameObject.GetComponent<ProjectCell>();
             cell.Setup(version);
             cell.onClick += (clickedCell) => {
-                loadInfo.SetAppMode(modePicker.CurrentAppMode);
-                loadInfo.SetModelName(selectedModel);
-                loadInfo.SetVersion(version);
+                AppState.shared().modelName = selectedModel;
+                AppState.shared().modelVersionName = version;
                 SceneManager.LoadScene("CreatorScene");
             };
         }
@@ -103,9 +93,8 @@ public class MenuManager: MonoBehaviour {
 
     private void NewVersion() {
         if (selectedModel == null) return;
-        loadInfo.SetAppMode(modePicker.CurrentAppMode);
-        loadInfo.SetModelName(selectedModel);
-        loadInfo.SetVersion(null);
+        AppState.shared().modelName = selectedModel;
+        AppState.shared().modelVersionName = null;
         SceneManager.LoadScene("CreatorScene");
     }
 
