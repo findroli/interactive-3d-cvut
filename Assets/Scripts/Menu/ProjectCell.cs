@@ -36,4 +36,9 @@ public class ProjectCell: MonoBehaviour {
     public void SetHighlight(bool value) {
         underlineImage.gameObject.SetActive(value);
     }
+
+    public Vector3 GetVersionsStartPosition() {
+        var rt = GetComponent<RectTransform>();
+        return transform.TransformPoint(new Vector3(0, - rt.sizeDelta.y / 2));
+    }
 }
