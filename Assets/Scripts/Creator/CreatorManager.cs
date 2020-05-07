@@ -151,21 +151,20 @@ public class CreatorManager: MonoBehaviour {
         if(currentDetail != null) return;
         if (AppState.shared().Mode == AppMode.Presentation) {
             var prefab = Resources.Load("NodeDetailPresentation") as GameObject;
-            var obj = Instantiate(prefab, canvas.transform, true);
+            var obj = Instantiate(prefab, canvas.transform, false);
             obj.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
             var detail = obj.GetComponent<NodeDetailPresentation>();
             detail.modelAnimator = model.GetComponent<Animator>();
+            currentDetail = detail;
             if (nodesData.ContainsKey(point)) {
                 detail.UpdateData(nodesData[point]);
             }
-
             return;
         }
-        
-        var nodeDetailPrefab = Resources.Load("NodeDetail") as GameObject;
-        var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform, true);
+        var nodeDetailPrefab = Resources.Load("NodeDetailEdit") as GameObject;
+        var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform, false);
         nodeGO.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
-        var nodeDetail = nodeGO.GetComponent<NodeDetail>();
+        var nodeDetail = nodeGO.GetComponent<NodeDetailEdit>();
         nodeDetail.interactionPoint = point;
         nodeDetail.modelAnimator = model.GetComponent<Animator>();
         nodeDetail.onDone += OnDetailDone;
@@ -203,21 +202,23 @@ public class CreatorManager: MonoBehaviour {
     }
 
     private void OnDetailDone() {
-        if (nodesData.ContainsKey(currentDetail.interactionPoint)) {
-            nodesData[currentDetail.interactionPoint] = currentDetail.GetData();
+        var detail = currentDetail as NodeDetailEdit;
+        if (nodesData.ContainsKey(detail.interactionPoint)) {
+            nodesData[detail.interactionPoint] = detail.GetData();
         } else {
-            nodesData.Add(currentDetail.interactionPoint, currentDetail.GetData());
+            nodesData.Add(detail.interactionPoint, detail.GetData());
         }
-        currentDetail.onDone -= OnDetailDone;
-        currentDetail.onCancel -= OnDetailCancel;
-        Destroy(currentDetail.gameObject);
+        detail.onDone -= OnDetailDone;
+        detail.onCancel -= OnDetailCancel;
+        Destroy(detail.gameObject);
         currentDetail = null;
     }
 
     private void OnDetailCancel() {
-        currentDetail.onDone -= OnDetailDone;
-        currentDetail.onCancel -= OnDetailCancel;
-        Destroy(currentDetail.gameObject);
+        var detail = currentDetail as NodeDetailEdit;
+        detail.onDone -= OnDetailDone;
+        detail.onCancel -= OnDetailCancel;
+        Destroy(detail.gameObject);
         currentDetail = null;
     }
 

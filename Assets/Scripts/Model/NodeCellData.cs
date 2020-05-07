@@ -5,9 +5,9 @@ using UnityEngine;
 [Serializable]
 public abstract class NodeCellData {
     protected abstract string getCellPrefabFileName();
-    public GameObject GetCell() {
+    public GameObject CreateCell(Transform parent) {
         var cellPrefab = Resources.Load(getCellPrefabFileName()) as GameObject;
-        var cell = GameObject.Instantiate(cellPrefab);
+        var cell = GameObject.Instantiate(cellPrefab, parent, false);
         if(cell != null) cell.GetComponent<NodeDetailCell>().FillWithData(this);
         else Debug.Log("NodeCellData: Cell is null!");
         return cell;

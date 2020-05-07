@@ -19,8 +19,10 @@ public class NodeDetailAnimationCell: NodeDetailCell {
         });
         deleteBtn.onClick.AddListener(() => { RaiseOnDelete(this); });
     }
-    
-    public override void CreatingEnded() { }
+
+    public override void CreatingEnded() {
+        deleteBtn.gameObject.SetActive(false);
+    }
 
     public override void FillWithData(NodeCellData data) {
         var animData = data as NodeAnimationCellData;

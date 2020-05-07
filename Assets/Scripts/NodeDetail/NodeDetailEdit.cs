@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 
-public class NodeDetail: MonoBehaviour {
+public class NodeDetailEdit: MonoBehaviour, NodeDetail {
     public delegate void OnDone();
     public event OnDone onDone;
     public delegate void OnCancel();
@@ -26,15 +26,17 @@ public class NodeDetail: MonoBehaviour {
     public InteractionPoint interactionPoint = null;
     public Animator modelAnimator;
     private GameObject currentCreatingCell = null;
+    
+    public void SetModelAnimator(Animator modelAnimator) {
+        this.modelAnimator = modelAnimator;
+    }
 
     public void UpdateData(NodeDetailData data) {
         titleInputField.text = data.title;
         foreach (var cellData in data.cells) {
-            var cellObj = cellData.GetCell();
-            cellObj.transform.SetParent(scrollViewContent.transform);
+            var cellObj = cellData.CreateCell(scrollViewContent.transform);
             var cell = cellObj.GetComponent<NodeDetailCell>();
             cell.onDelete += OnDeleteCell;
-            cell.CreatingEnded();
             var animCell = cell.GetComponent<NodeDetailAnimationCell>();
             if (animCell != null) animCell.onTriggerAnimation += OnAnimatorTrigger;
         }

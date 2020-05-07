@@ -19,7 +19,9 @@ public class NodeDetailImageCell: NodeDetailCell {
         });
     }
 
-    public override void CreatingEnded() { }
+    public override void CreatingEnded() {
+        deleteButton.gameObject.SetActive(false);
+    }
 
     public override void FillWithData(NodeCellData data) {
         var imageCellData = data as NodeImageCellData;

@@ -146,15 +146,18 @@
             <e p="User.cs" t="Include" />
           </e>
           <e p="NodeDetail" t="Include">
-            <e p="AddNodeDetailCell.cs" t="Include" />
+            <e p="Cells" t="Include">
+              <e p="AddNodeDetailCell.cs" t="Include" />
+              <e p="NodeDetailAnimationCell.cs" t="Include" />
+              <e p="NodeDetailCell.cs" t="Include" />
+              <e p="NodeDetailImageCell.cs" t="Include" />
+              <e p="NodeDetailTextCell.cs" t="Include" />
+              <e p="NodeDetailVideoCell.cs" t="Include" />
+            </e>
             <e p="ListViewController.cs" t="Include" />
-            <e p="NodeDetailAnimationCell.cs" t="Include" />
-            <e p="NodeDetailCell.cs" t="Include" />
+            <e p="NodeDetail.cs" t="Include" />
             <e p="NodeDetailEdit.cs" t="Include" />
-            <e p="NodeDetailImageCell.cs" t="Include" />
             <e p="NodeDetailPresentation.cs" t="Include" />
-            <e p="NodeDetailTextCell.cs" t="Include" />
-            <e p="NodeDetailVideoCell.cs" t="Include" />
           </e>
           <e p="PasswordPopup.cs" t="Include" />
           <e p="Singleton" t="Include">

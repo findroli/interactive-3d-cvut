@@ -2,39 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ModelVersionCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/ModelVersionCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ModelVersionCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/ModelVersionCell.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ProjectCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ProjectCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VersionPopupCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/VersionPopupCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VersionsPopupPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/VersionsPopupPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetail.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetail.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailAnimationCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailAnimationCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailImageCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailImageCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailPresentation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailPresentation.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailVideoCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailVideoCell.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FileBrowseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/FileBrowseHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FileBrowseHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/FileBrowseHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FullScreenViewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creator/FullScreenViewer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FullScreenViewer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creator/FullScreenViewer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Helper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/TopMenuPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/TopMenuPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/MovingWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingWindow.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/MovingWindow.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectShaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/ObjectShaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectShaker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/ObjectShaker.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singleton/AppState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton/AppState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VersionsPopupPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/VersionsPopupPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VersionsPopupPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/VersionsPopupPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailAnimationCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailAnimationCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailAnimationCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailAnimationCell.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailCell.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailTextCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailTextCell.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailVideoCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailVideoCell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/PCInputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/InteractionPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/ModePicker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/User.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,7 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/InteractiveButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailTextCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///Applications/Unity/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F961FE2-8A7A-4258-AA27-4703AA7B6BA0/08/8d246241/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -65,7 +61,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/DBManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/AppState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/982F5A4B-86A9-4E77-B7C6-C7452AD8E95C/ab/3857ba94/ImageConversion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/CellDataJsonWrapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/ModelVersionCell.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,27 +84,18 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creator/ViewModePicker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/TopMenuPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/ListViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMPro.cginc" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ObjectShaker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailAnimationCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailAnimationCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailVideoCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Libraries/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs" />
-        <option value="$PROJECT_DIR$/Assets/NodeDetailVideoCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/BasicCellData.cs" />
-        <option value="$PROJECT_DIR$/Assets/ListViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/CellDataJsonWrapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/NodeDetailAnimationCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailAnimationCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LongPressEventTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/ListViewController.cs" />
         <option value="$PROJECT_DIR$/Assets/MovingWindow.cs" />
@@ -121,7 +108,6 @@
         <option value="$PROJECT_DIR$/Assets/CameraViewChange.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Creator/Helper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/PCInputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs" />
         <option value="$PROJECT_DIR$/Assets/FullScreenViewer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FileBrowser.cs" />
@@ -148,8 +134,19 @@
         <option value="$PROJECT_DIR$/Assets/PasswordPopup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/TopMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailAnimationCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailVideoCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailAnimationCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailTextCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" />
       </list>
     </option>
   </component>
@@ -215,7 +212,7 @@
       <workItem from="1588770832522" duration="8720000" />
       <workItem from="1588839894959" duration="1015000" />
       <workItem from="1588846131763" duration="229000" />
-      <workItem from="1588847951274" duration="6395000" />
+      <workItem from="1588847951274" duration="9210000" />
     </task>
     <servers />
   </component>

@@ -10,8 +10,16 @@ public class NodeDetailTextCell: NodeDetailCell {
     public InputField inputField;
     private RectTransform rectTransform;
     
+    void Start() {
+        inputField = gameObject.GetComponent<InputField>();
+        inputField.onValueChanged.AddListener(OnValueChanged);
+        rectTransform = gameObject.GetComponent<RectTransform>();
+        deleteBtn.onClick.AddListener(() => { RaiseOnDelete(this); });
+    }
+    
     public override void CreatingEnded() {
         inputField.enabled = false;
+        deleteBtn.gameObject.SetActive(false);
     }
 
     public override void FillWithData(NodeCellData data) {
@@ -26,13 +34,6 @@ public class NodeDetailTextCell: NodeDetailCell {
         return new NodeTextCellData {
             text = inputField.text
         };
-    }
-
-    void Start() {
-        inputField = gameObject.GetComponent<InputField>();
-        inputField.onValueChanged.AddListener(OnValueChanged);
-        rectTransform = gameObject.GetComponent<RectTransform>();
-        deleteBtn.onClick.AddListener(() => { RaiseOnDelete(this); });
     }
 
     void OnValueChanged(string newText) {

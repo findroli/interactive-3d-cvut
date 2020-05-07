@@ -19,7 +19,9 @@ public class NodeDetailVideoCell: NodeDetailCell {
         pauseButton.onClick.AddListener(Pause);
     }
 
-    public override void CreatingEnded() { }
+    public override void CreatingEnded() { 
+        deleteButton.gameObject.SetActive(false);
+    }
 
     public override void FillWithData(NodeCellData data) {
         var videoCellData = data as NodeVideoCellData;

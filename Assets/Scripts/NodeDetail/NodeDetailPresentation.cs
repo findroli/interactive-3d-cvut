@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NodeDetailPresentation: MonoBehaviour {
+public class NodeDetailPresentation: MonoBehaviour, NodeDetail {
     [SerializeField] private GameObject textCellPrefab;
     [SerializeField] private GameObject imageCellPrefab;
     [SerializeField] private GameObject videoCellPrefab;
@@ -10,14 +10,16 @@ public class NodeDetailPresentation: MonoBehaviour {
     [SerializeField] private Text titleText;
     [SerializeField] private GameObject scrollViewContent;
     [SerializeField] private Button cancelBtn;
-    
+
     public Animator modelAnimator;
-    
+    public void SetModelAnimator(Animator modelAnimator) {
+        this.modelAnimator = modelAnimator;
+    }
+
     public void UpdateData(NodeDetailData data) {
         titleText.text = data.title;
         foreach (var cellData in data.cells) {
-            var cellObj = cellData.GetCell();
-            cellObj.transform.SetParent(scrollViewContent.transform);
+            var cellObj = cellData.CreateCell(scrollViewContent.transform);
             var cell = cellObj.GetComponent<NodeDetailCell>();
             cell.CreatingEnded();
             var animCell = cell.GetComponent<NodeDetailAnimationCell>();
