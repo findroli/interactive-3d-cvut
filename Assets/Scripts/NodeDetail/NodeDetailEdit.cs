@@ -22,7 +22,6 @@ public class NodeDetail: MonoBehaviour {
     [SerializeField] private Button cancelBtn;
     [SerializeField] private Button doneBtn;
     [SerializeField] private AddNodeDetailCell addCell;
-    [SerializeField] private LongPressEventTrigger grabBtn;
 
     public InteractionPoint interactionPoint = null;
     public Animator modelAnimator;

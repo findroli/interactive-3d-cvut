@@ -68,11 +68,11 @@ public class CreatorManager: MonoBehaviour {
 
     void LoadModel() {
         Debug.Log("CreatorManager.LoadModel(): started!");
-        modelName = AppState.shared().modelName;
+        modelName = AppState.shared().ModelName;
         var prefab = Resources.Load("Models/" + modelName);
         model = Instantiate(prefab) as GameObject;
         model.layer = 8;
-        var versionName = AppState.shared().modelVersionName;
+        var versionName = AppState.shared().ModelVersionName;
         if (versionName != null) {
             var fileContent = IOManager.LoadProjectJson(modelName, versionName);
             var projectData = JsonUtility.FromJson<ProjectData>(fileContent);
@@ -80,7 +80,7 @@ public class CreatorManager: MonoBehaviour {
             projectName.text = versionName;
             Debug.Log("CreatorManager.LoadModel(): loaded project model:\n" + modelName);
         }
-        if(AppState.shared().mode == AppMode.Edit) {
+        if(AppState.shared().Mode == AppMode.Edit) {
             CreateMeshColliderRecursively(model.gameObject);
         }
     }
@@ -104,7 +104,7 @@ public class CreatorManager: MonoBehaviour {
     }
 
     private void SetupUI() {
-        var mode = AppState.shared().mode;
+        var mode = AppState.shared().Mode;
         interactCreationBtn.gameObject.SetActive(mode == AppMode.Edit);
         saveProjectBtn.gameObject.SetActive(mode == AppMode.Edit);
         projectName.gameObject.SetActive(mode == AppMode.Edit);
@@ -149,6 +149,19 @@ public class CreatorManager: MonoBehaviour {
 
     private void OnInteractionPointSelect(InteractionPoint point) {
         if(currentDetail != null) return;
+        if (AppState.shared().Mode == AppMode.Presentation) {
+            var prefab = Resources.Load("NodeDetailPresentation") as GameObject;
+            var obj = Instantiate(prefab, canvas.transform, true);
+            obj.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
+            var detail = obj.GetComponent<NodeDetailPresentation>();
+            detail.modelAnimator = model.GetComponent<Animator>();
+            if (nodesData.ContainsKey(point)) {
+                detail.UpdateData(nodesData[point]);
+            }
+
+            return;
+        }
+        
         var nodeDetailPrefab = Resources.Load("NodeDetail") as GameObject;
         var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform, true);
         nodeGO.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);

@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class IOManager {
+    public static string GetLastNameFromPath(string path) {
+        return path?.Split('/').Last();
+    }
+    
     public static bool SaveCurrentProject(string modelName, string versionName, string json, bool overwrite = true) {
         var versionFolder = GetVersionFolder(modelName, versionName, true);
         var jsonPath = versionFolder + "/interactionPoints.json";
@@ -50,6 +55,12 @@ public class IOManager {
         var fileContent = sr.ReadToEnd();
         sr.Close();
         return fileContent;
+    }
+
+    public static string GetLatestVersionName(string modelName) {
+        var versions = LoadModelVersionNames(modelName);
+        if(!versions.Any()) return null;
+        return versions.OrderBy(Directory.GetCreationTime).First();
     }
 
     private static string GetAllModelsFolder() {

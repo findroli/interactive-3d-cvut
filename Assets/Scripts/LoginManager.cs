@@ -29,7 +29,7 @@ public class LoginManager : MonoBehaviour {
         if (user != null) {
             loginPanel.SetActive(false);
             modePickPanel.SetActive(true);
-            AppState.shared().currentUser = user;
+            AppState.shared().CurrentUser = user;
         }
         else {
             loginBtn.GetComponent<ObjectShaker>().Shake();
@@ -37,12 +37,12 @@ public class LoginManager : MonoBehaviour {
     }
 
     void StartInPresentationMode() {
-        AppState.shared().mode = AppMode.Presentation;
+        AppState.shared().Mode = AppMode.Presentation;
         SceneManager.LoadScene("MainMenuScene");
     }
 
     void StartInEditMode() {
-        AppState.shared().mode = AppMode.Edit;
+        AppState.shared().Mode = AppMode.Edit;
         SceneManager.LoadScene("MainMenuScene");
     }
 }

@@ -21,26 +21,28 @@ public class MenuManager: MonoBehaviour {
     private ProjectCell selectedCell;
     private VersionsPopupPanel versionPanel;
     private string selectedModel;
-    private float scrollViewWidth;
     private GameObject canvas;
     
     void Start() {
         importBtn.onClick.AddListener(ImportModel);
         SetupModelCells();
         canvas = GameObject.Find("Canvas");
-        scrollViewWidth = Screen.width + scrollView.GetComponent<RectTransform>().sizeDelta.x;
     }
 
-    //TODO: not used - smaller cells when further from the center
-    private void UpdateCellSizes() {
-        for(int i = 0; i < projectsScrollViewContent.transform.childCount; i++) {
-            var cell = projectsScrollViewContent.transform.GetChild(i).GetComponent<RectTransform>();
-            var dist = (scrollView.transform.position - cell.position).magnitude;
-            var scale = 1 - dist / (scrollViewWidth / 2);
-            Debug.Log("Dist: " + dist + ", Width: " + scrollViewWidth + ", Scale: " + scale);
-            if (scale < 0) scale = 0;
-            cell.sizeDelta = new Vector2(200 * scale, cell.sizeDelta.y);
-        }
+    private void OnEnable() {
+        AppState.shared().onModeChange += UpdateUI;
+    }
+    
+    private void OnDisable() {
+        AppState.shared().onModeChange -= UpdateUI;
+    }
+
+    private void UpdateUI() {
+        importBtn.gameObject.SetActive(AppState.shared().Mode == AppMode.Edit);
+        if(versionPanel != null) DeleteVersionsPopup();
+        if(selectedCell != null) selectedCell.SetHighlight(false);
+        selectedCell = null;
+        selectedModel = null;
     }
 
     private void SetupModelCells() {
@@ -61,36 +63,45 @@ public class MenuManager: MonoBehaviour {
             texture = Resources.Load<Texture2D>(resPath);
             if(texture == null) Debug.Log("MenuManager.SetupModelCells(): Texture " + prefabName + " was not found!");
             cell.Setup(prefabName, texture);
-            cell.onClick += newCell => {
-                if(versionPanel != null) DeleteVersionsPopup();
-                if(selectedCell != null) selectedCell.SetHighlight(false);
-                if (selectedCell == newCell) {
-                    selectedModel = null;
-                    selectedCell = null;
-                    return;
-                }
-                newCell.SetHighlight(true);
-                selectedModel = prefabName;
-                selectedCell = newCell;
-                CreateVersionsPopup(newCell.GetVersionsStartPosition());
-            };
+            cell.onClick += OnModelSelect;
         }
+    }
+
+    private void OnModelSelect(ProjectCell newCell) {
+        if(AppState.shared().Mode == AppMode.Presentation) {
+            var versionName = IOManager.GetLastNameFromPath(IOManager.GetLatestVersionName(newCell.projectName));
+            AppState.shared().ModelName = newCell.projectName;
+            AppState.shared().ModelVersionName = versionName;
+            SceneManager.LoadScene("CreatorScene");
+            return;
+        }
+        if(versionPanel != null) DeleteVersionsPopup();
+        if(selectedCell != null) selectedCell.SetHighlight(false);
+        if (selectedCell == newCell) {
+            selectedModel = null;
+            selectedCell = null;
+            return;
+        }
+        newCell.SetHighlight(true);
+        selectedModel = newCell.projectName;
+        selectedCell = newCell;
+        CreateVersionsPopup(newCell.GetVersionsStartPosition());
     }
 
     private void CreateVersionsPopup(Vector3 pos) {
         var popup = Instantiate(versionsListPrefab, canvas.transform);
         popup.transform.position = pos;
         versionPanel = popup.GetComponent<VersionsPopupPanel>();
-        var versions = IOManager.LoadModelVersionNames(selectedModel).Select(v => v.Split('/').Last());
+        var versions = IOManager.LoadModelVersionNames(selectedModel).Select(IOManager.GetLastNameFromPath);
         versionPanel.FillWithVersions(versions.ToArray());
         versionPanel.onCreateVersion += () => {
-            AppState.shared().modelName = selectedModel;
-            AppState.shared().modelVersionName = null;
+            AppState.shared().ModelName = selectedModel;
+            AppState.shared().ModelVersionName = null;
             SceneManager.LoadScene("CreatorScene");
         };
         versionPanel.onVersionSelect += (versionName) => {
-            AppState.shared().modelName = selectedModel;
-            AppState.shared().modelVersionName = versionName;
+            AppState.shared().ModelName = selectedModel;
+            AppState.shared().ModelVersionName = versionName;
             SceneManager.LoadScene("CreatorScene");
         };
     }

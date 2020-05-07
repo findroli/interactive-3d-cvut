@@ -7,9 +7,22 @@ public class AppState {
     }
     private static AppState instance;
 
-    public User? currentUser;
-    public AppMode mode;
+    public delegate void OnModeChange();
+    public event OnModeChange onModeChange;
+
+    public User? CurrentUser;
     
-    public string modelName;
-    public string modelVersionName;
+    private AppMode mode;
+    public AppMode Mode {
+        get => mode;
+        set => SetMode(value);
+    }
+    
+    public string ModelName;
+    public string ModelVersionName;
+
+    public void SetMode(AppMode newMode) {
+        mode = newMode;
+        onModeChange?.Invoke();
+    }
 }

@@ -15,4 +15,10 @@ public class Helper {
         var creatorManager = GameObject.FindObjectOfType<CreatorManager>();
         creatorManager.ViewFullScreenImage(sprite);
     }
+
+    public static void CreatePasswordPopup(PasswordPopup.OnDone callback) {
+        var canvas = GameObject.Find("Canvas");
+        var popup = GameObject.Instantiate(Resources.Load("PasswordPopup"), canvas.transform) as GameObject;
+        popup.GetComponent<PasswordPopup>().onDone += callback;
+    }
 }

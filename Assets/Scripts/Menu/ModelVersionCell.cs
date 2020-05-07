@@ -10,7 +10,12 @@ public class ModelVersionCell: MonoBehaviour {
     [SerializeField] private Text text;
     [SerializeField] private Button button;
 
-    public string cellName;
+    private string cellName;
+
+    public void FillWithData(string cellName) {
+        this.cellName = cellName;
+        text.text = cellName;
+    }
     
     void Start() {
         button.onClick.AddListener(() => {

@@ -23,7 +23,7 @@ public class VersionsPopupPanel: MonoBehaviour {
         emptyLabelObj.SetActive(versions.Length == 0);
         foreach (var version in versions) {
             var cell = Instantiate(versionCellPrefab, transform).GetComponent<ModelVersionCell>();
-            cell.cellName = version;
+            cell.FillWithData(version);
             cell.onCellTap += cellName => { onVersionSelect?.Invoke(cellName); };
         }
         createVersionButton.transform.SetAsLastSibling();

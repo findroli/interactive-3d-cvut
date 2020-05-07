@@ -6,7 +6,6 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="ModelVersionCell.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="ARFoundationDemos" t="Include">
             <e p="Common" t="Include">
@@ -117,13 +116,11 @@
           <e p="Creator" t="Include">
             <e p="CameraViewChange.cs" t="Include" />
             <e p="CreatorManager.cs" t="Include" />
+            <e p="FullScreenViewer.cs" t="Include" />
             <e p="InteractionPoint.cs" t="Include" />
             <e p="InteractiveButton.cs" t="Include" />
             <e p="ViewModePicker.cs" t="Include" />
           </e>
-          <e p="FileBrowseHandler.cs" t="Include" />
-          <e p="FullScreenViewer.cs" t="Include" />
-          <e p="Helper.cs" t="Include" />
           <e p="Input" t="Include">
             <e p="IAnyInputManager.cs" t="Include" />
             <e p="InputHandler.cs" t="Include" />
@@ -135,9 +132,11 @@
           <e p="LoginManager.cs" t="Include" />
           <e p="Menu" t="Include">
             <e p="MenuManager.cs" t="Include" />
+            <e p="ModelVersionCell.cs" t="Include" />
             <e p="ModePicker.cs" t="Include" />
             <e p="ProjectCell.cs" t="Include" />
             <e p="TopMenuPanel.cs" t="Include" />
+            <e p="VersionsPopupPanel.cs" t="Include" />
           </e>
           <e p="Model" t="Include">
             <e p="CellDataJsonWrapper.cs" t="Include" />
@@ -146,24 +145,29 @@
             <e p="ProjectData.cs" t="Include" />
             <e p="User.cs" t="Include" />
           </e>
-          <e p="MovingWindow.cs" t="Include" />
           <e p="NodeDetail" t="Include">
             <e p="AddNodeDetailCell.cs" t="Include" />
             <e p="ListViewController.cs" t="Include" />
-            <e p="NodeDetail.cs" t="Include" />
             <e p="NodeDetailAnimationCell.cs" t="Include" />
             <e p="NodeDetailCell.cs" t="Include" />
+            <e p="NodeDetailEdit.cs" t="Include" />
             <e p="NodeDetailImageCell.cs" t="Include" />
+            <e p="NodeDetailPresentation.cs" t="Include" />
             <e p="NodeDetailTextCell.cs" t="Include" />
             <e p="NodeDetailVideoCell.cs" t="Include" />
           </e>
-          <e p="ObjectShaker.cs" t="Include" />
+          <e p="PasswordPopup.cs" t="Include" />
           <e p="Singleton" t="Include">
             <e p="AppState.cs" t="Include" />
             <e p="DBManager.cs" t="Include" />
           </e>
+          <e p="Utilities" t="Include">
+            <e p="FileBrowseHandler.cs" t="Include" />
+            <e p="Helper.cs" t="Include" />
+            <e p="MovingWindow.cs" t="Include" />
+            <e p="ObjectShaker.cs" t="Include" />
+          </e>
         </e>
-        <e p="VersionsPopupPanel.cs" t="Include" />
       </e>
       <e p="interactive-3d-cvut.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
