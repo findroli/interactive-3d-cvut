@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class NodeDetailPresentation: MonoBehaviour, NodeDetail {
+    public delegate void OnCancel();
+    public event OnCancel onCancel;
+    
     [SerializeField] private GameObject textCellPrefab;
     [SerializeField] private GameObject imageCellPrefab;
     [SerializeField] private GameObject videoCellPrefab;
@@ -28,7 +31,7 @@ public class NodeDetailPresentation: MonoBehaviour, NodeDetail {
     }
 
     private void Start() {
-        cancelBtn.onClick.AddListener(() => { Destroy(gameObject); });
+        cancelBtn.onClick.AddListener(() => { onCancel?.Invoke(); });
     }
     
     private void OnAnimatorTrigger(string triggerName) {

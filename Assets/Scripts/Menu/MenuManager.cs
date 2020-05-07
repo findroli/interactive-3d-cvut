@@ -27,6 +27,7 @@ public class MenuManager: MonoBehaviour {
         importBtn.onClick.AddListener(ImportModel);
         SetupModelCells();
         canvas = GameObject.Find("Canvas");
+        UpdateUI();
     }
 
     private void OnEnable() {

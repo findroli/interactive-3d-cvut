@@ -154,6 +154,7 @@ public class CreatorManager: MonoBehaviour {
             var obj = Instantiate(prefab, canvas.transform, false);
             obj.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
             var detail = obj.GetComponent<NodeDetailPresentation>();
+            detail.onCancel += OnDetailCancel;
             detail.modelAnimator = model.GetComponent<Animator>();
             currentDetail = detail;
             if (nodesData.ContainsKey(point)) {
@@ -215,10 +216,17 @@ public class CreatorManager: MonoBehaviour {
     }
 
     private void OnDetailCancel() {
-        var detail = currentDetail as NodeDetailEdit;
-        detail.onDone -= OnDetailDone;
-        detail.onCancel -= OnDetailCancel;
-        Destroy(detail.gameObject);
+        var presDetail = currentDetail as NodeDetailPresentation;
+        if (presDetail != null) {
+            presDetail.onCancel -= OnDetailCancel;
+            Destroy(presDetail.gameObject);
+        }
+        var editDetail = currentDetail as NodeDetailEdit;
+        if (editDetail != null) {
+            editDetail.onDone -= OnDetailDone;
+            editDetail.onCancel -= OnDetailCancel;
+            Destroy(editDetail.gameObject);
+        }
         currentDetail = null;
     }
 
