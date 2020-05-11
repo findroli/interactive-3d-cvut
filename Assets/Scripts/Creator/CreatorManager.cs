@@ -170,6 +170,7 @@ public class CreatorManager: MonoBehaviour {
         nodeDetail.modelAnimator = model.GetComponent<Animator>();
         nodeDetail.onDone += OnDetailDone;
         nodeDetail.onCancel += OnDetailCancel;
+        nodeDetail.onDelete += OnDetailDelete;
         currentDetail = nodeDetail;
         if (nodesData.ContainsKey(point)) {
             nodeDetail.UpdateData(nodesData[point]);
@@ -211,7 +212,23 @@ public class CreatorManager: MonoBehaviour {
         }
         detail.onDone -= OnDetailDone;
         detail.onCancel -= OnDetailCancel;
+        detail.onDelete -= OnDetailDelete;
         Destroy(detail.gameObject);
+        currentDetail = null;
+    }
+
+    private void OnDetailDelete() {
+        var editDetail = currentDetail as NodeDetailEdit;
+        if (editDetail == null) return;
+        editDetail.onDone -= OnDetailDone;
+        editDetail.onCancel -= OnDetailCancel;
+        editDetail.onDelete -= OnDetailDelete;
+        if (nodesData.ContainsKey(editDetail.interactionPoint)) {
+            nodesData.Remove(editDetail.interactionPoint);
+        }
+        interactNodes.Remove(editDetail.interactionPoint);
+        Destroy(editDetail.gameObject);
+        Destroy(editDetail.interactionPoint.gameObject);
         currentDetail = null;
     }
 
@@ -225,6 +242,7 @@ public class CreatorManager: MonoBehaviour {
         if (editDetail != null) {
             editDetail.onDone -= OnDetailDone;
             editDetail.onCancel -= OnDetailCancel;
+            editDetail.onDelete -= OnDetailDelete;
             Destroy(editDetail.gameObject);
         }
         currentDetail = null;

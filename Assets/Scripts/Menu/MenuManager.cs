@@ -105,6 +105,10 @@ public class MenuManager: MonoBehaviour {
             AppState.shared().ModelVersionName = versionName;
             SceneManager.LoadScene("CreatorScene");
         };
+        versionPanel.onVersionDelete += versionName => {
+            IOManager.DeleteVersion(selectedModel, versionName);
+            versionPanel.DeleteVersion(versionName);
+        };
     }
 
     private void DeleteVersionsPopup() {

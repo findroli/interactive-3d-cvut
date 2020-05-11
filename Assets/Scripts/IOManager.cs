@@ -29,6 +29,11 @@ public class IOManager {
         return path == null ? null : path + "/image.png";
     }
 
+    public static void DeleteVersion(string modelName, string versionName) {
+        var path = GetVersionFolder(modelName, versionName);
+        Directory.Delete(path, true);
+    }
+
     public static string[] LoadSavedProjects() {
         return Directory.GetDirectories(GetAllModelsFolder());
     }

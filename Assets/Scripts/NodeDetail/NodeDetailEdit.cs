@@ -10,6 +10,8 @@ public class NodeDetailEdit: MonoBehaviour, NodeDetail {
     public event OnDone onDone;
     public delegate void OnCancel();
     public event OnCancel onCancel;
+    public delegate void OnDelete();
+    public event OnDelete onDelete;
     
     [SerializeField] private GameObject textCellPrefab;
     [SerializeField] private GameObject imageCellPrefab;
@@ -21,6 +23,7 @@ public class NodeDetailEdit: MonoBehaviour, NodeDetail {
     [SerializeField] private GameObject scrollViewContent;
     [SerializeField] private Button cancelBtn;
     [SerializeField] private Button doneBtn;
+    [SerializeField] private Button deleteBtn;
     [SerializeField] private AddNodeDetailCell addCell;
 
     public InteractionPoint interactionPoint = null;
@@ -61,6 +64,7 @@ public class NodeDetailEdit: MonoBehaviour, NodeDetail {
     private void Start() {
         cancelBtn.onClick.AddListener(() => { onCancel?.Invoke(); });
         doneBtn.onClick.AddListener(() => { onDone?.Invoke(); });
+        deleteBtn.onClick.AddListener(() => { onDelete?.Invoke(); });
         addCell.TextCreateDelegate += () => { CreateNewCell(textCellPrefab); };
         addCell.ImageCreateDelegate += CreateImage;
         addCell.VideoCreateDelegate += CreateVideo;
