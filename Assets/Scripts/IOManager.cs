@@ -25,9 +25,9 @@ public class IOManager {
     }
 
     public static string CurrentProjectVersionImagePath(string modelName, string versionName) {
-        var path = GetVersionFolder(modelName, versionName);
-        return path == null ? null : path + "/image.png";
-    }
+             var path = GetVersionFolder(modelName, versionName);
+             return path == null ? null : path + "/image.png";
+         }
 
     public static void DeleteVersion(string modelName, string versionName) {
         var path = GetVersionFolder(modelName, versionName);

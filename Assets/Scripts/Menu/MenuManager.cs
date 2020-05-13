@@ -100,7 +100,7 @@ public class MenuManager: MonoBehaviour {
             AppState.shared().ModelVersionName = null;
             SceneManager.LoadScene("CreatorScene");
         };
-        versionPanel.onVersionSelect += (versionName) => {
+        versionPanel.onVersionSelect += versionName => {
             AppState.shared().ModelName = selectedModel;
             AppState.shared().ModelVersionName = versionName;
             SceneManager.LoadScene("CreatorScene");

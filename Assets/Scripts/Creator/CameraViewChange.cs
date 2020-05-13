@@ -20,6 +20,7 @@ public class CameraViewChange: MonoBehaviour {
 
     private bool buttonsHidden = true;
     private Coroutine[] currentCoroutines = new Coroutine[] {};
+    private Vector3 offset;
 
     public void SetButtonsHidden(bool value) {
         buttonsHidden = value;
@@ -27,6 +28,7 @@ public class CameraViewChange: MonoBehaviour {
     }
     
     void Start() {
+        offset = GameObject.Find("Canvas").transform.localScale * 60f;
         topBtn.onClick.AddListener(() => onViewChange?.Invoke(CameraDefaultView.top));
         sideBtn.onClick.AddListener(() => onViewChange?.Invoke(CameraDefaultView.side));
         frontBtn.onClick.AddListener(() => onViewChange?.Invoke(CameraDefaultView.front));
@@ -40,9 +42,9 @@ public class CameraViewChange: MonoBehaviour {
         
         buttonsObject.SetActive(!buttonsHidden);
         var basePos = changeBtn.transform.position;
-        var topPos = buttonsHidden ? basePos : new Vector3(basePos.x, basePos.y + 80, basePos.z);
-        var sidePos = buttonsHidden ? basePos : new Vector3(basePos.x + 60, basePos.y + 60, basePos.z);
-        var frontPos = buttonsHidden ? basePos : new Vector3(basePos.x + 80, basePos.y, basePos.z);
+        var topPos = buttonsHidden ? basePos : new Vector3(basePos.x, basePos.y + offset.y + 20, basePos.z);
+        var sidePos = buttonsHidden ? basePos : new Vector3(basePos.x + offset.x, basePos.y + offset.y, basePos.z);
+        var frontPos = buttonsHidden ? basePos : new Vector3(basePos.x + offset.x + 20, basePos.y, basePos.z);
 
         currentCoroutines = new Coroutine[] {
             StartCoroutine(Helper.AnimateMovement(topBtn.transform, 10f, topPos)),

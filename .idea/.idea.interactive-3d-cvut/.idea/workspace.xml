@@ -4,17 +4,15 @@
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailEdit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailEdit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VersionPopupCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/VersionPopupCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creator/CameraViewChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creator/CameraViewChange.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/ModelVersionCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/ModelVersionCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/VersionsPopupPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/VersionsPopupPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/TopMenuPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/TopMenuPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singleton/DBManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton/DBManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,23 +95,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FileBrowser.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FileBrowseHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creator/CameraViewChange.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/AddNodeDetailCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/User.cs" />
         <option value="$PROJECT_DIR$/Assets/LoginManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DBManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ObjectShaker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AppState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" />
         <option value="$PROJECT_DIR$/Assets/TopMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/ModelVersionCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Singleton/DBManager.cs" />
         <option value="$PROJECT_DIR$/Assets/VersionsPopupPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Singleton/AppState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Helper.cs" />
         <option value="$PROJECT_DIR$/Assets/PasswordPopup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/TopMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailAnimationCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailImageCell.cs" />
@@ -128,10 +121,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ModelVersionCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/VersionsPopupPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/User.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Singleton/DBManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/TopMenuPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creator/CameraViewChange.cs" />
       </list>
     </option>
   </component>
@@ -199,7 +197,8 @@
       <workItem from="1588846131763" duration="229000" />
       <workItem from="1588847951274" duration="10076000" />
       <workItem from="1588862058573" duration="114000" />
-      <workItem from="1589215727183" duration="1630000" />
+      <workItem from="1589215727183" duration="1771000" />
+      <workItem from="1589360681238" duration="2254000" />
     </task>
     <servers />
   </component>

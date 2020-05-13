@@ -27,9 +27,14 @@ public class LoginManager : MonoBehaviour {
 
         var user = DBManager.shared().Login(username, password);
         if (user != null) {
-            loginPanel.SetActive(false);
-            modePickPanel.SetActive(true);
             AppState.shared().CurrentUser = user;
+            if (user.Value.userType == User.UserType.presenter) {
+                StartInPresentationMode();
+            }
+            else {
+                loginPanel.SetActive(false);
+                modePickPanel.SetActive(true);
+            }
         }
         else {
             loginBtn.GetComponent<ObjectShaker>().Shake();

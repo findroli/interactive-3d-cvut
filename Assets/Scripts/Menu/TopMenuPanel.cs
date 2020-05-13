@@ -28,15 +28,20 @@ public class TopMenuPanel: MonoBehaviour {
             AppState.shared().CurrentUser = null;
             SceneManager.LoadScene("LoginScene");
         });
-        switchModeButton.onClick.AddListener(() => {
-            if (AppState.shared().Mode == AppMode.Edit) {
-                ChangeMode(AppMode.Presentation);
-                return;
-            }
-            Helper.CreatePasswordPopup(success => {
-                if (success) ChangeMode(AppMode.Edit);
+        if (AppState.shared().CurrentUser?.userType == User.UserType.presenter) {
+            switchModeButton.gameObject.SetActive(false);
+        }
+        else {
+            switchModeButton.onClick.AddListener(() => {
+                if (AppState.shared().Mode == AppMode.Edit) {
+                    ChangeMode(AppMode.Presentation);
+                    return;
+                }
+                Helper.CreatePasswordPopup(success => {
+                    if (success) ChangeMode(AppMode.Edit);
+                });
             });
-        });
+        }
     }
 
     private void ChangeMode(AppMode mode) {
