@@ -5,26 +5,30 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LoginManager : MonoBehaviour {
-    [SerializeField] private GameObject loginPanel;
     [SerializeField] private GameObject modePickPanel;
-
-    [SerializeField] private Button loginBtn;
-    [SerializeField] private InputField nameField;
-    [SerializeField] private InputField passwordField;
 
     [SerializeField] private Button presentBtn;
     [SerializeField] private Button editModeBtn;
+
+    [SerializeField] private LoginCompoment loginComponent;
+    [SerializeField] private RegisterComponent registerComponent;
     
     void Start() {
-        loginBtn.onClick.AddListener(Login);
+        loginComponent.onLogin += Login;
+        loginComponent.toRegister += () => {
+            loginComponent.gameObject.SetActive(false);
+            registerComponent.gameObject.SetActive(true);
+        };
+        registerComponent.onRegister += Register;
+        registerComponent.toLogin += () => {
+            loginComponent.gameObject.SetActive(true);
+            registerComponent.gameObject.SetActive(false);
+        };
         presentBtn.onClick.AddListener(StartInPresentationMode);
         editModeBtn.onClick.AddListener(StartInEditMode);
     }
 
-    void Login() {
-        var username = nameField.text;
-        var password = passwordField.text;
-
+    void Login(string username, string password) {
         var user = DBManager.shared().Login(username, password);
         if (user != null) {
             AppState.shared().CurrentUser = user;
@@ -32,12 +36,23 @@ public class LoginManager : MonoBehaviour {
                 StartInPresentationMode();
             }
             else {
-                loginPanel.SetActive(false);
+                loginComponent.gameObject.SetActive(false);
                 modePickPanel.SetActive(true);
             }
         }
         else {
-            loginBtn.GetComponent<ObjectShaker>().Shake();
+            loginComponent.LoginUnsuccesful();
+        }
+    }
+
+    void Register(string username, string password, string companyCode) {
+        var response = DBManager.shared().Register(username, password, companyCode);
+        if (response) {
+            registerComponent.gameObject.SetActive(false);
+            loginComponent.gameObject.SetActive(true);
+        }
+        else {
+            registerComponent.RegisterUnsuccessful();
         }
     }
 

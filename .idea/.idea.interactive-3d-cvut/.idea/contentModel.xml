@@ -6,6 +6,7 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="LoginCompoment.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="ARFoundationDemos" t="Include">
             <e p="Common" t="Include">
@@ -112,6 +113,7 @@
             </e>
           </e>
         </e>
+        <e p="RegisterComponent.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Creator" t="Include">
             <e p="CameraViewChange.cs" t="Include" />
