@@ -12,14 +12,23 @@ public class LoginManager : MonoBehaviour {
 
     [SerializeField] private LoginCompoment loginComponent;
     [SerializeField] private RegisterComponent registerComponent;
+    [SerializeField] private GameObject loadingView;
     
     void Start() {
-        loginComponent.onLogin += Login;
+        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+            var dependencyStatus = task.Result;
+            if (dependencyStatus == Firebase.DependencyStatus.Available) {
+                Debug.Log("Firebase ready to use!");
+            } else {
+                Debug.Log("Firebase init failed");
+            }
+        });
+        loginComponent.onLogin += LoginFirebase;
         loginComponent.toRegister += () => {
             loginComponent.gameObject.SetActive(false);
             registerComponent.gameObject.SetActive(true);
         };
-        registerComponent.onRegister += Register;
+        registerComponent.onRegister += RegisterFirebase;
         registerComponent.toLogin += () => {
             loginComponent.gameObject.SetActive(true);
             registerComponent.gameObject.SetActive(false);
@@ -28,25 +37,33 @@ public class LoginManager : MonoBehaviour {
         editModeBtn.onClick.AddListener(StartInEditMode);
     }
 
-    void Login(string username, string password) {
-        var user = DBManager.shared().Login(username, password);
-        if (user != null) {
-            AppState.shared().CurrentUser = user;
-            if (user.Value.userType == User.UserType.presenter) {
-                StartInPresentationMode();
+    void LoginFirebase(string email, string password) {
+        loadingView.SetActive(true);
+        DBManager.shared().LoginFirebase(email, password, response => {
+            loadingView.SetActive(false);
+            if (response) {
+                AppState.shared().CurrentUser = new User(email, password, User.UserType.admin);
+                //if (user.Value.userType == User.UserType.presenter) {
+                //    StartInPresentationMode();
+                //}
+                //else {
+                    loginComponent.gameObject.SetActive(false);
+                    modePickPanel.SetActive(true);
+                //}
             }
             else {
-                loginComponent.gameObject.SetActive(false);
-                modePickPanel.SetActive(true);
+                loginComponent.LoginUnsuccesful();
             }
-        }
-        else {
-            loginComponent.LoginUnsuccesful();
-        }
+        });
     }
 
-    void Register(string username, string password, string companyCode) {
-        var response = DBManager.shared().Register(username, password, companyCode);
+    void RegisterFirebase(string email, string password, string companyCode) {
+        loadingView.SetActive(true);
+        DBManager.shared().RegisterFirebase(email, password, HandleRegisterResponse);
+    }
+
+    void HandleRegisterResponse(bool response) {
+        loadingView.SetActive(false);
         if (response) {
             registerComponent.gameObject.SetActive(false);
             loginComponent.gameObject.SetActive(true);
