@@ -28,7 +28,6 @@ public class MobileInputManager: MonoBehaviour, IAnyInputManager {
             if (diff.magnitude > 0.2) {
                 var directions = new Vector3(diff.y, -diff.x, diff.z);
                 onSwipe?.Invoke(directions);
-                Debug.Log("Rotation value: " + diff);
                 touchPos = Input.mousePosition;
             }
         }
@@ -36,7 +35,6 @@ public class MobileInputManager: MonoBehaviour, IAnyInputManager {
             var diff = (Input.touches[0].position - Input.touches[1].position).magnitude - touchDistance;
             if (Mathf.Abs(diff) > 0.2) {
                 onPinch?.Invoke(diff/2f);
-                Debug.Log("Zoom value: " + diff/2);
                 touchDistance = (Input.touches[0].position - Input.touches[1].position).magnitude;
             }
         }

@@ -27,7 +27,6 @@ public class PCInputManager: MonoBehaviour, IAnyInputManager {
             if (diff.magnitude > 0.2) {
                 var directions = new Vector3(-diff.y, -diff.x, diff.z);
                 onSwipe?.Invoke(directions);
-                Debug.Log("Rotation value: " + diff);
                 touchPos = Input.mousePosition;
             }
         } else if (pinching) {
@@ -38,7 +37,6 @@ public class PCInputManager: MonoBehaviour, IAnyInputManager {
                 } else {
                     onPinch?.Invoke(-diff.magnitude);
                 }
-                Debug.Log("Zoom value: " + diff.magnitude);
                 touchPos = Input.mousePosition;
             }
         }

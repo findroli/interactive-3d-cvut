@@ -39,6 +39,7 @@ public class LoginManager : MonoBehaviour {
 
     void LoginFirebase(string email, string password) {
         loadingView.SetActive(true);
+        loginComponent.gameObject.SetActive(false);
         DBManager.shared().LoginFirebase(email, password, response => {
             loadingView.SetActive(false);
             if (response) {
@@ -47,11 +48,11 @@ public class LoginManager : MonoBehaviour {
                 //    StartInPresentationMode();
                 //}
                 //else {
-                    loginComponent.gameObject.SetActive(false);
                     modePickPanel.SetActive(true);
                 //}
             }
             else {
+                loginComponent.gameObject.SetActive(true);
                 loginComponent.LoginUnsuccesful();
             }
         });
@@ -59,16 +60,17 @@ public class LoginManager : MonoBehaviour {
 
     void RegisterFirebase(string email, string password, string companyCode) {
         loadingView.SetActive(true);
+        registerComponent.gameObject.SetActive(false);
         DBManager.shared().RegisterFirebase(email, password, HandleRegisterResponse);
     }
 
     void HandleRegisterResponse(bool response) {
         loadingView.SetActive(false);
         if (response) {
-            registerComponent.gameObject.SetActive(false);
             loginComponent.gameObject.SetActive(true);
         }
         else {
+            registerComponent.gameObject.SetActive(true);
             registerComponent.RegisterUnsuccessful();
         }
     }

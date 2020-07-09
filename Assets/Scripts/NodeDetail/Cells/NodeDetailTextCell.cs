@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class NodeDetailTextCell: NodeDetailCell {
     [SerializeField] private Button deleteBtn;
     public InputField inputField;
     private RectTransform rectTransform;
+    private float scaleFactor;
     
     void Start() {
+        scaleFactor = GameObject.Find("Canvas").GetComponent<CanvasScaler>().scaleFactor;
+        Debug.Log("=== scale factor = " + scaleFactor);
         inputField = gameObject.GetComponent<InputField>();
         inputField.onValueChanged.AddListener(OnValueChanged);
         rectTransform = gameObject.GetComponent<RectTransform>();
@@ -25,6 +29,7 @@ public class NodeDetailTextCell: NodeDetailCell {
     public override void FillWithData(NodeCellData data) {
         var textData = data as NodeTextCellData;
         if(textData == null) return;
+        Debug.Log("Filling text cell with: " + textData.text);
         if (textData.text != "") {
             inputField.text = textData.text;
         }
@@ -37,8 +42,6 @@ public class NodeDetailTextCell: NodeDetailCell {
     }
 
     void OnValueChanged(string newText) {
-        //TODO: not properly counting the height of the text
-        var newLineCount = inputField.text.Count(c => c == '\n');
-        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, newLineCount * 16 + 30);
+        GetComponent<ContentSizeFitter>().SetLayoutVertical();
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class IOManager {
     public static string GetLastNameFromPath(string path) {
-        return path?.Split('/').Last();
+        return path?.Replace("\\","/").Split('/').Last();
     }
     
     public static bool SaveCurrentProject(string modelName, string versionName, string json, bool overwrite = true) {

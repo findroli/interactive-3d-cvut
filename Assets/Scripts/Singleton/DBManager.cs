@@ -20,6 +20,7 @@ public class DBManager {
         FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task => {
             if (task.IsCanceled || task.IsFaulted) {
                 callback(false);
+                Debug.Log("Login failed: " + task.Exception?.Message);
                 return;
             }
             callback(true);

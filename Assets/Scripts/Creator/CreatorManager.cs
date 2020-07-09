@@ -37,10 +37,13 @@ public class CreatorManager: MonoBehaviour {
         fullScreenViewer.ViewImage(sprite);
     }
 
-    void Start() {
-        SetupUI();
+    private void Awake() {
         canvas = GameObject.Find("Canvas");
         LoadModel();
+    }
+
+    void Start() {
+        SetupUI();
         saveProjectBtn.onClick.AddListener(Save);
         interactCreationBtn.onClick.AddListener(ToggleInteractionPointCreation);
         exitBtn.onClick.AddListener(() => { SceneManager.LoadScene("MainMenuScene"); });
