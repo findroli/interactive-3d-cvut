@@ -6,8 +6,6 @@ public class PCInputManager: MonoBehaviour, IAnyInputManager {
     public event OnSwipe onSwipe;
     public event OnPinch onPinch;
 
-    public Vector2 inputPosition => Input.mousePosition;
-
     private bool swiping = false;
     private bool pinching = false;
     private Vector3 touchPos;
