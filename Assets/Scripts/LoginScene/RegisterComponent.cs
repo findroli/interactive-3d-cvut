@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RegisterComponent : MonoBehaviour
 {
-    public delegate void OnRegister(string username, string password, string companyCode);
+    public delegate void OnRegister(string username, string password);
     public event OnRegister onRegister;
     public delegate void ToLogin();
     public event ToLogin toLogin;
@@ -14,7 +14,6 @@ public class RegisterComponent : MonoBehaviour
     [SerializeField] private InputField nameField;
     [SerializeField] private InputField passwordField;
     [SerializeField] private InputField password2Field;
-    [SerializeField] private InputField companyField;
     [SerializeField] private Button toLoginBtn;
 
     public void RegisterUnsuccessful() {
@@ -34,13 +33,12 @@ public class RegisterComponent : MonoBehaviour
         var username = nameField.text;
         var password = passwordField.text;
         var password2 = password2Field.text;
-        var companyCode = companyField.text;
 
-        if (username == "" || password == "" || password2 == "" || companyCode == "" || password != password2) {
+        if (username == "" || password == "" || password2 == "" || password != password2) {
             RegisterUnsuccessful();
             return;
         }
         
-        onRegister?.Invoke(username, password, companyCode);
+        onRegister?.Invoke(username, password);
     }
 }

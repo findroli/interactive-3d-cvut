@@ -15,7 +15,6 @@ public class CreatorManager: MonoBehaviour {
     [SerializeField] private InteractiveButton interactCreationBtn;
     [SerializeField] private Button exitBtn;
     [SerializeField] private Button saveProjectBtn;
-    [SerializeField] private InputField projectName;
     [SerializeField] private ViewModePicker viewModePicker;
     [SerializeField] private FullScreenViewer fullScreenViewer;
 
@@ -26,6 +25,7 @@ public class CreatorManager: MonoBehaviour {
     public GameObject node;
 
     private string modelName;
+    private string versionName;
     private GameObject canvas;
     private bool interactCreationMode = false;
     private List<InteractionPoint> interactNodes = new List<InteractionPoint>();
@@ -46,7 +46,7 @@ public class CreatorManager: MonoBehaviour {
         SetupUI();
         saveProjectBtn.onClick.AddListener(Save);
         interactCreationBtn.onClick.AddListener(ToggleInteractionPointCreation);
-        exitBtn.onClick.AddListener(() => { SceneManager.LoadScene("MainMenuScene"); });
+        exitBtn.onClick.AddListener(Exit);
     }
 
     void Update() {
@@ -75,12 +75,11 @@ public class CreatorManager: MonoBehaviour {
         var prefab = Resources.Load("Models/" + modelName);
         model = Instantiate(prefab) as GameObject;
         model.layer = 8;
-        var versionName = AppState.shared().ModelVersionName;
+        versionName = AppState.shared().ModelVersionName;
         if (versionName != null) {
             var fileContent = IOManager.LoadProjectJson(modelName, versionName);
             var projectData = JsonUtility.FromJson<ProjectData>(fileContent);
             LoadPointsFromData(projectData.ToOriginal());
-            projectName.text = versionName;
             Debug.Log("CreatorManager.LoadModel(): loaded project model:\n" + modelName);
         }
         if(AppState.shared().Mode == AppMode.Edit) {
@@ -110,7 +109,6 @@ public class CreatorManager: MonoBehaviour {
         var mode = AppState.shared().Mode;
         interactCreationBtn.gameObject.SetActive(mode == AppMode.Edit);
         saveProjectBtn.gameObject.SetActive(mode == AppMode.Edit);
-        projectName.gameObject.SetActive(mode == AppMode.Edit);
     }
 
     private void SetInteractionPointCreation(bool value) {
@@ -130,12 +128,20 @@ public class CreatorManager: MonoBehaviour {
     }
     
     private void Save() {
-        var versionName = projectName.text ?? "untitled";
-        var data = new ProjectData(nodesData.Values.ToArray());
-        var json = JsonUtility.ToJson(data, true);
-        IOManager.SaveCurrentProject(modelName, versionName, json);
-        var imagePath = IOManager.CurrentProjectVersionImagePath(modelName, versionName);
-        if(imagePath != null) ScreenCapture.CaptureScreenshot(imagePath);
+        Helper.CreateSavePopup(string.IsNullOrEmpty(versionName) ? "untitled" : versionName, saveName => {
+            versionName = saveName;
+            var data = new ProjectData(nodesData.Values.ToArray());
+            var json = JsonUtility.ToJson(data, true);
+            IOManager.SaveCurrentProject(modelName, saveName, json);
+            var imagePath = IOManager.CurrentProjectVersionImagePath(modelName, versionName);
+            if(imagePath != null) ScreenCapture.CaptureScreenshot(imagePath);
+        });
+    }
+
+    private void Exit() {
+        Helper.CreateConfirmPopup("Are you sure you want to exit presentation?", "Exit", () => {
+            SceneManager.LoadScene("MainMenuScene");
+        });
     }
 
     private void LoadPointsFromData(NodeDetailData[] data) {

@@ -14,7 +14,6 @@ public class NodeDetailTextCell: NodeDetailCell {
     
     void Start() {
         scaleFactor = GameObject.Find("Canvas").GetComponent<CanvasScaler>().scaleFactor;
-        Debug.Log("=== scale factor = " + scaleFactor);
         inputField = gameObject.GetComponent<InputField>();
         inputField.onValueChanged.AddListener(OnValueChanged);
         rectTransform = gameObject.GetComponent<RectTransform>();

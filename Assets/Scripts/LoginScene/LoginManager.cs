@@ -20,9 +20,15 @@ public class LoginManager : MonoBehaviour {
             if (dependencyStatus == Firebase.DependencyStatus.Available) {
                 Debug.Log("Firebase ready to use!");
             } else {
-                Debug.Log("Firebase init failed");
+                Debug.Log("Firebase init failed!");
             }
         });
+        SetUpLoginAndRegister();
+        presentBtn.onClick.AddListener(StartInPresentationMode);
+        editModeBtn.onClick.AddListener(StartInEditMode);
+    }
+
+    private void SetUpLoginAndRegister() {
         loginComponent.onLogin += LoginFirebase;
         loginComponent.toRegister += () => {
             loginComponent.gameObject.SetActive(false);
@@ -33,8 +39,6 @@ public class LoginManager : MonoBehaviour {
             loginComponent.gameObject.SetActive(true);
             registerComponent.gameObject.SetActive(false);
         };
-        presentBtn.onClick.AddListener(StartInPresentationMode);
-        editModeBtn.onClick.AddListener(StartInEditMode);
     }
 
     void LoginFirebase(string email, string password) {
@@ -54,11 +58,12 @@ public class LoginManager : MonoBehaviour {
             else {
                 loginComponent.gameObject.SetActive(true);
                 loginComponent.LoginUnsuccesful();
+                ShowMessage("Login was not successful!");
             }
         });
     }
 
-    void RegisterFirebase(string email, string password, string companyCode) {
+    void RegisterFirebase(string email, string password) {
         loadingView.SetActive(true);
         registerComponent.gameObject.SetActive(false);
         DBManager.shared().RegisterFirebase(email, password, HandleRegisterResponse);
@@ -72,7 +77,12 @@ public class LoginManager : MonoBehaviour {
         else {
             registerComponent.gameObject.SetActive(true);
             registerComponent.RegisterUnsuccessful();
+            ShowMessage("Register was not successful!");
         }
+    }
+
+    void ShowMessage(string message) {
+        Helper.CreateMessagePopup(message);
     }
 
     void StartInPresentationMode() {

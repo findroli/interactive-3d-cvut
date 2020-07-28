@@ -39,7 +39,7 @@ public class MenuManager: MonoBehaviour {
     }
 
     private void UpdateUI() {
-        importBtn.gameObject.SetActive(AppState.shared().Mode == AppMode.Edit);
+        //importBtn.gameObject.SetActive(AppState.shared().Mode == AppMode.Edit);
         if(versionPanel != null) DeleteVersionsPopup();
         if(selectedCell != null) selectedCell.SetHighlight(false);
         selectedCell = null;

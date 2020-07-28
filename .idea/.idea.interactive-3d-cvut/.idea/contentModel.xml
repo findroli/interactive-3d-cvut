@@ -6,8 +6,6 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="LoadingAnimation.cs" t="Include" />
-        <e p="LoginCompoment.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="ARFoundationDemos" t="Include">
             <e p="Common" t="Include">
@@ -114,9 +112,12 @@
             </e>
           </e>
         </e>
-        <e p="RegisterComponent.cs" t="Include" />
+        <e p="SavePopup.cs" t="Include" />
         <e p="Scripts" t="Include">
-          <e p="Creator" t="Include">
+          <e p="AR" t="Include">
+            <e p="ARManager.cs" t="Include" />
+          </e>
+          <e p="CreatorScene" t="Include">
             <e p="AnimationsPanel.cs" t="Include" />
             <e p="CameraViewChange.cs" t="Include" />
             <e p="CreatorManager.cs" t="Include" />
@@ -132,12 +133,17 @@
             <e p="MobileInputManager.cs" t="Include" />
             <e p="PCInputManager.cs" t="Include" />
           </e>
-          <e p="IOManager.cs" t="Include" />
-          <e p="LoginManager.cs" t="Include" />
-          <e p="Menu" t="Include">
+          <e p="LoginScene" t="Include">
+            <e p="LoadingAnimation.cs" t="Include" />
+            <e p="LoginCompoment.cs" t="Include" />
+            <e p="LoginManager.cs" t="Include" />
+            <e p="RegisterComponent.cs" t="Include" />
+          </e>
+          <e p="MenuScene" t="Include">
             <e p="MenuManager.cs" t="Include" />
             <e p="ModelVersionCell.cs" t="Include" />
             <e p="ModePicker.cs" t="Include" />
+            <e p="PasswordPopup.cs" t="Include" />
             <e p="ProjectCell.cs" t="Include" />
             <e p="TopMenuPanel.cs" t="Include" />
             <e p="VersionsPopupPanel.cs" t="Include" />
@@ -163,14 +169,16 @@
             <e p="NodeDetailEdit.cs" t="Include" />
             <e p="NodeDetailPresentation.cs" t="Include" />
           </e>
-          <e p="PasswordPopup.cs" t="Include" />
           <e p="Singleton" t="Include">
             <e p="AppState.cs" t="Include" />
             <e p="DBManager.cs" t="Include" />
           </e>
           <e p="Utilities" t="Include">
+            <e p="ConfirmPopup.cs" t="Include" />
             <e p="FileBrowseHandler.cs" t="Include" />
             <e p="Helper.cs" t="Include" />
+            <e p="IOManager.cs" t="Include" />
+            <e p="MessagePopup.cs" t="Include" />
             <e p="MovingWindow.cs" t="Include" />
             <e p="ObjectShaker.cs" t="Include" />
           </e>
