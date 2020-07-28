@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionPoint : MonoBehaviour {
+public class InteractionPoint: MonoBehaviour {
     public delegate void OnInteractionDelegate(InteractionPoint point);
     public static event OnInteractionDelegate interactionDelegate;
     

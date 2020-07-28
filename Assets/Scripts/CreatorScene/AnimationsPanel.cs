@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class AnimationsPanel: MonoBehaviour {
     [SerializeField] private Button collapseButton;
-    [SerializeField] private Image buttonImage;
     [SerializeField] private Sprite collapseImage;
     [SerializeField] private Sprite expandImage;
     [SerializeField] private GameObject scrollViewContent;
@@ -30,14 +29,12 @@ public class AnimationsPanel: MonoBehaviour {
     private void Collapse() {
         var tf = transform;
         tf.localPosition = new Vector2(tf.localPosition.x - width, 0f);
-        buttonImage.sprite = expandImage;
         collapsed = true;
     }
 
     private void Expand() {
         var tf = transform;
         tf.localPosition = new Vector2(tf.localPosition.x + width, 0f);
-        buttonImage.sprite = collapseImage;
         collapsed = false;
     }
 

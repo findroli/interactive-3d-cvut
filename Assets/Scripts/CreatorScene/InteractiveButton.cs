@@ -13,7 +13,7 @@ public class InteractiveButton : Button {
 
     void Start() {
         unselectedColor = GetComponent<Image>().color;
-        selectedColor = Color.black;
+        selectedColor = Color.gray;
     }
 
     void setSelection(bool value) {

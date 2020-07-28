@@ -13,6 +13,7 @@ public class CreatorManager: MonoBehaviour {
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private CameraViewChange viewChange;
     [SerializeField] private InteractiveButton interactCreationBtn;
+    [SerializeField] private GameObject creationTip;
     [SerializeField] private Button exitBtn;
     [SerializeField] private Button saveProjectBtn;
     [SerializeField] private ViewModePicker viewModePicker;
@@ -105,14 +106,9 @@ public class CreatorManager: MonoBehaviour {
         SetInteractionPointCreation(!interactCreationBtn.selected);
     }
 
-    private void SetupUI() {
-        var mode = AppState.shared().Mode;
-        interactCreationBtn.gameObject.SetActive(mode == AppMode.Edit);
-        saveProjectBtn.gameObject.SetActive(mode == AppMode.Edit);
-    }
-
     private void SetInteractionPointCreation(bool value) {
         interactCreationBtn.selected = value;
+        creationTip.SetActive(value);
         if (value) {
             node = Instantiate(nodePrefab, model.transform, false);
             node.SetActive(false);
@@ -125,6 +121,12 @@ public class CreatorManager: MonoBehaviour {
             }
             node = null;
         }
+    }
+
+    private void SetupUI() {
+        var mode = AppState.shared().Mode;
+        interactCreationBtn.gameObject.SetActive(mode == AppMode.Edit);
+        saveProjectBtn.gameObject.SetActive(mode == AppMode.Edit);
     }
     
     private void Save() {

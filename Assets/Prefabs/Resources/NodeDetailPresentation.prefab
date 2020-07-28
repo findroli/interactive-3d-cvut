@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 44462193738995828}
   - component: {fileID: 1627980604979244341}
   - component: {fileID: 2497275391380317347}
+  - component: {fileID: 8382910010199350605}
   m_Layer: 5
   m_Name: NodeDetailPresentation
   m_TagString: Untagged
@@ -403,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2019c5167a24a13b4dd6687b13b9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  longPress: {fileID: 5012512936233841944}
+  longPress: {fileID: 8382910010199350605}
   inputHandler: {fileID: 0}
 --- !u!114 &2497275391380317347
 MonoBehaviour:
@@ -429,6 +430,25 @@ MonoBehaviour:
   scrollViewContent: {fileID: 2497275390296362804}
   cancelBtn: {fileID: 2497275392188132628}
   modelAnimator: {fileID: 0}
+--- !u!114 &8382910010199350605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2497275391380317344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa66640c066e441bb4046378ed5612cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  durationThreshold: 1.6
+  onLongPressStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onLongPressEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2497275391617345004
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +993,6 @@ GameObject:
   - component: {fileID: 2250988289780238012}
   - component: {fileID: 6069244914171907774}
   - component: {fileID: 2097657530928842282}
-  - component: {fileID: 5012512936233841944}
   - component: {fileID: 6937679927261548832}
   m_Layer: 5
   m_Name: GrabBar
@@ -1037,25 +1056,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5012512936233841944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6475282677308233426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa66640c066e441bb4046378ed5612cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  durationThreshold: 0
-  onLongPressStart:
-    m_PersistentCalls:
-      m_Calls: []
-  onLongPressEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6937679927261548832
 MonoBehaviour:
   m_ObjectHideFlags: 0
