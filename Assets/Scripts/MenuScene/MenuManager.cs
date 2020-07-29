@@ -91,6 +91,7 @@ public class MenuManager: MonoBehaviour {
 
     private void CreateVersionsPopup(Vector3 pos) {
         var popup = Instantiate(versionsListPrefab, canvas.transform);
+        popup.transform.SetAsFirstSibling();
         popup.transform.position = pos;
         versionPanel = popup.GetComponent<VersionsPopupPanel>();
         var versions = IOManager.LoadModelVersionNames(selectedModel).Select(IOManager.GetLastNameFromPath);

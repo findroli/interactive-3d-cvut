@@ -14,10 +14,29 @@ public class TopMenuPanel: MonoBehaviour {
     [SerializeField] private Button switchModeButton;
     [SerializeField] private Button logoutButton;
     [SerializeField] private Button exitButton;
+    [SerializeField] private Button adminPanelButton;
+    [SerializeField] private Text adminButtonText;
 
+    [SerializeField] private GameObject adminPanel;
+
+    public void BackToProjects() {
+        adminPanel.SetActive(false);
+        adminButtonText.text = "Users panel";
+    }
+    
     private void Start() {
         menuObject.SetActive(false);
         UpdateUI();
+        adminPanelButton.onClick.AddListener(() => {
+            menuObject.SetActive(false);
+            if (adminPanel.activeInHierarchy) {
+                BackToProjects();
+            }
+            else {
+                adminPanel.SetActive(true);
+                adminButtonText.text = "Products";
+            }
+        });
         profileButton.onClick.AddListener(() => {
             menuObject.SetActive(!menuObject.activeInHierarchy);
         });
@@ -59,7 +78,7 @@ public class TopMenuPanel: MonoBehaviour {
 
     public void UpdateUI() {
         var appState = AppState.shared();
-        username.text = appState.CurrentUser.HasValue ? appState.CurrentUser.Value.username : "";
+        username.text = appState.CurrentUser.HasValue ? appState.CurrentUser.Value.name : "";
         modeText.text = appState.Mode == AppMode.Edit ? "Edit mode" : "Presentation mode";
     }
 }

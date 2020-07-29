@@ -1,5 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Firebase;
+using Firebase.Database;
+using Firebase.Extensions;
+using Firebase.Unity.Editor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,6 +27,7 @@ public class LoginManager : MonoBehaviour {
                 Debug.Log("Firebase init failed!");
             }
         });
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://interactive3d-25d90.firebaseio.com/");
         SetUpLoginAndRegister();
         presentBtn.onClick.AddListener(StartInPresentationMode);
         editModeBtn.onClick.AddListener(StartInEditMode);
@@ -44,21 +49,32 @@ public class LoginManager : MonoBehaviour {
     void LoginFirebase(string email, string password) {
         loadingView.SetActive(true);
         loginComponent.gameObject.SetActive(false);
-        DBManager.shared().LoginFirebase(email, password, response => {
-            loadingView.SetActive(false);
-            if (response) {
-                AppState.shared().CurrentUser = new User(email, password, User.UserType.admin);
-                //if (user.Value.userType == User.UserType.presenter) {
-                //    StartInPresentationMode();
-                //}
-                //else {
-                    modePickPanel.SetActive(true);
-                //}
+        DBManager.shared().LoginFirebase(email, password, (success, data) => {
+            if (success) {
+                HandleAfterLoginFirebase(data, email, password);
             }
             else {
+                loadingView.SetActive(false);
                 loginComponent.gameObject.SetActive(true);
                 loginComponent.LoginUnsuccesful();
                 ShowMessage("Login was not successful!");
+            }
+        });
+    }
+
+    void HandleAfterLoginFirebase(string id, string email, string password) {
+        DBManager.shared().GetUser(id, email, password, user => {
+            loadingView.SetActive(false);
+            if (!user.approved) {
+                ShowMessage("Your account has not yet been approved. Contact your supervisor for more information.");
+                return;
+            }
+            AppState.shared().CurrentUser = user;
+            if (user.userType == User.UserType.presenter) {
+                StartInPresentationMode();
+            }
+            else {
+                modePickPanel.SetActive(true);
             }
         });
     }
