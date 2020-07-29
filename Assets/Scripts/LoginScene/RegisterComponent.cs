@@ -5,23 +5,20 @@ using UnityEngine.UI;
 
 public class RegisterComponent : MonoBehaviour
 {
-    public delegate void OnRegister(string username, string password);
+    public delegate void OnRegister(string username, string email, string password);
     public event OnRegister onRegister;
     public delegate void ToLogin();
     public event ToLogin toLogin;
 
     [SerializeField] private Button registerBtn;
     [SerializeField] private InputField nameField;
+    [SerializeField] private InputField emailField;
     [SerializeField] private InputField passwordField;
     [SerializeField] private InputField password2Field;
     [SerializeField] private Button toLoginBtn;
 
     public void RegisterUnsuccessful() {
         registerBtn.GetComponent<ObjectShaker>().Shake();
-    }
-
-    public void RegisterUnsuccessful(string errorMessage) {
-        //todo
     }
     
     void Start() {
@@ -31,14 +28,15 @@ public class RegisterComponent : MonoBehaviour
 
     void Register() {
         var username = nameField.text;
+        var email = emailField.text;
         var password = passwordField.text;
         var password2 = password2Field.text;
 
-        if (username == "" || password == "" || password2 == "" || password != password2) {
+        if (email == "" || username == "" || password == "" || password2 == "" || password != password2) {
             RegisterUnsuccessful();
             return;
         }
         
-        onRegister?.Invoke(username, password);
+        onRegister?.Invoke(username, email, password);
     }
 }

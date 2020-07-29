@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Firebase;
 using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Extensions;
@@ -18,7 +19,8 @@ public class DBManager {
     private static DBManager instance;
 
     public void LoginFirebase(string email, string password, UnityAction<bool, string> callback) {
-        FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task => {
+        FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(email, password)
+            .ContinueWithOnMainThread(task => {
             if (task.IsCanceled || task.IsFaulted) {
                 callback(false, task.Exception?.Message ?? "Sign in failed (unknown reason)");
                 return;
@@ -28,7 +30,8 @@ public class DBManager {
     }
 
     public void GetUser(string id, string email, string password, UnityAction<User> callback) {
-        FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(id).GetValueAsync().ContinueWithOnMainThread(t => {
+        FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(id).GetValueAsync()
+            .ContinueWithOnMainThread(t => {
             if (t.IsCompleted) {
                 DataSnapshot snapshot = t.Result;
                 if (snapshot == null) return;
@@ -39,23 +42,35 @@ public class DBManager {
         });
     }
 
-    public void RegisterFirebase(string email, string password, UnityAction<bool> callback) {
-        FirebaseAuth.DefaultInstance.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task => {
+    public void RegisterFirebase(string username, string email, string password, UnityAction<bool> callback) {
+        FirebaseAuth.DefaultInstance.CreateUserWithEmailAndPasswordAsync(email, password)
+            .ContinueWithOnMainThread(task => {
             if (task.IsCanceled || task.IsFaulted) {
                 callback(false);
                 return;
             }
-            callback(true);
+            AddUser(task.Result.UserId, username, success => callback(success));
+            });
+    }
+
+    public void AddUser(string id, string username, UnityAction<bool> callback) {
+        var userDb = new UserDB();
+        userDb.name = username;
+        userDb.approved = "no";
+        userDb.type = "editor";
+        string json = JsonUtility.ToJson(userDb);
+        FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(id).SetRawJsonValueAsync(json)
+            .ContinueWithOnMainThread(t => callback(t.IsCompleted));
+    }
+
+    private DBManager() {
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+            var dependencyStatus = task.Result;
+            if (dependencyStatus == DependencyStatus.Available) {
+                Debug.Log("Firebase ready to use!");
+            } else {
+                Debug.Log("Firebase init failed!");
+            }
         });
     }
-
-    public void AddUser(string email, string password) {
-        
-    }
-
-    public void GetUser(string id, UnityAction<User> callback) {
-        
-    }
-        
-    private DBManager() {}
 }

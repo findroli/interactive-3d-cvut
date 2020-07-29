@@ -19,14 +19,7 @@ public class LoginManager : MonoBehaviour {
     [SerializeField] private GameObject loadingView;
     
     void Start() {
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-            var dependencyStatus = task.Result;
-            if (dependencyStatus == Firebase.DependencyStatus.Available) {
-                Debug.Log("Firebase ready to use!");
-            } else {
-                Debug.Log("Firebase init failed!");
-            }
-        });
+        DBManager.shared();
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://interactive3d-25d90.firebaseio.com/");
         SetUpLoginAndRegister();
         presentBtn.onClick.AddListener(StartInPresentationMode);
@@ -57,7 +50,7 @@ public class LoginManager : MonoBehaviour {
                 loadingView.SetActive(false);
                 loginComponent.gameObject.SetActive(true);
                 loginComponent.LoginUnsuccesful();
-                ShowMessage("Login was not successful!");
+                ShowMessage("Sign in failed! Check your credentials or try later.");
             }
         });
     }
@@ -67,6 +60,7 @@ public class LoginManager : MonoBehaviour {
             loadingView.SetActive(false);
             if (!user.approved) {
                 ShowMessage("Your account has not yet been approved. Contact your supervisor for more information.");
+                loginComponent.gameObject.SetActive(true);
                 return;
             }
             AppState.shared().CurrentUser = user;
@@ -79,21 +73,22 @@ public class LoginManager : MonoBehaviour {
         });
     }
 
-    void RegisterFirebase(string email, string password) {
+    void RegisterFirebase(string username, string email, string password) {
         loadingView.SetActive(true);
         registerComponent.gameObject.SetActive(false);
-        DBManager.shared().RegisterFirebase(email, password, HandleRegisterResponse);
+        DBManager.shared().RegisterFirebase(username, email, password, HandleRegisterResponse);
     }
 
     void HandleRegisterResponse(bool response) {
         loadingView.SetActive(false);
         if (response) {
+            ShowMessage("Successfully registered! After your approval, you can sign in.");
             loginComponent.gameObject.SetActive(true);
         }
         else {
             registerComponent.gameObject.SetActive(true);
             registerComponent.RegisterUnsuccessful();
-            ShowMessage("Register was not successful!");
+            ShowMessage("Registration failed! Make sure your email is in valid format and your password is at least 6 characters long.");
         }
     }
 
