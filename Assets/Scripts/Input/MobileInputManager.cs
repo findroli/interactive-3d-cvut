@@ -26,7 +26,7 @@ public class MobileInputManager: MonoBehaviour, IAnyInputManager {
             Vector3 pos = Input.touches[0].position;
             var diff = pos - touchPos;
             if (diff.magnitude > 0.2) {
-                var directions = new Vector3(diff.y, -diff.x, diff.z);
+                var directions = new Vector3(-diff.y, -diff.x, diff.z);
                 onSwipe?.Invoke(directions);
                 touchPos = Input.mousePosition;
             }
@@ -43,7 +43,9 @@ public class MobileInputManager: MonoBehaviour, IAnyInputManager {
     private void UpdateGestures(int touchCount) {
         switch (touchCount) {
             case 2: {
-                if (!pinching && !EventSystem.current.IsPointerOverGameObject()) {
+                if (!pinching && 
+                    !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) && 
+                    !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(1).fingerId)) {
                     swiping = false;
                     pinching = true;
                     touchDistance = (Input.touches[0].position - Input.touches[1].position).magnitude;
@@ -51,7 +53,7 @@ public class MobileInputManager: MonoBehaviour, IAnyInputManager {
                 break;
             }
             case 1: {
-                if (!swiping && !EventSystem.current.IsPointerOverGameObject()) {
+                if (!swiping && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
                     pinching = false;
                     swiping = true;
                     touchPos = Input.touches[0].position;

@@ -26,13 +26,13 @@ public class AnimationsPanel: MonoBehaviour {
 
     private void Collapse() {
         var tf = transform;
-        tf.position = new Vector2(tf.position.x - width/2 - 50, tf.position.y);
+        tf.position = new Vector2(-330, tf.position.y); //tf.position.x - width - 30
         collapsed = true;
     }
 
     private void Expand() {
         var tf = transform;
-        tf.position = new Vector2(tf.position.x + width/2 + 50, tf.position.y);
+        tf.position = new Vector2(30, tf.position.y); //tf.position.x + width + 30
         collapsed = false;
     }
 

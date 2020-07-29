@@ -11,6 +11,10 @@ public class InputHandler: MonoBehaviour {
     
     public Vector3 inputPosition => inputManager.GetInputPosition();
 
+    public bool Tapped() {
+        return Input.GetMouseButtonDown(0) || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
+    }
+
     private IAnyInputManager inputManager;
     
     private void Start() {

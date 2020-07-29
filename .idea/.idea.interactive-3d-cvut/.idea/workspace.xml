@@ -2,22 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AnimationCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AnimationCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ListView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ListView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ListView.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ListView.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ListViewCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ListViewCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailAnimationCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailAnimationCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/Common/Materials/ShadowMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/Common/Materials/ShadowMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/InteractionPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/InteractionPoint.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailEdit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailEdit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailImageCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailImageCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailVideoCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailVideoCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailPresentation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailPresentation.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SavePopup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SavePopup.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AR/ARManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AR/ARManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/normal-screen-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/normal-screen-icon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/MobileInputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/MobileInputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +37,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/RegisterComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ConfirmPopup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/Common/Shaders/MobileARShadow.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/14A4CFEF-F4B2-4845-AAB1-32DC299CB62B/e2/0a84db9c/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailTextCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/LoginCompoment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/Common/Scripts/ARFeatheredPlaneMeshVisualizer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/Sample/CanvasSampleSaveFileImage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@3.1.0-preview.8/Runtime/AR/ARPlaneManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -45,13 +50,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/ARUXAnimationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/FileBrowseHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/AlwaysOnTop.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/IAnyInputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/DBManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/AppState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/AlwaysOnTopDiffuse.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/ARKitCoachingOverlay.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SavePopup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B814B509-D4AD-406F-B40C-6C93E38929E7/461/Directory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/DisableTrackedVisuals.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,12 +72,14 @@
     <setting file="file://$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/FullScreenViewer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/LoginManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/ViewModePicker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractiveButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Resources/Models/Chevrolet Camaro 1960.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file:///Applications/Unity/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/LongPressEventTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/NativeGallery/NativeGallery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/LoadingAnimation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,6 +89,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/OBJLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/ListViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMP_SDF.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@3.1.0-preview.8/Runtime/AR/ARPlanesChangedEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@3.1.0-preview.8/Runtime/AR/ARRaycastManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AR/ARManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -98,11 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/ObjectShaker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AppState.cs" />
-        <option value="$PROJECT_DIR$/Assets/TopMenuPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/ModelVersionCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/VersionsPopupPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ProjectCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Singleton/AppState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Helper.cs" />
@@ -115,7 +119,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailAnimationCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ModelVersionCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/VersionsPopupPanel.cs" />
@@ -131,11 +134,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Creator/AnimationsPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/IOManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/PCInputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Input/MobileInputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Creator/CreatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailTextCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AR/ARManager.cs" />
         <option value="$PROJECT_DIR$/Assets/MessagePopup.cs" />
         <option value="$PROJECT_DIR$/Assets/RegisterComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" />
@@ -143,12 +143,21 @@
         <option value="$PROJECT_DIR$/Assets/ConfirmPopup.cs" />
         <option value="$PROJECT_DIR$/Assets/SavePopup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractiveButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/DisableTrackedVisuals.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AR/ARManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Input/MobileInputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Sprites-Diffuse.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/AlwaysOnTop.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/AlwaysOnTopDiffuse.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractiveButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" />
       </list>
     </option>
   </component>
@@ -177,10 +186,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="56475">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="56475" />
       <method v="2" />
     </configuration>
   </component>
@@ -221,7 +230,7 @@
       <workItem from="1589360681238" duration="2254000" />
       <workItem from="1593877659497" duration="7557000" />
       <workItem from="1594139568806" duration="14086000" />
-      <workItem from="1595591443282" duration="21668000" />
+      <workItem from="1595591443282" duration="35538000" />
     </task>
     <servers />
   </component>
@@ -258,54 +267,54 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1238" height="215" key="GridCell.Tab.0.bottom" timestamp="1594044726309">
+    <state width="1238" height="213" key="GridCell.Tab.0.bottom" timestamp="1596041594738">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="1238" height="202" key="GridCell.Tab.0.bottom/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588016399165" />
     <state width="1238" height="202" key="GridCell.Tab.0.bottom/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587404284338" />
-    <state width="1238" height="215" key="GridCell.Tab.0.bottom/0.23.1280.703@0.23.1280.703" timestamp="1594044726309" />
-    <state width="1238" height="215" key="GridCell.Tab.0.center" timestamp="1594044726307">
+    <state width="1238" height="213" key="GridCell.Tab.0.bottom/0.23.1280.703@0.23.1280.703" timestamp="1596041594738" />
+    <state width="1238" height="213" key="GridCell.Tab.0.center" timestamp="1596041594734">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="1238" height="202" key="GridCell.Tab.0.center/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588016399143" />
     <state width="1238" height="202" key="GridCell.Tab.0.center/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587404284337" />
-    <state width="1238" height="215" key="GridCell.Tab.0.center/0.23.1280.703@0.23.1280.703" timestamp="1594044726307" />
-    <state width="1238" height="215" key="GridCell.Tab.0.left" timestamp="1594044726307">
+    <state width="1238" height="213" key="GridCell.Tab.0.center/0.23.1280.703@0.23.1280.703" timestamp="1596041594734" />
+    <state width="1238" height="213" key="GridCell.Tab.0.left" timestamp="1596041594733">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="1238" height="202" key="GridCell.Tab.0.left/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588016399141" />
     <state width="1238" height="202" key="GridCell.Tab.0.left/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587404284336" />
-    <state width="1238" height="215" key="GridCell.Tab.0.left/0.23.1280.703@0.23.1280.703" timestamp="1594044726307" />
-    <state width="1238" height="215" key="GridCell.Tab.0.right" timestamp="1594044726308">
+    <state width="1238" height="213" key="GridCell.Tab.0.left/0.23.1280.703@0.23.1280.703" timestamp="1596041594733" />
+    <state width="1238" height="213" key="GridCell.Tab.0.right" timestamp="1596041594736">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="1238" height="202" key="GridCell.Tab.0.right/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588016399146" />
     <state width="1238" height="202" key="GridCell.Tab.0.right/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587404284337" />
-    <state width="1238" height="215" key="GridCell.Tab.0.right/0.23.1280.703@0.23.1280.703" timestamp="1594044726308" />
-    <state width="1238" height="215" key="GridCell.Tab.1.bottom" timestamp="1594044754538">
+    <state width="1238" height="213" key="GridCell.Tab.0.right/0.23.1280.703@0.23.1280.703" timestamp="1596041594736" />
+    <state width="1238" height="213" key="GridCell.Tab.1.bottom" timestamp="1596041620086">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="1238" height="202" key="GridCell.Tab.1.bottom/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588016399195" />
     <state width="1238" height="202" key="GridCell.Tab.1.bottom/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587404284339" />
-    <state width="1238" height="215" key="GridCell.Tab.1.bottom/0.23.1280.703@0.23.1280.703" timestamp="1594044754538" />
-    <state width="1238" height="215" key="GridCell.Tab.1.center" timestamp="1594044754537">
+    <state width="1238" height="213" key="GridCell.Tab.1.bottom/0.23.1280.703@0.23.1280.703" timestamp="1596041620086" />
+    <state width="1238" height="213" key="GridCell.Tab.1.center" timestamp="1596041620085">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="1238" height="202" key="GridCell.Tab.1.center/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588016399175" />
     <state width="1238" height="202" key="GridCell.Tab.1.center/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587404284338" />
-    <state width="1238" height="215" key="GridCell.Tab.1.center/0.23.1280.703@0.23.1280.703" timestamp="1594044754537" />
-    <state width="1238" height="215" key="GridCell.Tab.1.left" timestamp="1594044754537">
+    <state width="1238" height="213" key="GridCell.Tab.1.center/0.23.1280.703@0.23.1280.703" timestamp="1596041620085" />
+    <state width="1238" height="213" key="GridCell.Tab.1.left" timestamp="1596041620084">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="1238" height="202" key="GridCell.Tab.1.left/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588016399166" />
     <state width="1238" height="202" key="GridCell.Tab.1.left/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587404284338" />
-    <state width="1238" height="215" key="GridCell.Tab.1.left/0.23.1280.703@0.23.1280.703" timestamp="1594044754537" />
-    <state width="1238" height="215" key="GridCell.Tab.1.right" timestamp="1594044754538">
+    <state width="1238" height="213" key="GridCell.Tab.1.left/0.23.1280.703@0.23.1280.703" timestamp="1596041620084" />
+    <state width="1238" height="213" key="GridCell.Tab.1.right" timestamp="1596041620085">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="1238" height="202" key="GridCell.Tab.1.right/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588016399194" />
     <state width="1238" height="202" key="GridCell.Tab.1.right/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587404284339" />
-    <state width="1238" height="215" key="GridCell.Tab.1.right/0.23.1280.703@0.23.1280.703" timestamp="1594044754538" />
+    <state width="1238" height="213" key="GridCell.Tab.1.right/0.23.1280.703@0.23.1280.703" timestamp="1596041620085" />
     <state width="1238" height="215" key="GridCell.Tab.2.bottom" timestamp="1594044726096">
       <screen x="0" y="23" width="1280" height="703" />
     </state>
@@ -362,11 +371,12 @@
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="640" height="351" key="XDebugger.FullValuePopup/0.23.1280.703@0.23.1280.703" timestamp="1594044657853" />
-    <state x="1435" y="1258" width="801" height="519" key="find.popup" timestamp="1595979792640">
-      <screen x="1210" y="1103" width="1280" height="703" />
+    <state x="225" y="177" width="801" height="517" key="find.popup" timestamp="1596025371411">
+      <screen x="0" y="23" width="1280" height="700" />
     </state>
     <state x="337" y="240" width="747" height="727" key="find.popup/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588341747100" />
     <state x="337" y="241" width="652" height="729" key="find.popup/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587057513642" />
+    <state x="225" y="177" width="801" height="517" key="find.popup/0.23.1280.700@0.23.1280.700" timestamp="1596025371411" />
     <state x="225" y="178" width="801" height="519" key="find.popup/0.23.1280.703@0.23.1280.703" timestamp="1595942520919" />
     <state x="1435" y="1258" width="801" height="519" key="find.popup/1210.1103.1280.703/0.23.1920.1057@1210.1103.1280.703" timestamp="1595979792640" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1595596014818">

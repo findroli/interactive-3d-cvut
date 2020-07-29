@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class CreatorManager: MonoBehaviour {
+public class CreatorManager : MonoBehaviour {
     [SerializeField] private GameObject nodePrefab;
-    
+
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private CameraViewChange viewChange;
     [SerializeField] private InteractiveButton interactCreationBtn;
@@ -24,7 +24,10 @@ public class CreatorManager: MonoBehaviour {
 
     public GameObject model;
     public GameObject node;
-
+    public Camera CurrentCamera => currentCamera;
+    
+    private Camera currentCamera;
+    private ViewMode currentViewMode = ViewMode.view3D;
     private string modelName;
     private string versionName;
     private GameObject canvas;
@@ -32,6 +35,7 @@ public class CreatorManager: MonoBehaviour {
     private List<InteractionPoint> interactNodes = new List<InteractionPoint>();
     private Dictionary<InteractionPoint, NodeDetailData> nodesData = new Dictionary<InteractionPoint, NodeDetailData>();
     private NodeDetail currentDetail = null;
+    private Vector3 last3Dscale = Vector3.one;
 
     public void ViewFullScreenImage(Sprite sprite) {
         fullScreenViewer.gameObject.SetActive(true);
@@ -44,6 +48,7 @@ public class CreatorManager: MonoBehaviour {
     }
 
     void Start() {
+        currentCamera = viewCamera.GetComponent<Camera>();
         SetupUI();
         saveProjectBtn.onClick.AddListener(Save);
         interactCreationBtn.onClick.AddListener(ToggleInteractionPointCreation);
@@ -52,19 +57,20 @@ public class CreatorManager: MonoBehaviour {
 
     void Update() {
         if (interactCreationBtn.selected) {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             var mask = LayerMask.GetMask("Interaction");
             if (Physics.Raycast(ray, out hit, 500.0f, ~mask)) {
                 if (!node.activeInHierarchy) {
                     node.SetActive(true);
                 }
-                node.transform.position = hit.point;
+                //var direction = (currentCamera.transform.position - hit.point).normalized;
+                node.transform.position = hit.point; // + direction * 0.1f;
             }
             else if (node.activeInHierarchy) {
                 node.SetActive(false);
             }
-            if (Input.GetMouseButtonDown(0)) {
+            if (inputHandler.Tapped()) {
                 SetInteractionPointCreation(false);
             }
         }
@@ -83,7 +89,7 @@ public class CreatorManager: MonoBehaviour {
             LoadPointsFromData(projectData.ToOriginal());
             Debug.Log("CreatorManager.LoadModel(): loaded project model:\n" + modelName);
         }
-        if(AppState.shared().Mode == AppMode.Edit) {
+        if (AppState.shared().Mode == AppMode.Edit) {
             CreateMeshColliderRecursively(model.gameObject);
         }
     }
@@ -108,16 +114,17 @@ public class CreatorManager: MonoBehaviour {
 
     private void SetInteractionPointCreation(bool value) {
         interactCreationBtn.selected = value;
+        if (value) creationTip.GetComponentInChildren<Text>().text = "To place interaction point by clicking on 3D model";
         creationTip.SetActive(value);
         if (value) {
             node = Instantiate(nodePrefab, model.transform, false);
             node.SetActive(false);
         }
-        else { 
+        else {
             if (!node.activeInHierarchy) Destroy(node);
             else {
                 var interactPoint = node.GetComponent<InteractionPoint>();
-                if(interactPoint != null) interactNodes.Add(interactPoint);
+                if (interactPoint != null) interactNodes.Add(interactPoint);
             }
             node = null;
         }
@@ -128,7 +135,7 @@ public class CreatorManager: MonoBehaviour {
         interactCreationBtn.gameObject.SetActive(mode == AppMode.Edit);
         saveProjectBtn.gameObject.SetActive(mode == AppMode.Edit);
     }
-    
+
     private void Save() {
         Helper.CreateSavePopup(string.IsNullOrEmpty(versionName) ? "untitled" : versionName, saveName => {
             versionName = saveName;
@@ -136,14 +143,13 @@ public class CreatorManager: MonoBehaviour {
             var json = JsonUtility.ToJson(data, true);
             IOManager.SaveCurrentProject(modelName, saveName, json);
             var imagePath = IOManager.CurrentProjectVersionImagePath(modelName, versionName);
-            if(imagePath != null) ScreenCapture.CaptureScreenshot(imagePath);
+            if (imagePath != null) ScreenCapture.CaptureScreenshot(imagePath);
         });
     }
 
     private void Exit() {
-        Helper.CreateConfirmPopup("Are you sure you want to exit presentation? Unsaved changes will be lost!", "Exit", () => {
-            SceneManager.LoadScene("MainMenuScene");
-        });
+        Helper.CreateConfirmPopup("Are you sure you want to exit presentation? Unsaved changes will be lost!", "Exit",
+            () => { SceneManager.LoadScene("MainMenuScene"); });
     }
 
     private void LoadPointsFromData(NodeDetailData[] data) {
@@ -159,11 +165,11 @@ public class CreatorManager: MonoBehaviour {
     }
 
     private void OnInteractionPointSelect(InteractionPoint point) {
-        if(currentDetail != null) return;
+        if (currentDetail != null) return;
         if (AppState.shared().Mode == AppMode.Presentation) {
             var prefab = Resources.Load("NodeDetailPresentation") as GameObject;
             var obj = Instantiate(prefab, canvas.transform, false);
-            obj.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
+            obj.transform.position = currentCamera.WorldToScreenPoint(point.transform.position);
             var detail = obj.GetComponent<NodeDetailPresentation>();
             detail.onCancel += OnDetailCancel;
             detail.modelAnimator = model.GetComponent<Animator>();
@@ -171,11 +177,13 @@ public class CreatorManager: MonoBehaviour {
             if (nodesData.ContainsKey(point)) {
                 detail.UpdateData(nodesData[point]);
             }
+
             return;
         }
+
         var nodeDetailPrefab = Resources.Load("NodeDetailEdit") as GameObject;
         var nodeGO = Instantiate(nodeDetailPrefab, canvas.transform, false);
-        nodeGO.transform.position = Camera.main.WorldToScreenPoint(point.transform.position);
+        nodeGO.transform.position = currentCamera.WorldToScreenPoint(point.transform.position);
         var nodeDetail = nodeGO.GetComponent<NodeDetailEdit>();
         nodeDetail.interactionPoint = point;
         nodeDetail.modelAnimator = model.GetComponent<Animator>();
@@ -189,15 +197,23 @@ public class CreatorManager: MonoBehaviour {
     }
 
     private void OnViewModeChanged(ViewMode viewMode) {
+        currentViewMode = viewMode;
         arObject.SetActive(viewMode == ViewMode.viewAR);
         viewCamera.SetActive(viewMode == ViewMode.view3D);
+        viewChange.gameObject.SetActive(viewMode == ViewMode.view3D);
+        creationTip.SetActive(false);
+        OnDetailCancel();
         if (viewMode == ViewMode.viewAR) {
-            arObject.GetComponentInChildren<PlaceObjectsOnPlane>().spawnedObject = model;
-        } else {
+            last3Dscale = model.transform.localScale;
+            currentCamera = arObject.GetComponentInChildren<Camera>();
+        }
+        else {
             model.transform.position = Vector3.zero;
+            model.transform.localScale = last3Dscale;
+            currentCamera = viewCamera.GetComponent<Camera>();
         }
     }
-    
+
     private void OnEnable() {
         inputHandler.onRotateModel += RotateModel;
         inputHandler.onZoomModel += ZoomModel;
@@ -260,6 +276,10 @@ public class CreatorManager: MonoBehaviour {
     }
 
     private void RotateModel(Vector3 rotation) {
+        if (currentViewMode == ViewMode.viewAR) {
+            rotation.x = 0f;
+            rotation.z = 0f;
+        }
         model.transform.Rotate(rotation/10f, Space.World);
     }
 
@@ -269,7 +289,7 @@ public class CreatorManager: MonoBehaviour {
             model.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
             return;
         }
-        model.transform.localScale = new Vector3(scale.x + value / 100f, scale.y + value / 100f, scale.z + value / 100f);
+        model.transform.localScale = new Vector3(scale.x + value / 1000f, scale.y + value / 1000f, scale.z + value / 1000f);
         Debug.Log("Scale: " + model.transform.localScale);
     }
 

@@ -40,8 +40,8 @@ public class AddNodeDetailCell: MonoBehaviour {
     }
 
     private void Start() {
-        var rectTransform = GetComponent<RectTransform>();
-        buttonSpacing = rectTransform.sizeDelta.x / 10;
+        //var rectTransform = GetComponent<RectTransform>();
+        buttonSpacing *= GameObject.Find("Canvas").GetComponent<Canvas>().scaleFactor; //rectTransform.sizeDelta.x / 10;
         addBtn.onClick.AddListener(() => { CreationState = CreationState.chooseType; });
         cancelBtn.onClick.AddListener(() => { CreationState = CreationState.add; });
         textBtn.onClick.AddListener(() => {

@@ -6,9 +6,10 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 [RequireComponent(typeof(ARRaycastManager))]
-public class PlaceObjectsOnPlane : MonoBehaviour {
-    public GameObject spawnedObject;
+public class PlaceObjectsOnPlane: MonoBehaviour {
     public static event Action onPlacedObject;
+    
+    public GameObject spawnedObject;
 
     ARRaycastManager m_RaycastManager;
 

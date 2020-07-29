@@ -47,9 +47,9 @@ public class CameraViewChange: MonoBehaviour {
         var frontPos = buttonsHidden ? basePos : new Vector3(basePos.x + 3 * offset.y + 30, basePos.y, basePos.z);
 
         currentCoroutines = new Coroutine[] {
-            StartCoroutine(Helper.AnimateMovement(topBtn.transform, 15f, topPos)),
-            StartCoroutine(Helper.AnimateMovement(sideBtn.transform, 15f, sidePos)),
-            StartCoroutine(Helper.AnimateMovement(frontBtn.transform, 15f, frontPos))
+            StartCoroutine(Helper.AnimateMovement(topBtn.transform, 30f, topPos)),
+            StartCoroutine(Helper.AnimateMovement(sideBtn.transform, 30f, sidePos)),
+            StartCoroutine(Helper.AnimateMovement(frontBtn.transform, 30f, frontPos))
         };
     }
 }
