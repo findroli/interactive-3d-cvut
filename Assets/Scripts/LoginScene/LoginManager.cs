@@ -58,8 +58,12 @@ public class LoginManager : MonoBehaviour {
     void HandleAfterLoginFirebase(string id, string email, string password) {
         DBManager.shared().GetUser(id, email, password, user => {
             loadingView.SetActive(false);
-            if (!user.approved) {
-                ShowMessage("Your account has not yet been approved. Contact your supervisor for more information.");
+            if (user.approved != User.Approval.yes) {
+                if (user.approved == User.Approval.pending) {
+                    ShowMessage("Your account has not yet been approved. Wait or contact your supervisor for more information.");
+                } else if (user.approved == User.Approval.declined) {
+                    ShowMessage("Your registration has been declined. Contact your supervisor for more information.");
+                }
                 loginComponent.gameObject.SetActive(true);
                 return;
             }

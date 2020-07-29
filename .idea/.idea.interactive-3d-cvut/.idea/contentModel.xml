@@ -123,6 +123,7 @@
             <e p="FullScreenViewer.cs" t="Include" />
             <e p="InteractionPoint.cs" t="Include" />
             <e p="InteractiveButton.cs" t="Include" />
+            <e p="SavePopup.cs" t="Include" />
             <e p="ViewModePicker.cs" t="Include" />
           </e>
           <e p="Input" t="Include">
@@ -139,6 +140,8 @@
             <e p="RegisterComponent.cs" t="Include" />
           </e>
           <e p="MenuScene" t="Include">
+            <e p="AdminListCell.cs" t="Include" />
+            <e p="AdminPanel.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
             <e p="ModelVersionCell.cs" t="Include" />
             <e p="ModePicker.cs" t="Include" />
@@ -169,7 +172,6 @@
             <e p="NodeDetailEdit.cs" t="Include" />
             <e p="NodeDetailPresentation.cs" t="Include" />
           </e>
-          <e p="SavePopup.cs" t="Include" />
           <e p="Singleton" t="Include">
             <e p="AppState.cs" t="Include" />
             <e p="DBManager.cs" t="Include" />

@@ -41,10 +41,12 @@ public class TopMenuPanel: MonoBehaviour {
             menuObject.SetActive(!menuObject.activeInHierarchy);
         });
         exitButton.onClick.AddListener(() => {
+            DBManager.shared().LogoutCurrent();
             Application.Quit();
         });
         logoutButton.onClick.AddListener(() => {
             AppState.shared().CurrentUser = null;
+            DBManager.shared().LogoutCurrent();
             SceneManager.LoadScene("LoginScene");
         });
         if (AppState.shared().CurrentUser?.userType == User.UserType.presenter) {

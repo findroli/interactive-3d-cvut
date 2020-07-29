@@ -29,6 +29,10 @@ public class DBManager {
         });
     }
 
+    public void LogoutCurrent() {
+        FirebaseAuth.DefaultInstance.SignOut();
+    }
+
     public void GetUser(string id, string email, string password, UnityAction<User> callback) {
         FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(id).GetValueAsync()
             .ContinueWithOnMainThread(t => {
@@ -56,11 +60,48 @@ public class DBManager {
     public void AddUser(string id, string username, UnityAction<bool> callback) {
         var userDb = new UserDB();
         userDb.name = username;
-        userDb.approved = "no";
+        userDb.approved = "pending";
         userDb.type = "editor";
         string json = JsonUtility.ToJson(userDb);
-        FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(id).SetRawJsonValueAsync(json)
+        FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(id)
+            .SetRawJsonValueAsync(json)
             .ContinueWithOnMainThread(t => callback(t.IsCompleted));
+    }
+
+    public void LoadPendingUsers(UnityAction<bool, User[]> callback) {
+        FirebaseDatabase.DefaultInstance.RootReference.Child("users")
+            .GetValueAsync()
+            .ContinueWithOnMainThread(t => {
+                if(t.IsCompleted) {
+                    var users = new List<User>();
+                    var userSnapshots = t.Result.Children;
+                    foreach (var userSnapshot in userSnapshots) {
+                        var userDb = JsonUtility.FromJson<UserDB>(userSnapshot.GetRawJsonValue());
+                        var user = new User(userDb, userSnapshot.Key, "", "");
+                        if (user.approved == User.Approval.pending) {
+                            users.Add(user);
+                        }
+                    }
+                    callback(true, users.ToArray());
+                }
+                else {
+                    callback(false, new User[]{});
+                }
+            });
+    }
+
+    public void AcceptUser(string id, UnityAction<bool> callback) {
+        FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(id).Child("approved")
+            .SetValueAsync("yes").ContinueWithOnMainThread(t => {
+                callback(t.IsCompleted);
+            });
+    }
+    
+    public void DeclineUser(string id, UnityAction<bool> callback) {
+        FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(id).Child("approved")
+            .SetValueAsync("declined").ContinueWithOnMainThread(t => {
+                callback(t.IsCompleted);
+            });
     }
 
     private DBManager() {
