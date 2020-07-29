@@ -6,14 +6,12 @@ using UnityEngine.UI;
 
 public class AnimationsPanel: MonoBehaviour {
     [SerializeField] private Button collapseButton;
-    [SerializeField] private Sprite collapseImage;
-    [SerializeField] private Sprite expandImage;
     [SerializeField] private GameObject scrollViewContent;
     [SerializeField] private GameObject cellPrefab;
     [SerializeField] private GameObject emptyLabel;
 
     private float width;
-    private bool collapsed = false;
+    private bool collapsed = true;
     private Animator modelAnimator;
     
     void Start() {
@@ -28,13 +26,13 @@ public class AnimationsPanel: MonoBehaviour {
 
     private void Collapse() {
         var tf = transform;
-        tf.localPosition = new Vector2(tf.localPosition.x - width, 0f);
+        tf.position = new Vector2(tf.position.x - width/2 - 50, tf.position.y);
         collapsed = true;
     }
 
     private void Expand() {
         var tf = transform;
-        tf.localPosition = new Vector2(tf.localPosition.x + width, 0f);
+        tf.position = new Vector2(tf.position.x + width/2 + 50, tf.position.y);
         collapsed = false;
     }
 
@@ -47,6 +45,9 @@ public class AnimationsPanel: MonoBehaviour {
         foreach (var animName in animNames) {
             var cell = Instantiate(cellPrefab, scrollViewContent.transform);
             cell.GetComponentInChildren<Text>().text = animName;
+            cell.GetComponentInChildren<Button>().onClick.AddListener(() => {
+                modelAnimator.SetTrigger(animName);
+            });
         }
     }
 }

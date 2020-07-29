@@ -2,6 +2,7 @@
   "dependencies": {
     "com.google.firebase.auth": "6.14.0",
     "com.google.firebase.database": "6.14.0",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.device-simulator": "2.0.0-preview",
     "com.unity.ide.rider": "1.1.4",

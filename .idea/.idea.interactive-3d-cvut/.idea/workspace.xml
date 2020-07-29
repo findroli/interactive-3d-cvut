@@ -3,20 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/ConfirmPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/ConfirmPopup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/MessagePopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/MessagePopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AnimationCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AnimationCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ListView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ListView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ListView.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ListView.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ListViewCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ListViewCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailAnimationCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailAnimationCell.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailEdit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailEdit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailPresentation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailPresentation.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/PasswordPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/PasswordPopup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/SavePopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/SavePopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailImageCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailImageCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailTextCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailVideoCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailVideoCell.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractiveButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractiveButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/full-screen-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/full-screen-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/full-screen-icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/full-screen-icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/normal-screen-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/normal-screen-icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +113,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailVideoCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailTextCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailAnimationCell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" />
@@ -144,17 +144,13 @@
         <option value="$PROJECT_DIR$/Assets/SavePopup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractiveButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" />
       </list>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
   </component>
   <component name="ProjectId" id="1aZmymE74vf1jixzzYzh4FEROLI" />
   <component name="ProjectViewState">
@@ -225,7 +221,7 @@
       <workItem from="1589360681238" duration="2254000" />
       <workItem from="1593877659497" duration="7557000" />
       <workItem from="1594139568806" duration="14086000" />
-      <workItem from="1595591443282" duration="18263000" />
+      <workItem from="1595591443282" duration="21668000" />
     </task>
     <servers />
   </component>
@@ -366,12 +362,13 @@
       <screen x="0" y="23" width="1280" height="703" />
     </state>
     <state width="640" height="351" key="XDebugger.FullValuePopup/0.23.1280.703@0.23.1280.703" timestamp="1594044657853" />
-    <state x="225" y="178" width="801" height="519" key="find.popup" timestamp="1595942520919">
-      <screen x="0" y="23" width="1280" height="703" />
+    <state x="1435" y="1258" width="801" height="519" key="find.popup" timestamp="1595979792640">
+      <screen x="1210" y="1103" width="1280" height="703" />
     </state>
     <state x="337" y="240" width="747" height="727" key="find.popup/-1280.303.1280.777/0.23.1920.986@0.23.1920.986" timestamp="1588341747100" />
     <state x="337" y="241" width="652" height="729" key="find.popup/-1280.303.1280.777/0.23.1920.989@0.23.1920.989" timestamp="1587057513642" />
     <state x="225" y="178" width="801" height="519" key="find.popup/0.23.1280.703@0.23.1280.703" timestamp="1595942520919" />
+    <state x="1435" y="1258" width="801" height="519" key="find.popup/1210.1103.1280.703/0.23.1920.1057@1210.1103.1280.703" timestamp="1595979792640" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1595596014818">
       <screen x="0" y="23" width="1280" height="703" />
     </state>

@@ -141,7 +141,7 @@ public class CreatorManager: MonoBehaviour {
     }
 
     private void Exit() {
-        Helper.CreateConfirmPopup("Are you sure you want to exit presentation?", "Exit", () => {
+        Helper.CreateConfirmPopup("Are you sure you want to exit presentation? Unsaved changes will be lost!", "Exit", () => {
             SceneManager.LoadScene("MainMenuScene");
         });
     }
