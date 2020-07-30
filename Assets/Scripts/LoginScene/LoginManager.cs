@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Firebase;
-using Firebase.Database;
-using Firebase.Extensions;
-using Firebase.Unity.Editor;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,7 +14,6 @@ public class LoginManager : MonoBehaviour {
     
     void Start() {
         DBManager.shared();
-        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://interactive3d-25d90.firebaseio.com/");
         SetUpLoginAndRegister();
         presentBtn.onClick.AddListener(StartInPresentationMode);
         editModeBtn.onClick.AddListener(StartInEditMode);

@@ -205,6 +205,7 @@ public class CreatorManager : MonoBehaviour {
         OnDetailCancel();
         if (viewMode == ViewMode.viewAR) {
             last3Dscale = model.transform.localScale;
+            model.transform.localScale = model.transform.localScale / 8;
             currentCamera = arObject.GetComponentInChildren<Camera>();
         }
         else {

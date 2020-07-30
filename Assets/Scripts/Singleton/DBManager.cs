@@ -6,6 +6,7 @@ using Firebase;
 using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Extensions;
+using Firebase.Unity.Editor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -105,6 +106,7 @@ public class DBManager {
     }
 
     private DBManager() {
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://interactive3d-25d90.firebaseio.com/");
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             var dependencyStatus = task.Result;
             if (dependencyStatus == DependencyStatus.Available) {

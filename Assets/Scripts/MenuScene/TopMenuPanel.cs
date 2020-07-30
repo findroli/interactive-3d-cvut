@@ -52,6 +52,9 @@ public class TopMenuPanel: MonoBehaviour {
         if (AppState.shared().CurrentUser?.userType == User.UserType.presenter) {
             switchModeButton.gameObject.SetActive(false);
         }
+        if (AppState.shared().CurrentUser?.userType != User.UserType.admin) {
+            adminPanelButton.gameObject.SetActive(false);
+        }
         else {
             switchModeButton.onClick.AddListener(() => {
                 if (AppState.shared().Mode == AppMode.Edit) {
