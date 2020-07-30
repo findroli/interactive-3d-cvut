@@ -61,7 +61,7 @@ public class DBManager {
     public void AddUser(string id, string username, UnityAction<bool> callback) {
         var userDb = new UserDB();
         userDb.name = username;
-        userDb.approved = "pending";
+        userDb.approved = "yes";
         userDb.type = "editor";
         string json = JsonUtility.ToJson(userDb);
         FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(id)

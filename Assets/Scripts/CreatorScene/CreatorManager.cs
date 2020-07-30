@@ -35,6 +35,7 @@ public class CreatorManager : MonoBehaviour {
     private List<InteractionPoint> interactNodes = new List<InteractionPoint>();
     private Dictionary<InteractionPoint, NodeDetailData> nodesData = new Dictionary<InteractionPoint, NodeDetailData>();
     private NodeDetail currentDetail = null;
+    private MovingWindow moveWindow;
     private Vector3 last3Dscale = Vector3.one;
 
     public void ViewFullScreenImage(Sprite sprite) {
@@ -174,6 +175,7 @@ public class CreatorManager : MonoBehaviour {
             detail.onCancel += OnDetailCancel;
             detail.modelAnimator = model.GetComponent<Animator>();
             currentDetail = detail;
+            moveWindow = detail.GetComponent<MovingWindow>();
             if (nodesData.ContainsKey(point)) {
                 detail.UpdateData(nodesData[point]);
             }
@@ -191,6 +193,7 @@ public class CreatorManager : MonoBehaviour {
         nodeDetail.onCancel += OnDetailCancel;
         nodeDetail.onDelete += OnDetailDelete;
         currentDetail = nodeDetail;
+        moveWindow = nodeDetail.GetComponent<MovingWindow>();
         if (nodesData.ContainsKey(point)) {
             nodeDetail.UpdateData(nodesData[point]);
         }
@@ -243,6 +246,7 @@ public class CreatorManager : MonoBehaviour {
         detail.onDelete -= OnDetailDelete;
         Destroy(detail.gameObject);
         currentDetail = null;
+        moveWindow = null;
     }
 
     private void OnDetailDelete() {
@@ -258,6 +262,7 @@ public class CreatorManager : MonoBehaviour {
         Destroy(editDetail.gameObject);
         Destroy(editDetail.interactionPoint.gameObject);
         currentDetail = null;
+        moveWindow = null;
     }
 
     private void OnDetailCancel() {
@@ -274,9 +279,11 @@ public class CreatorManager : MonoBehaviour {
             Destroy(editDetail.gameObject);
         }
         currentDetail = null;
+        moveWindow = null;
     }
 
     private void RotateModel(Vector3 rotation) {
+        if(moveWindow != null && moveWindow.IsMoving) return;
         if (currentViewMode == ViewMode.viewAR) {
             rotation.x = 0f;
             rotation.z = 0f;
@@ -285,6 +292,7 @@ public class CreatorManager : MonoBehaviour {
     }
 
     private void ZoomModel(float value) {
+        if(moveWindow != null && moveWindow.IsMoving) return;
         var scale = model.transform.localScale;
         if (scale.x + value / 100f <= 0f) {
             model.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);

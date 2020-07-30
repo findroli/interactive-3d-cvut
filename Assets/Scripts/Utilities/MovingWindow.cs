@@ -6,7 +6,8 @@ public class MovingWindow: MonoBehaviour {
     [SerializeField] private LongPressEventTrigger longPress;
 
     public InputHandler inputHandler;
-    
+
+    public bool IsMoving => isMoving;
     private bool isMoving = false;
     private Vector3 moveOffset;
     
