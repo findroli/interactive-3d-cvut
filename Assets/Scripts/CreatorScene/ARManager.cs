@@ -11,6 +11,7 @@ using UnityEngine.XR.ARSubsystems;
 public class ARManager: MonoBehaviour {
     [SerializeField] private ARPlaneManager arPlaneManager;
     [SerializeField] private GameObject tipObject;
+    [SerializeField] private ARKitCoachingOverlay coachingOverlay;
     
     public delegate void OnPlacedObject();
     public static event OnPlacedObject onPlacedObject;
@@ -43,9 +44,14 @@ public class ARManager: MonoBehaviour {
                     m_CreatorManager.model.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
                     m_HasPlacedObject = true;
                     tipObject.SetActive(false);
+                    coachingOverlay.activatesAutomatically = false;
                     onPlacedObject?.Invoke();
                 }
             }
         }
+    }
+
+    private void OnDisable() {
+        m_HasPlacedObject = false;
     }
 }

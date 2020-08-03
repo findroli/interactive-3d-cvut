@@ -7,6 +7,16 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Plugins" t="Include">
+          <e p="Android" t="Include">
+            <e p="Firebase" t="Include">
+              <e p="AndroidManifest.xml" t="Include" />
+              <e p="res" t="Include">
+                <e p="values" t="Include">
+                  <e p="google-services.xml" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
           <e p="ARFoundationDemos" t="Include">
             <e p="Common" t="Include">
               <e p="Scripts" t="Include">
@@ -113,11 +123,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="AR" t="Include">
-            <e p="ARManager.cs" t="Include" />
-          </e>
           <e p="CreatorScene" t="Include">
             <e p="AnimationsPanel.cs" t="Include" />
+            <e p="ARManager.cs" t="Include" />
             <e p="CameraViewChange.cs" t="Include" />
             <e p="CreatorManager.cs" t="Include" />
             <e p="FullScreenViewer.cs" t="Include" />

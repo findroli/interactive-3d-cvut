@@ -2624,6 +2624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arPlaneManager: {fileID: 1414976996}
   tipObject: {fileID: 1150937057}
+  coachingOverlay: {fileID: 1966423477}
 --- !u!114 &1414976999
 MonoBehaviour:
   m_ObjectHideFlags: 0
