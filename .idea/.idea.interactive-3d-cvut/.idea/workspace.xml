@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="97e094be-c3e5-4596-adaa-babbb4e26679" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.interactive-3d-cvut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/InteractionPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/InteractionPoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailVideoCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/NodeDetailVideoCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/ListViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/ListViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/FullScreenViewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatorScene/FullScreenViewer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,8 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ModelVersionCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/VersionsPopupPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" />
@@ -128,7 +126,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LoginManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ConfirmPopup.cs" />
         <option value="$PROJECT_DIR$/Assets/SavePopup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractiveButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs" />
@@ -158,7 +155,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/ListViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/FullScreenViewer.cs" />
       </list>
     </option>
   </component>
@@ -232,7 +232,7 @@
       <workItem from="1593877659497" duration="7557000" />
       <workItem from="1594139568806" duration="14086000" />
       <workItem from="1595591443282" duration="55444000" />
-      <workItem from="1596466616361" duration="10394000" />
+      <workItem from="1596466616361" duration="13563000" />
     </task>
     <servers />
   </component>

@@ -10,6 +10,7 @@ public class NodeDetailVideoCell: NodeDetailCell {
     [SerializeField] private Button deleteButton;
     [SerializeField] private Button playButton;
     [SerializeField] private Button pauseButton;
+    [SerializeField] private Button fullScreenButton;
     
     private string filename;
 
@@ -17,9 +18,13 @@ public class NodeDetailVideoCell: NodeDetailCell {
         deleteButton.onClick.AddListener(() => { RaiseOnDelete(this); });
         playButton.onClick.AddListener(Play);
         pauseButton.onClick.AddListener(Pause);
+        fullScreenButton.onClick.AddListener(() => {
+            player.Pause();
+            Helper.FullScreenViewer(filename);
+        });
     }
 
-    public override void CreatingEnded() { 
+    public override void CreatingEnded() {
         deleteButton.gameObject.SetActive(false);
     }
 
@@ -28,7 +33,6 @@ public class NodeDetailVideoCell: NodeDetailCell {
         if(videoCellData == null) return;
         filename = videoCellData.videoFile;
         player.url = "file://" + filename;
-        Debug.Log("NodeDetailVideoCell.FillWithData(): URL set:\n" + player.url);
     }
 
     public override NodeCellData GetData() {

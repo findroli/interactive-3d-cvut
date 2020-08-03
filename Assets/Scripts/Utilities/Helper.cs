@@ -16,6 +16,11 @@ public class Helper {
         creatorManager.ViewFullScreenImage(sprite);
     }
 
+    public static void FullScreenViewer(string videoPath) {
+        var creatorManager = GameObject.FindObjectOfType<CreatorManager>();
+        creatorManager.ViewFullScreenVideo(videoPath);
+    }
+
     public static void CreatePasswordPopup(PasswordPopup.OnDone callback) {
         var canvas = GameObject.Find("Canvas");
         var popup = GameObject.Instantiate(Resources.Load("PasswordPopup"), canvas.transform) as GameObject;

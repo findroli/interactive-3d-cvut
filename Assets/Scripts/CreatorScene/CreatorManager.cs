@@ -46,6 +46,11 @@ public class CreatorManager : MonoBehaviour {
         fullScreenViewer.ViewImage(sprite);
     }
 
+    public void ViewFullScreenVideo(string path) {
+        fullScreenViewer.gameObject.SetActive(true);
+        fullScreenViewer.ShowVideo(path);
+    }
+
     public void AddMovingWindow(MovingWindow mw) {
         moveWindows.Add(mw);
     }
