@@ -12,7 +12,7 @@ public class NodeDetailEdit: MonoBehaviour, NodeDetail {
     public event OnCancel onCancel;
     public delegate void OnDelete();
     public event OnDelete onDelete;
-    
+
     [SerializeField] private GameObject textCellPrefab;
     [SerializeField] private GameObject imageCellPrefab;
     [SerializeField] private GameObject videoCellPrefab;
@@ -80,7 +80,7 @@ public class NodeDetailEdit: MonoBehaviour, NodeDetail {
 
     private void SelectAnimation() {
         if (modelAnimator == null) {
-            Debug.Log("Model has no animator!");
+            Helper.CreateMessagePopup("Model has no animations to play.");
             return;
         }
         var listView = Instantiate(listViewPrefab, addCell.transform.position, Quaternion.identity, transform);

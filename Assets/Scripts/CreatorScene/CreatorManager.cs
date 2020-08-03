@@ -8,6 +8,9 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class CreatorManager : MonoBehaviour {
+    private static string ModelLayerName = "Interaction";
+    private static string PointsLayerName = "Points";
+    
     [SerializeField] private GameObject nodePrefab;
 
     [SerializeField] private InputHandler inputHandler;
@@ -35,12 +38,20 @@ public class CreatorManager : MonoBehaviour {
     private List<InteractionPoint> interactNodes = new List<InteractionPoint>();
     private Dictionary<InteractionPoint, NodeDetailData> nodesData = new Dictionary<InteractionPoint, NodeDetailData>();
     private NodeDetail currentDetail = null;
-    private MovingWindow moveWindow;
+    private List<MovingWindow> moveWindows;
     private Vector3 last3Dscale = Vector3.one;
 
     public void ViewFullScreenImage(Sprite sprite) {
         fullScreenViewer.gameObject.SetActive(true);
         fullScreenViewer.ViewImage(sprite);
+    }
+
+    public void AddMovingWindow(MovingWindow mw) {
+        moveWindows.Add(mw);
+    }
+
+    public void RemoveMovingWindow(MovingWindow mw) {
+        moveWindows.Remove(mw);
     }
 
     private void Awake() {
@@ -49,6 +60,7 @@ public class CreatorManager : MonoBehaviour {
     }
 
     void Start() {
+        moveWindows = new List<MovingWindow>();
         currentCamera = viewCamera.GetComponent<Camera>();
         SetupUI();
         saveProjectBtn.onClick.AddListener(Save);
@@ -57,22 +69,41 @@ public class CreatorManager : MonoBehaviour {
     }
 
     void Update() {
-        if (interactCreationBtn.selected) {
-            Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            var mask = LayerMask.GetMask("Interaction");
-            if (Physics.Raycast(ray, out hit, 500.0f, ~mask)) {
-                if (!node.activeInHierarchy) {
-                    node.SetActive(true);
-                }
-                //var direction = (currentCamera.transform.position - hit.point).normalized;
-                node.transform.position = hit.point; // + direction * 0.1f;
+        if(inputHandler.Tapped()) {
+            if (interactCreationBtn.selected) {
+                HandlePointCreationInput();
             }
-            else if (node.activeInHierarchy) {
-                node.SetActive(false);
+            else {
+                CheckForInteractionPointSelection();
             }
-            if (inputHandler.Tapped()) {
-                SetInteractionPointCreation(false);
+        }
+    }
+
+    void HandlePointCreationInput() {
+        Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        var mask = LayerMask.GetMask(ModelLayerName);
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask)) {
+            EndInteractionPointCreation(true, hit.point);
+        }
+        else {
+            EndInteractionPointCreation(false, Vector3.zero);
+        }
+        
+    }
+
+    void CheckForInteractionPointSelection() {
+        Debug.Log("Checking for interaction... " + inputHandler.inputPosition);
+        Ray ray = currentCamera.ScreenPointToRay(inputHandler.inputPosition);
+        ray.origin -= ray.direction * 10f;
+        RaycastHit hit;
+        var mask = LayerMask.GetMask(PointsLayerName);
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask)) {
+            Debug.Log("Hit something!" + hit.collider.gameObject.name);
+            var point = hit.collider.gameObject.GetComponent<InteractionPoint>();
+            if (point != null) {
+                Debug.Log("Its interaction point");
+                point.UserTapped();
             }
         }
     }
@@ -82,7 +113,10 @@ public class CreatorManager : MonoBehaviour {
         modelName = AppState.shared().ModelName;
         var prefab = Resources.Load("Models/" + modelName);
         model = Instantiate(prefab) as GameObject;
-        model.layer = 8;
+        var children = model.GetComponentsInChildren<Transform>();
+        foreach (var child in children) {
+            child.gameObject.layer = LayerMask.NameToLayer(ModelLayerName);
+        }
         versionName = AppState.shared().ModelVersionName;
         if (versionName != null) {
             var fileContent = IOManager.LoadProjectJson(modelName, versionName);
@@ -110,25 +144,29 @@ public class CreatorManager : MonoBehaviour {
     }
 
     void ToggleInteractionPointCreation() {
-        SetInteractionPointCreation(!interactCreationBtn.selected);
-    }
-
-    private void SetInteractionPointCreation(bool value) {
-        interactCreationBtn.selected = value;
-        if (value) creationTip.GetComponentInChildren<Text>().text = "To place interaction point by clicking on 3D model";
-        creationTip.SetActive(value);
-        if (value) {
-            node = Instantiate(nodePrefab, model.transform, false);
-            node.SetActive(false);
+        if (!interactCreationBtn.selected) {
+            interactCreationBtn.selected = true;
+            creationTip.SetActive(true);
+            creationTip.GetComponentInChildren<Text>().text = "To place interaction point by clicking on 3D model";
         }
         else {
-            if (!node.activeInHierarchy) Destroy(node);
-            else {
-                var interactPoint = node.GetComponent<InteractionPoint>();
-                if (interactPoint != null) interactNodes.Add(interactPoint);
-            }
-            node = null;
+            EndInteractionPointCreation(false, Vector3.zero);
         }
+    }
+
+    private void EndInteractionPointCreation(bool shouldCreate, Vector3 position) {
+        interactCreationBtn.selected = false;
+        creationTip.SetActive(false);
+        if (shouldCreate) {
+            node = Instantiate(nodePrefab, model.transform, false);
+            node.transform.position = position;
+            var interactPoint = node.GetComponent<InteractionPoint>();
+            if (interactPoint != null) interactNodes.Add(interactPoint);
+        }
+        else {
+            Destroy(node);
+        }
+        node = null;
     }
 
     private void SetupUI() {
@@ -175,11 +213,10 @@ public class CreatorManager : MonoBehaviour {
             detail.onCancel += OnDetailCancel;
             detail.modelAnimator = model.GetComponent<Animator>();
             currentDetail = detail;
-            moveWindow = detail.GetComponent<MovingWindow>();
+            moveWindows.Add(detail.GetComponent<MovingWindow>());;
             if (nodesData.ContainsKey(point)) {
                 detail.UpdateData(nodesData[point]);
             }
-
             return;
         }
 
@@ -193,7 +230,7 @@ public class CreatorManager : MonoBehaviour {
         nodeDetail.onCancel += OnDetailCancel;
         nodeDetail.onDelete += OnDetailDelete;
         currentDetail = nodeDetail;
-        moveWindow = nodeDetail.GetComponent<MovingWindow>();
+        moveWindows.Add(nodeDetail.GetComponent<MovingWindow>());;
         if (nodesData.ContainsKey(point)) {
             nodeDetail.UpdateData(nodesData[point]);
         }
@@ -246,7 +283,7 @@ public class CreatorManager : MonoBehaviour {
         detail.onDelete -= OnDetailDelete;
         Destroy(detail.gameObject);
         currentDetail = null;
-        moveWindow = null;
+        moveWindows.Remove(detail.GetComponent<MovingWindow>());
     }
 
     private void OnDetailDelete() {
@@ -262,13 +299,14 @@ public class CreatorManager : MonoBehaviour {
         Destroy(editDetail.gameObject);
         Destroy(editDetail.interactionPoint.gameObject);
         currentDetail = null;
-        moveWindow = null;
+        moveWindows.Remove(editDetail.GetComponent<MovingWindow>());
     }
 
     private void OnDetailCancel() {
         var presDetail = currentDetail as NodeDetailPresentation;
         if (presDetail != null) {
             presDetail.onCancel -= OnDetailCancel;
+            moveWindows.Remove(presDetail.GetComponent<MovingWindow>());
             Destroy(presDetail.gameObject);
         }
         var editDetail = currentDetail as NodeDetailEdit;
@@ -276,14 +314,14 @@ public class CreatorManager : MonoBehaviour {
             editDetail.onDone -= OnDetailDone;
             editDetail.onCancel -= OnDetailCancel;
             editDetail.onDelete -= OnDetailDelete;
+            moveWindows.Remove(editDetail.GetComponent<MovingWindow>());
             Destroy(editDetail.gameObject);
         }
         currentDetail = null;
-        moveWindow = null;
     }
 
     private void RotateModel(Vector3 rotation) {
-        if(moveWindow != null && moveWindow.IsMoving) return;
+        if(IsAnyWindowMoving()) return;
         if (currentViewMode == ViewMode.viewAR) {
             rotation.x = 0f;
             rotation.z = 0f;
@@ -292,7 +330,7 @@ public class CreatorManager : MonoBehaviour {
     }
 
     private void ZoomModel(float value) {
-        if(moveWindow != null && moveWindow.IsMoving) return;
+        if(IsAnyWindowMoving()) return;
         var scale = model.transform.localScale;
         if (scale.x + value / 100f <= 0f) {
             model.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
@@ -300,6 +338,10 @@ public class CreatorManager : MonoBehaviour {
         }
         model.transform.localScale = new Vector3(scale.x + value / 1000f, scale.y + value / 1000f, scale.z + value / 1000f);
         Debug.Log("Scale: " + model.transform.localScale);
+    }
+
+    private bool IsAnyWindowMoving() {
+        return moveWindows.Count > 0 && moveWindows.Any(mw => mw.IsMoving);
     }
 
     private void ChangeView(CameraViewChange.CameraDefaultView view) {
