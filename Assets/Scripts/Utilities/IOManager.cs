@@ -65,7 +65,7 @@ public class IOManager {
     public static string GetLatestVersionName(string modelName) {
         var versions = LoadModelVersionNames(modelName);
         if(!versions.Any()) return null;
-        return versions.OrderBy(Directory.GetCreationTime).First();
+        return versions.OrderBy(Directory.GetCreationTime).Last();
     }
 
     private static string GetAllModelsFolder() {

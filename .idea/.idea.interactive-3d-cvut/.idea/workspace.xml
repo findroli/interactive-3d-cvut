@@ -10,105 +10,246 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="8" column="31" selection-start-line="7" selection-end-line="8" selection-end-column="31" />
+              <folding>
+                <marker date="1596448044405" expanded="false" signature="6:64" ph="..." />
+                <marker date="1596448044405" expanded="true" signature="107:1317" ph="{...}" />
+                <marker date="1596448044405" expanded="true" signature="409:531" ph="{...}" />
+                <marker date="1596448044405" expanded="true" signature="606:1095" ph="{...}" />
+                <marker date="1596448044405" expanded="true" signature="966:1089" ph="{...}" />
+                <marker date="1596448044405" expanded="true" signature="1153:1203" ph="{...}" />
+                <marker date="1596448044405" expanded="true" signature="1263:1315" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="125" column="35" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
+              <folding>
+                <marker date="1596486784067" expanded="false" signature="6:148" ph="..." />
+                <marker date="1596486784067" expanded="true" signature="205:5890" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="1222:1273" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="1323:1815" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="1413:1763" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="1853:2374" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="1975:2171" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="2102:2161" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="2206:2367" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="2405:2862" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="2915:3060" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="2969:3020" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="3097:3658" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="3134:3240" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="3719:4050" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="3940:3988" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="4107:4217" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="4250:4840" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="4337:4823" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="4411:4640" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="4568:4624" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="4640:4813" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="4873:5526" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="4960:5509" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="5034:5326" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="5250:5310" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="5326:5499" ph="{...}" />
+                <marker date="1596486784067" expanded="true" signature="5578:5883" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/FileBrowseHandler.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <folding>
+                <marker date="1593184677287" expanded="false" signature="6:24" ph="..." />
+                <marker date="1593184677287" expanded="true" signature="57:1468" ph="{...}" />
+                <marker date="1593184677287" expanded="true" signature="85:113" ph="{...}" />
+                <marker date="1593184677287" expanded="true" signature="265:972" ph="{...}" />
+                <marker date="1593184677287" expanded="true" signature="1041:1461" ph="{...}" />
+                <marker date="1593184677287" expanded="true" signature="1065:1455" ph="{...}" />
+                <marker date="1593184677287" expanded="true" signature="1131:1228" ph="{...}" />
+                <marker date="1593184677287" expanded="true" signature="1294:1375" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/MenuManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1682">
+              <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+              <folding>
+                <marker date="1596448044407" expanded="false" signature="6:233" ph="..." />
+                <marker date="1596448044407" expanded="true" signature="275:4853" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="734:884" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="914:973" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="1008:1067" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="1097:1368" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="1405:2360" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="1498:2354" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="2414:3240" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="2475:2797" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="2958:3056" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="3292:4336" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="3729:3904" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="3961:4143" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="4200:4329" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="4377:4455" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="4488:4570" ph="{...}" />
+                <marker date="1596448044407" expanded="true" signature="4646:4851" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/IOManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+              <folding>
+                <marker date="1596523303277" expanded="false" signature="6:114" ph="..." />
+                <marker date="1596523303277" expanded="true" signature="139:3813" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="199:264" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="386:953" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="565:747" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="1049:1190" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="1267:1373" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="1422:1492" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="1561:1717" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="1798:2457" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="1891:2099" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="2195:2316" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="2523:2695" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="2744:2953" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="2858:2920" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="3043:3298" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="3148:3265" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="3415:3811" ph="{...}" />
+                <marker date="1596523303277" expanded="true" signature="3661:3778" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>system.windows.</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/PCInputManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/UserDB.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/Samples/ObjFromStream.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserMac.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/AdminPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/SavePopup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/RegisterComponent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ConfirmPopup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/Common/Shaders/MobileARShadow.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/14A4CFEF-F4B2-4845-AAB1-32DC299CB62B/e2/0a84db9c/Animator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/Sample/BasicSample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailTextCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/LoginCompoment.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/Common/Scripts/ARFeatheredPlaneMeshVisualizer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/Sample/CanvasSampleSaveFileImage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@3.1.0-preview.8/Runtime/AR/ARPlaneManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/MessagePopup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/ARUXAnimationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/FileBrowseHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/AlwaysOnTop.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/AppState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/IAnyInputManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/DBManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/94FF7C8A-5D71-4836-8339-F72033F97E1E/61/ffe302bb/Dispatcher.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/AlwaysOnTopDiffuse.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/ARKitCoachingOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Helper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B814B509-D4AD-406F-B40C-6C93E38929E7/461/Directory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/DisableTrackedVisuals.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/ProjectCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/CellDataJsonWrapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/MovingWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/PasswordPopup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/AdminListCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ObjectShaker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/DisableTrackedVisuals.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/ARKitCoachingOverlay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailPresentation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/TopMenuPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/ListViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/MobileInputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/AddNodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailAnimationCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/IOManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/MessagePopup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailTextCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/Common/Scripts/ARFeatheredPlaneMeshVisualizer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ConfirmPopup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/NativeGallery/NativeGallery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/Common/Shaders/MobileARShadow.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/LoginManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/RegisterComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/LoadingAnimation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/LoginCompoment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/UserDB.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserMac.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractiveButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/FullScreenViewer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/ViewModePicker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/LoginManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/CameraViewChange.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractiveButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Resources/Models/Chevrolet Camaro 1960.prefab" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file:///Applications/Unity/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/LongPressEventTrigger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/NativeGallery/NativeGallery.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoginScene/LoadingAnimation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/AnimationsPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ProjectData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/CharWordReader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/OBJLoader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/ListViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMP_SDF.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@3.1.0-preview.8/Runtime/AR/ARPlanesChangedEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Custom-Atlas.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetail.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@3.1.0-preview.8/Runtime/AR/ARRaycastManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/ARManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailImageCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMPro.cginc" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/OBJLoaderHelper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ObjectShaker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/TextureLoader/BMPLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/InteractionPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/Sample/CanvasSampleSaveFileImage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatorScene/SavePopup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/ProjectCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@3.1.0-preview.8/Runtime/AR/ARRaycastManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/PasswordPopup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/Sample/BasicSample.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/CharWordReader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/AdminPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/AdminListCell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/TopMenuPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/OBJLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/AlwaysOnTop.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/AlwaysOnTopDiffuse.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/MTLLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/OBJLoaderHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@3.1.0-preview.8/Runtime/AR/ARPlaneManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMPro.cginc" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/Samples/ObjFromStream.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMP_SDF.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/OBJImport/TextureLoader/BMPLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailAnimationCell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/CreatorScene.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/LongPressEventTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@3.1.0-preview.8/Runtime/AR/ARPlanesChangedEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/IAnyInputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Custom-Atlas.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/MobileInputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/PCInputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/DBManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton/AppState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Resources/Models/Chevrolet Camaro 1960.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeDetailModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/CellDataJsonWrapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/NodeCellData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/ProjectData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/ARFoundationDemos/UX/Scripts/PlaceObjectsOnPlane.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ModelVersionCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/VersionsPopupPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/TopMenuPanel.cs" />
@@ -159,10 +300,46 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/CreatorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NodeDetail/Cells/NodeDetailVideoCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatorScene/FullScreenViewer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/IOManager.cs" />
       </list>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
   <component name="ProjectId" id="1aZmymE74vf1jixzzYzh4FEROLI" />
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+        <option name="show-project-names" value="true" />
+      </pane>
+      <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -179,6 +356,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -233,8 +422,57 @@
       <workItem from="1594139568806" duration="14086000" />
       <workItem from="1595591443282" duration="55444000" />
       <workItem from="1596466616361" duration="13563000" />
+      <workItem from="1596491456169" duration="649000" />
+      <workItem from="1596497771837" duration="513000" />
+      <workItem from="1596522716543" duration="660000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1822000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Unity" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Unit Tests" order="13" />
+      <window_info anchor="bottom" id="Terminal" order="14" />
+      <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Errors In Solution" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -247,6 +485,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -427,16 +671,149 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo typeName="Firebase.Database.DataSnapshot" fieldName="Exists" />
-      </pinned-members>
-    </pin-to-top-manager>
     <watches-manager>
       <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
         <watch expression="data" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/FileBrowseHandler.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <marker date="1593184677287" expanded="false" signature="6:24" ph="..." />
+            <marker date="1593184677287" expanded="true" signature="57:1468" ph="{...}" />
+            <marker date="1593184677287" expanded="true" signature="85:113" ph="{...}" />
+            <marker date="1593184677287" expanded="true" signature="265:972" ph="{...}" />
+            <marker date="1593184677287" expanded="true" signature="1041:1461" ph="{...}" />
+            <marker date="1593184677287" expanded="true" signature="1065:1455" ph="{...}" />
+            <marker date="1593184677287" expanded="true" signature="1131:1228" ph="{...}" />
+            <marker date="1593184677287" expanded="true" signature="1294:1375" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MenuScene/MenuManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1682">
+          <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+          <folding>
+            <marker date="1596448044407" expanded="false" signature="6:233" ph="..." />
+            <marker date="1596448044407" expanded="true" signature="275:4853" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="734:884" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="914:973" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="1008:1067" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="1097:1368" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="1405:2360" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="1498:2354" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="2414:3240" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="2475:2797" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="2958:3056" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="3292:4336" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="3729:3904" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="3961:4143" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="4200:4329" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="4377:4455" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="4488:4570" ph="{...}" />
+            <marker date="1596448044407" expanded="true" signature="4646:4851" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/NodeDetail/NodeDetailEdit.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="125" column="35" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
+          <folding>
+            <marker date="1596486784067" expanded="false" signature="6:148" ph="..." />
+            <marker date="1596486784067" expanded="true" signature="205:5890" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="1222:1273" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="1323:1815" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="1413:1763" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="1853:2374" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="1975:2171" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="2102:2161" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="2206:2367" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="2405:2862" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="2915:3060" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="2969:3020" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="3097:3658" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="3134:3240" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="3719:4050" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="3940:3988" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="4107:4217" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="4250:4840" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="4337:4823" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="4411:4640" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="4568:4624" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="4640:4813" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="4873:5526" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="4960:5509" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="5034:5326" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="5250:5310" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="5326:5499" ph="{...}" />
+            <marker date="1596486784067" expanded="true" signature="5578:5883" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <marker date="1593184677200" expanded="true" signature="165:414" ph="/* For fullscreen support ... */" />
+            <marker date="1593184677200" expanded="true" signature="3983:4111" ph="/* .NET Framework FileDialog Filter format ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputHandler.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="8" column="31" selection-start-line="7" selection-end-line="8" selection-end-column="31" />
+          <folding>
+            <marker date="1596448044405" expanded="false" signature="6:64" ph="..." />
+            <marker date="1596448044405" expanded="true" signature="107:1317" ph="{...}" />
+            <marker date="1596448044405" expanded="true" signature="409:531" ph="{...}" />
+            <marker date="1596448044405" expanded="true" signature="606:1095" ph="{...}" />
+            <marker date="1596448044405" expanded="true" signature="966:1089" ph="{...}" />
+            <marker date="1596448044405" expanded="true" signature="1153:1203" ph="{...}" />
+            <marker date="1596448044405" expanded="true" signature="1263:1315" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/IOManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+          <folding>
+            <marker date="1596523303277" expanded="false" signature="6:114" ph="..." />
+            <marker date="1596523303277" expanded="true" signature="139:3813" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="199:264" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="386:953" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="565:747" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="1049:1190" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="1267:1373" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="1422:1492" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="1561:1717" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="1798:2457" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="1891:2099" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="2195:2316" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="2523:2695" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="2744:2953" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="2858:2920" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="3043:3298" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="3148:3265" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="3415:3811" ph="{...}" />
+            <marker date="1596523303277" expanded="true" signature="3661:3778" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
